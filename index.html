@@ -2,21 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#050816">
 
 <title>Deepak G | Forward Deployed Engineer</title>
 
 <meta
-  name="description"
-  content="Deepak G — Forward Deployed Engineer at Ephron Tech LLC. Software engineering, APIs, cloud infrastructure, authentication and system integration."
+name="description"
+content="Deepak G — Forward Deployed Engineer at Ephron Tech LLC. Software engineering, cloud, APIs, authentication, system integration and deployment."
 >
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+rel="stylesheet"
 >
 
 <style>
@@ -26,25 +30,27 @@
 ========================================================= */
 
 :root {
-  --bg: #020617;
-  --bg-soft: #07111f;
 
-  --panel: rgba(15, 23, 42, 0.58);
-  --panel-strong: rgba(15, 23, 42, 0.88);
+    --bg: #030712;
+    --bg2: #050816;
 
-  --cyan: #22d3ee;
-  --cyan-light: #67e8f9;
-  --blue: #3b82f6;
-  --violet: #8b5cf6;
-  --green: #22c55e;
+    --cyan: #22d3ee;
+    --blue: #3b82f6;
+    --violet: #8b5cf6;
+    --green: #22c55e;
 
-  --text: #f8fafc;
-  --muted: #94a3b8;
+    --white: #f8fafc;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
 
-  --border: rgba(148, 163, 184, 0.15);
+    --glass: rgba(15, 23, 42, .55);
+    --glass-heavy: rgba(15, 23, 42, .78);
 
-  --radius: 24px;
-  --max: 1180px;
+    --border: rgba(148,163,184,.14);
+
+    --radius: 24px;
+
+    --max: 1250px;
 }
 
 /* =========================================================
@@ -52,64 +58,105 @@
 ========================================================= */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Inter", sans-serif;
 
-  background:
-    radial-gradient(
-      circle at 15% 10%,
-      rgba(34, 211, 238, 0.10),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 85% 20%,
-      rgba(59, 130, 246, 0.10),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 50% 80%,
-      rgba(139, 92, 246, 0.08),
-      transparent 35%
-    ),
-    var(--bg);
+    font-family: "Inter", sans-serif;
 
-  color: var(--text);
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(34,211,238,.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(139,92,246,.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(59,130,246,.08),
+            transparent 30%
+        ),
+        var(--bg);
 
-  overflow-x: hidden;
+    color: var(--white);
 
-  line-height: 1.7;
+    overflow-x: hidden;
+
+    line-height: 1.7;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    text-decoration: none;
+    color: inherit;
 }
 
 button {
-  font-family: inherit;
+    font-family: inherit;
 }
 
 ::selection {
-  background: var(--cyan);
-  color: #020617;
+    background: var(--cyan);
+    color: #020617;
 }
 
-.container {
-  width: min(
-    var(--max),
-    calc(100% - 40px)
-  );
+/* =========================================================
+   CUSTOM CURSOR
+========================================================= */
 
-  margin: auto;
+.cursor {
+
+    position: fixed;
+
+    width: 10px;
+    height: 10px;
+
+    background: var(--cyan);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 0 20px var(--cyan),
+        0 0 50px rgba(34,211,238,.6);
+
+    transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+
+    position: fixed;
+
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid rgba(34,211,238,.55);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 9998;
+
+    transform: translate(-50%, -50%);
+
+    transition:
+        width .25s,
+        height .25s,
+        border-color .25s;
 }
 
 /* =========================================================
@@ -117,33 +164,59 @@ button {
 ========================================================= */
 
 .grid {
-  position: fixed;
 
-  inset: 0;
+    position: fixed;
 
-  z-index: -10;
+    inset: 0;
 
-  pointer-events: none;
+    pointer-events: none;
 
-  background-image:
-    linear-gradient(
-      rgba(148,163,184,0.035) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(148,163,184,0.035) 1px,
-      transparent 1px
-    );
+    z-index: -10;
 
-  background-size: 60px 60px;
+    background-image:
+        linear-gradient(
+            rgba(148,163,184,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(148,163,184,.035) 1px,
+            transparent 1px
+        );
 
-  mask-image:
-    linear-gradient(
-      to bottom,
-      black,
-      transparent 90%
-    );
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 85%
+        );
+}
+
+/* =========================================================
+   SCANLINE
+========================================================= */
+
+.scanline {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+    opacity: .025;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 3px,
+            #fff 4px
+        );
 }
 
 /* =========================================================
@@ -151,155 +224,228 @@ button {
 ========================================================= */
 
 .orb {
-  position: fixed;
 
-  width: 400px;
-  height: 400px;
+    position: fixed;
 
-  border-radius: 50%;
+    width: 420px;
+    height: 420px;
 
-  filter: blur(100px);
+    border-radius: 50%;
 
-  opacity: 0.13;
+    filter: blur(110px);
 
-  z-index: -9;
+    opacity: .10;
 
-  pointer-events: none;
+    pointer-events: none;
 
-  animation:
-    floatOrb
-    12s
-    ease-in-out
-    infinite
-    alternate;
+    z-index: -8;
+
+    animation:
+        orbFloat 15s ease-in-out infinite alternate;
 }
 
 .orb.one {
-  background: var(--cyan);
 
-  top: 5%;
-  left: -150px;
+    background: var(--cyan);
+
+    top: -160px;
+    left: -180px;
 }
 
 .orb.two {
-  background: var(--violet);
 
-  right: -180px;
-  top: 35%;
+    background: var(--violet);
 
-  animation-delay: -4s;
+    top: 35%;
+    right: -180px;
+
+    animation-delay: -5s;
 }
 
 .orb.three {
-  background: var(--blue);
 
-  bottom: -180px;
-  left: 35%;
+    background: var(--blue);
 
-  animation-delay: -8s;
+    bottom: -220px;
+    left: 35%;
+
+    animation-delay: -9s;
 }
 
-@keyframes floatOrb {
+@keyframes orbFloat {
 
-  from {
-    transform:
-      translate3d(0, 0, 0)
-      scale(1);
-  }
+    from {
+        transform:
+            translate3d(0,0,0)
+            scale(1);
+    }
 
-  to {
-    transform:
-      translate3d(50px, -40px, 0)
-      scale(1.15);
-  }
-
+    to {
+        transform:
+            translate3d(80px,-50px,0)
+            scale(1.2);
+    }
 }
 
 /* =========================================================
-   NAVIGATION
+   PARTICLES
+========================================================= */
+
+#particles {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -7;
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+
+    width:
+        min(
+            var(--max),
+            calc(100% - 40px)
+        );
+
+    margin: auto;
+}
+
+/* =========================================================
+   NAV
 ========================================================= */
 
 nav {
-  position: fixed;
 
-  top: 18px;
-  left: 50%;
+    position: fixed;
 
-  transform: translateX(-50%);
+    top: 18px;
+    left: 50%;
 
-  width: min(
-    1000px,
-    calc(100% - 30px)
-  );
+    transform: translateX(-50%);
 
-  z-index: 1000;
+    width:
+        min(
+            1050px,
+            calc(100% - 30px)
+        );
 
-  display: flex;
+    z-index: 1000;
 
-  align-items: center;
+    display: flex;
 
-  justify-content: space-between;
+    align-items: center;
 
-  padding: 12px 16px;
+    justify-content: space-between;
 
-  background:
-    rgba(2, 6, 23, 0.68);
+    padding: 13px 18px;
 
-  backdrop-filter:
-    blur(20px);
+    background:
+        rgba(3,7,18,.65);
 
-  -webkit-backdrop-filter:
-    blur(20px);
+    backdrop-filter:
+        blur(22px);
 
-  border:
-    1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-  border-radius: 18px;
+    border-radius: 18px;
 
-  box-shadow:
-    0 20px 70px
-    rgba(0,0,0,0.35);
+    box-shadow:
+        0 20px 80px rgba(0,0,0,.35);
 }
 
-.nav-logo {
-  font-family:
-    "JetBrains Mono",
-    monospace;
+.logo {
 
-  font-weight: 700;
+    font-family:
+        "JetBrains Mono",
+        monospace;
 
-  color: var(--cyan);
+    font-weight: 800;
 
-  letter-spacing: -0.04em;
+    color: var(--cyan);
+
+    letter-spacing: -.05em;
+}
+
+.logo span {
+    color: white;
 }
 
 .nav-links {
-  display: flex;
 
-  gap: 20px;
+    display: flex;
 
-  align-items: center;
+    gap: 26px;
 }
 
 .nav-links a {
-  color: var(--muted);
 
-  font-size: 12px;
+    color: var(--muted);
 
-  font-family:
-    "JetBrains Mono",
-    monospace;
+    font-family:
+        "JetBrains Mono",
+        monospace;
 
-  transition:
-    0.25s ease;
+    font-size: 11px;
+
+    letter-spacing: .08em;
+
+    transition: .25s;
 }
 
 .nav-links a:hover {
-  color: var(--cyan);
 
-  text-shadow:
-    0 0 15px
-    rgba(34,211,238,0.5);
+    color: var(--cyan);
+
+    text-shadow:
+        0 0 15px var(--cyan);
+}
+
+.nav-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 10px;
+
+    color: #86efac;
+}
+
+.status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 15px var(--green);
+
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    50% {
+        transform: scale(.55);
+        opacity: .5;
+    }
 }
 
 /* =========================================================
@@ -307,362 +453,605 @@ nav {
 ========================================================= */
 
 .hero {
-  min-height: 100vh;
 
-  display: flex;
+    min-height: 100vh;
 
-  align-items: center;
+    display: flex;
 
-  position: relative;
+    align-items: center;
 
-  padding-top: 90px;
+    position: relative;
+
+    padding-top: 100px;
 }
 
-.hero-content {
-  max-width: 900px;
+.hero-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    gap: 70px;
+
+    align-items: center;
 }
 
-.status {
-  display: inline-flex;
+/* =========================================================
+   HERO TEXT
+========================================================= */
 
-  align-items: center;
+.eyebrow {
 
-  gap: 9px;
+    display: inline-flex;
 
-  padding: 8px 13px;
+    align-items: center;
 
-  border:
-    1px solid
-    rgba(34,211,238,0.25);
+    gap: 10px;
 
-  border-radius: 999px;
+    padding: 8px 13px;
 
-  background:
-    rgba(34,211,238,0.05);
+    border:
+        1px solid
+        rgba(34,211,238,.25);
 
-  color: #a5f3fc;
+    border-radius: 999px;
 
-  font-family:
-    "JetBrains Mono",
-    monospace;
+    background:
+        rgba(34,211,238,.045);
 
-  font-size: 12px;
+    color:
+        #a5f3fc;
 
-  margin-bottom: 30px;
-}
+    font-family:
+        "JetBrains Mono",
+        monospace;
 
-.status-dot {
-  width: 8px;
-  height: 8px;
+    font-size: 11px;
 
-  border-radius: 50%;
-
-  background: var(--green);
-
-  box-shadow:
-    0 0 14px
-    var(--green);
-
-  animation:
-    pulse
-    1.8s
-    infinite;
-}
-
-@keyframes pulse {
-
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 0.4;
-    transform: scale(0.65);
-  }
-
+    margin-bottom: 25px;
 }
 
 .hero h1 {
-  font-size:
-    clamp(
-      55px,
-      9vw,
-      112px
-    );
 
-  line-height: 0.9;
+    font-size:
+        clamp(
+            65px,
+            9vw,
+            125px
+        );
 
-  letter-spacing: -0.075em;
+    line-height: .85;
 
-  font-weight: 900;
+    letter-spacing:
+        -.085em;
 
-  margin-bottom: 30px;
+    font-weight: 900;
+
+    margin-bottom: 30px;
 }
 
-.gradient-text {
-  background:
-    linear-gradient(
-      100deg,
-      #ffffff 5%,
-      #67e8f9 35%,
-      #3b82f6 65%,
-      #a78bfa 95%
-    );
+.gradient {
 
-  -webkit-background-clip: text;
+    background:
+        linear-gradient(
+            110deg,
+            white,
+            #67e8f9,
+            #3b82f6,
+            #a78bfa,
+            white
+        );
 
-  background-clip: text;
+    background-size: 300% auto;
 
-  color: transparent;
+    -webkit-background-clip: text;
 
-  background-size: 200% auto;
+    background-clip: text;
 
-  animation:
-    gradientMove
-    5s
-    linear
-    infinite;
+    color: transparent;
+
+    animation:
+        gradientMove 6s linear infinite;
 }
 
 @keyframes gradientMove {
 
-  to {
-    background-position:
-      200% center;
-  }
-
+    to {
+        background-position:
+            300% center;
+    }
 }
 
-.hero-role {
-  font-family:
-    "JetBrains Mono",
-    monospace;
+.role {
 
-  font-size:
-    clamp(
-      17px,
-      2vw,
-      24px
-    );
+    min-height: 35px;
 
-  color: var(--cyan);
+    font-family:
+        "JetBrains Mono",
+        monospace;
 
-  margin-bottom: 24px;
+    color: var(--cyan);
 
-  min-height: 38px;
+    font-size:
+        clamp(17px,2vw,24px);
+
+    margin-bottom: 20px;
 }
 
-.hero-description {
-  max-width: 720px;
+.description {
 
-  color: var(--muted);
+    max-width: 690px;
 
-  font-size: 18px;
+    color: var(--muted);
 
-  line-height: 1.8;
+    font-size: 17px;
 
-  margin-bottom: 35px;
-}
+    line-height: 1.85;
 
-.hero-buttons {
-  display: flex;
-
-  gap: 14px;
-
-  flex-wrap: wrap;
+    margin-bottom: 32px;
 }
 
 /* =========================================================
    BUTTONS
 ========================================================= */
 
+.buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
 .btn {
-  padding: 13px 19px;
 
-  border-radius: 13px;
+    position: relative;
 
-  border:
-    1px solid
-    var(--border);
+    overflow: hidden;
 
-  font-size: 14px;
+    padding:
+        13px 20px;
 
-  font-weight: 600;
+    border-radius: 12px;
 
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
+    border:
+        1px solid var(--border);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        transform .3s,
+        border .3s,
+        box-shadow .3s;
+}
+
+.btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent,
+            rgba(255,255,255,.18),
+            transparent
+        );
+
+    transform:
+        translateX(-120%);
+
+    transition:
+        transform .5s;
+}
+
+.btn:hover::before {
+
+    transform:
+        translateX(120%);
 }
 
 .btn:hover {
-  transform:
-    translateY(-4px);
 
-  border-color:
-    rgba(34,211,238,0.5);
+    transform:
+        translateY(-4px);
 
-  box-shadow:
-    0 12px 35px
-    rgba(34,211,238,0.08);
+    border-color:
+        rgba(34,211,238,.5);
+
+    box-shadow:
+        0 15px 40px
+        rgba(34,211,238,.12);
 }
 
-.btn-primary {
-  background:
-    linear-gradient(
-      135deg,
-      #0891b2,
-      #2563eb
-    );
+.primary {
 
-  border-color:
-    transparent;
+    background:
+        linear-gradient(
+            135deg,
+            #0891b2,
+            #2563eb
+        );
 
-  box-shadow:
-    0 10px 40px
-    rgba(37,99,235,0.25);
+    border-color:
+        transparent;
 }
 
-.btn-primary:hover {
-  box-shadow:
-    0 15px 45px
-    rgba(37,99,235,0.4);
-}
+.secondary {
 
-.btn-secondary {
-  background:
-    rgba(15,23,42,0.6);
-
-  color: #cbd5e1;
+    background:
+        rgba(15,23,42,.55);
 }
 
 /* =========================================================
-   SCROLL
+   PROFILE CARD
 ========================================================= */
 
-.scroll-indicator {
-  position: absolute;
+.profile-wrap {
 
-  bottom: 35px;
-
-  left: 50%;
-
-  transform:
-    translateX(-50%);
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  gap: 8px;
-
-  color: #64748b;
-
-  font-size: 10px;
-
-  font-family:
-    "JetBrains Mono",
-    monospace;
-
-  letter-spacing: 0.15em;
+    perspective: 1200px;
 }
 
-.scroll-line {
-  width: 1px;
-  height: 50px;
+.profile-card {
 
-  background:
-    linear-gradient(
-      to bottom,
-      var(--cyan),
-      transparent
-    );
+    position: relative;
 
-  animation:
-    scrollLine
-    2s
-    infinite;
+    min-height: 520px;
+
+    padding: 28px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,23,42,.88),
+            rgba(2,6,23,.72)
+        );
+
+    border:
+        1px solid
+        rgba(148,163,184,.18);
+
+    backdrop-filter:
+        blur(25px);
+
+    box-shadow:
+        0 40px 100px
+        rgba(0,0,0,.5),
+
+        inset 0 1px
+        rgba(255,255,255,.05);
+
+    overflow: hidden;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform .15s ease;
 }
 
-@keyframes scrollLine {
+.profile-card::before {
 
-  0% {
-    opacity: 0;
+    content: "";
 
-    transform:
-      scaleY(0);
+    position: absolute;
 
-    transform-origin: top;
-  }
+    width: 280px;
+    height: 280px;
 
-  50% {
-    opacity: 1;
+    border-radius: 50%;
 
-    transform:
-      scaleY(1);
-  }
+    background:
+        var(--cyan);
 
-  100% {
-    opacity: 0;
+    filter:
+        blur(100px);
 
-    transform:
-      scaleY(0);
+    opacity: .13;
 
-    transform-origin: bottom;
-  }
+    top: -100px;
+    left: -100px;
+}
 
+.profile-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        var(--violet);
+
+    filter:
+        blur(100px);
+
+    opacity: .12;
+
+    bottom: -100px;
+    right: -100px;
 }
 
 /* =========================================================
-   SECTIONS
+   PROFILE PHOTO
+========================================================= */
+
+.avatar-area {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    padding: 25px 0 35px;
+}
+
+.avatar-ring {
+
+    position: relative;
+
+    width: 205px;
+    height: 205px;
+
+    padding: 6px;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            var(--cyan),
+            var(--blue),
+            var(--violet),
+            var(--cyan)
+        );
+
+    animation:
+        rotateRing 7s linear infinite;
+
+    box-shadow:
+        0 0 35px
+        rgba(34,211,238,.25);
+}
+
+@keyframes rotateRing {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.avatar-ring::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    background: var(--bg);
+
+    border-radius: 50%;
+}
+
+.avatar {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border:
+        5px solid
+        var(--bg);
+
+    animation:
+        counterRotate 7s linear infinite;
+}
+
+@keyframes counterRotate {
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+/* =========================================================
+   PROFILE INFORMATION
+========================================================= */
+
+.profile-name {
+
+    text-align: center;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    letter-spacing:
+        -.05em;
+
+    margin-bottom: 3px;
+}
+
+.profile-role {
+
+    text-align: center;
+
+    color: var(--cyan);
+
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 12px;
+}
+
+.company {
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-top: 4px;
+}
+
+.profile-line {
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--border),
+            transparent
+        );
+
+    margin: 25px 0;
+}
+
+/* =========================================================
+   PROFILE DETAILS
+========================================================= */
+
+.details {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+}
+
+.detail {
+
+    padding: 13px;
+
+    background:
+        rgba(15,23,42,.45);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 13px;
+}
+
+.detail-label {
+
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 9px;
+
+    color: #64748b;
+
+    margin-bottom: 3px;
+}
+
+.detail-value {
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #cbd5e1;
+}
+
+/* =========================================================
+   LIVE CLOCK
+========================================================= */
+
+.clock {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 11px;
+
+    color: #64748b;
+}
+
+.clock span {
+    color: var(--cyan);
+}
+
+/* =========================================================
+   SECTION
 ========================================================= */
 
 section {
-  padding: 120px 0;
+
+    padding: 120px 0;
 }
 
 .section-label {
-  font-family:
-    "JetBrains Mono",
-    monospace;
 
-  font-size: 12px;
+    font-family:
+        "JetBrains Mono",
+        monospace;
 
-  color: var(--cyan);
+    font-size: 11px;
 
-  letter-spacing: 0.16em;
+    letter-spacing: .18em;
 
-  margin-bottom: 14px;
+    color: var(--cyan);
 
-  text-transform: uppercase;
+    margin-bottom: 14px;
 }
 
 .section-title {
-  font-size:
-    clamp(
-      36px,
-      5vw,
-      62px
-    );
 
-  letter-spacing: -0.06em;
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            70px
+        );
 
-  line-height: 1;
+    letter-spacing:
+        -.07em;
 
-  margin-bottom: 20px;
+    line-height: .95;
+
+    margin-bottom: 22px;
 }
 
 .section-description {
-  max-width: 680px;
 
-  color: var(--muted);
+    color: var(--muted);
 
-  font-size: 17px;
+    max-width: 700px;
+
+    font-size: 16px;
 }
 
 /* =========================================================
@@ -670,21 +1059,23 @@ section {
 ========================================================= */
 
 .glass {
-  background:
-    var(--panel);
 
-  border:
-    1px solid
-    var(--border);
+    background:
+        var(--glass);
 
-  border-radius:
-    var(--radius);
+    border:
+        1px solid
+        var(--border);
 
-  backdrop-filter:
-    blur(18px);
+    backdrop-filter:
+        blur(20px);
 
-  -webkit-backdrop-filter:
-    blur(18px);
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.18);
 }
 
 /* =========================================================
@@ -692,80 +1083,86 @@ section {
 ========================================================= */
 
 .about-grid {
-  display: grid;
 
-  grid-template-columns:
-    1.2fr 0.8fr;
+    margin-top: 55px;
 
-  gap: 50px;
+    display: grid;
 
-  margin-top: 60px;
+    grid-template-columns:
+        1.3fr .7fr;
 
-  align-items: stretch;
+    gap: 20px;
 }
 
 .about-card {
-  padding: 35px;
+
+    padding: 35px;
 }
 
 .about-card p {
-  color: var(--muted);
 
-  margin-bottom: 18px;
+    color: var(--muted);
 
-  font-size: 16px;
+    font-size: 15px;
+
+    margin-bottom: 18px;
 }
 
-.identity-card {
-  padding: 35px;
+.identity {
 
-  display: flex;
+    padding: 35px;
 
-  flex-direction: column;
+    display: flex;
 
-  justify-content: space-between;
+    flex-direction: column;
 
-  min-height: 330px;
+    justify-content: space-between;
 }
 
-.identity-top {
-  font-family:
-    "JetBrains Mono",
-    monospace;
+.identity-label {
 
-  color: var(--cyan);
+    font-family:
+        "JetBrains Mono",
+        monospace;
 
-  font-size: 13px;
+    color: var(--cyan);
+
+    font-size: 11px;
 }
 
-.identity-name {
-  font-size: 35px;
+.identity h3 {
 
-  font-weight: 800;
+    font-size: 32px;
 
-  letter-spacing: -0.05em;
+    letter-spacing:
+        -.05em;
 
-  margin: 18px 0 8px;
+    margin-top: 15px;
 }
 
 .identity-role {
-  color: var(--muted);
+
+    color: var(--muted);
+
+    margin-top: 3px;
 }
 
 .identity-company {
-  color: #67e8f9;
 
-  margin-top: 4px;
+    color: #67e8f9;
+
+    margin-top: 4px;
 }
 
 .identity-bottom {
-  font-family:
-    "JetBrains Mono",
-    monospace;
 
-  color: #64748b;
+    font-family:
+        "JetBrains Mono",
+        monospace;
 
-  font-size: 12px;
+    font-size: 10px;
+
+    color: #64748b;
 }
 
 /* =========================================================
@@ -773,123 +1170,219 @@ section {
 ========================================================= */
 
 .capability-grid {
-  display: grid;
 
-  grid-template-columns:
-    repeat(3, 1fr);
+    margin-top: 55px;
 
-  gap: 18px;
+    display: grid;
 
-  margin-top: 60px;
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 15px;
 }
 
 .capability {
-  padding: 30px;
 
-  position: relative;
+    position: relative;
 
-  overflow: hidden;
+    padding: 30px;
 
-  transition:
-    transform 0.35s ease,
-    border-color 0.35s ease;
-}
+    overflow: hidden;
 
-.capability::before {
-  content: "";
-
-  position: absolute;
-
-  width: 120px;
-  height: 120px;
-
-  right: -60px;
-  top: -60px;
-
-  border-radius: 50%;
-
-  background: var(--cyan);
-
-  filter: blur(50px);
-
-  opacity: 0.08;
+    transition:
+        transform .35s,
+        border .35s;
 }
 
 .capability:hover {
-  transform:
-    translateY(-8px);
 
-  border-color:
-    rgba(34,211,238,0.3);
+    transform:
+        translateY(-9px);
+
+    border-color:
+        rgba(34,211,238,.35);
+
+    box-shadow:
+        0 25px 70px
+        rgba(34,211,238,.08);
 }
 
-.capability-icon {
-  font-size: 30px;
+.icon {
 
-  margin-bottom: 18px;
+    font-size: 30px;
+
+    margin-bottom: 18px;
 }
 
 .capability h3 {
-  margin-bottom: 10px;
 
-  font-size: 20px;
+    font-size: 19px;
+
+    margin-bottom: 8px;
 }
 
 .capability p {
-  color: var(--muted);
 
-  font-size: 14px;
+    color: var(--muted);
+
+    font-size: 13px;
 }
 
 /* =========================================================
-   TECH STACK
+   TECH ORBIT
 ========================================================= */
 
-.tech-wrapper {
-  margin-top: 60px;
+.orbit-container {
 
-  display: flex;
+    position: relative;
 
-  flex-wrap: wrap;
+    height: 500px;
 
-  gap: 12px;
+    margin-top: 50px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
 }
 
-.tech {
-  padding: 12px 16px;
+.orbit-center {
 
-  background:
-    rgba(15,23,42,0.65);
+    position: relative;
 
-  border:
-    1px solid
-    var(--border);
+    z-index: 5;
 
-  border-radius: 12px;
+    width: 130px;
+    height: 130px;
 
-  color: #cbd5e1;
+    border-radius: 50%;
 
-  font-family:
-    "JetBrains Mono",
-    monospace;
+    display: flex;
 
-  font-size: 13px;
+    align-items: center;
 
-  transition: 0.25s ease;
+    justify-content: center;
+
+    text-align: center;
+
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: var(--cyan);
+
+    border:
+        1px solid
+        rgba(34,211,238,.5);
+
+    background:
+        rgba(2,6,23,.8);
+
+    box-shadow:
+        0 0 50px
+        rgba(34,211,238,.15);
 }
 
-.tech:hover {
-  color: var(--cyan);
+.orbit {
 
-  border-color:
-    rgba(34,211,238,0.35);
+    position: absolute;
 
-  transform:
-    translateY(-3px);
+    border:
+        1px dashed
+        rgba(148,163,184,.16);
 
-  box-shadow:
-    0 10px 30px
-    rgba(34,211,238,0.06);
+    border-radius: 50%;
+
+    animation:
+        orbitSpin 20s linear infinite;
+}
+
+.orbit-one {
+
+    width: 280px;
+    height: 280px;
+}
+
+.orbit-two {
+
+    width: 430px;
+    height: 430px;
+
+    animation-duration: 30s;
+
+    animation-direction:
+        reverse;
+}
+
+@keyframes orbitSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.tech-node {
+
+    position: absolute;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        rgba(15,23,42,.9);
+
+    border:
+        1px solid
+        rgba(34,211,238,.22);
+
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    color: #cbd5e1;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.3);
+}
+
+/* orbit positions */
+
+.node-a {
+    top: -29px;
+    left: calc(50% - 29px);
+}
+
+.node-b {
+    right: -29px;
+    top: calc(50% - 29px);
+}
+
+.node-c {
+    bottom: -29px;
+    left: calc(50% - 29px);
+}
+
+.node-d {
+    left: -29px;
+    top: calc(50% - 29px);
 }
 
 /* =========================================================
@@ -897,75 +1390,78 @@ section {
 ========================================================= */
 
 .flow {
-  margin-top: 65px;
 
-  display: grid;
+    margin-top: 55px;
 
-  grid-template-columns:
-    repeat(5, 1fr);
+    display: grid;
 
-  gap: 10px;
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap: 12px;
 }
 
 .flow-step {
-  text-align: center;
 
-  padding: 28px 12px;
+    position: relative;
 
-  background:
-    rgba(15,23,42,0.45);
+    padding: 30px 15px;
 
-  border:
-    1px solid
-    var(--border);
+    text-align: center;
 
-  border-radius: 16px;
+    background:
+        rgba(15,23,42,.4);
 
-  position: relative;
+    border:
+        1px solid
+        var(--border);
 
-  transition:
-    0.3s ease;
+    border-radius: 18px;
+
+    transition: .3s;
 }
 
 .flow-step:hover {
-  transform:
-    translateY(-7px);
 
-  border-color:
-    rgba(34,211,238,0.3);
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(34,211,238,.3);
 }
 
-.flow-step::after {
-  content: "→";
+.flow-step:not(:last-child)::after {
 
-  position: absolute;
+    content: "→";
 
-  right: -16px;
+    position: absolute;
 
-  top: 50%;
+    right: -18px;
 
-  transform:
-    translateY(-50%);
+    top: 50%;
 
-  color: var(--cyan);
+    color: var(--cyan);
 
-  font-size: 20px;
+    transform:
+        translateY(-50%);
 
-  z-index: 2;
-}
-
-.flow-step:last-child::after {
-  display: none;
+    z-index: 5;
 }
 
 .flow-icon {
-  font-size: 28px;
 
-  margin-bottom: 10px;
+    font-size: 28px;
+
+    margin-bottom: 10px;
 }
 
 .flow-step h3 {
-  font-size: 13px;
+
+    font-size: 12px;
+
+    font-family:
+        "JetBrains Mono",
+        monospace;
 }
 
 /* =========================================================
@@ -973,961 +1469,290 @@ section {
 ========================================================= */
 
 .terminal {
-  margin-top: 60px;
 
-  background: #030712;
+    margin-top: 55px;
 
-  border:
-    1px solid
-    rgba(34,211,238,0.18);
+    border-radius: 20px;
 
-  border-radius: 20px;
+    overflow: hidden;
 
-  overflow: hidden;
+    background:
+        #020617;
 
-  box-shadow:
-    0 30px 100px
-    rgba(0,0,0,0.4);
+    border:
+        1px solid
+        rgba(34,211,238,.18);
+
+    box-shadow:
+        0 35px 100px
+        rgba(0,0,0,.45);
 }
 
 .terminal-header {
-  display: flex;
 
-  align-items: center;
+    display: flex;
 
-  gap: 7px;
+    align-items: center;
 
-  padding: 13px 17px;
+    gap: 7px;
 
-  border-bottom:
-    1px solid
-    rgba(148,163,184,0.1);
+    padding:
+        14px 18px;
+
+    border-bottom:
+        1px solid
+        rgba(148,163,184,.1);
 }
 
 .terminal-dot {
-  width: 10px;
-  height: 10px;
 
-  border-radius: 50%;
+    width: 10px;
+    height: 10px;
 
-  background: #334155;
+    border-radius: 50%;
+
+    background: #334155;
 }
 
 .terminal-title {
-  margin-left: 8px;
 
-  color: #64748b;
+    margin-left: 8px;
 
-  font-family:
-    "JetBrains Mono",
-    monospace;
+    font-family:
+        "JetBrains Mono",
+        monospace;
 
-  font-size: 11px;
+    font-size: 10px;
+
+    color: #64748b;
 }
 
 .terminal-body {
-  padding: 30px;
 
-  font-family:
-    "JetBrains Mono",
-    monospace;
+    padding: 30px;
 
-  font-size: 13px;
+    font-family:
+        "JetBrains Mono",
+        monospace;
 
-  line-height: 2;
+    font-size: 13px;
 
-  color: #94a3b8;
+    line-height: 2;
 }
 
-.terminal-green {
-  color: #4ade80;
+.green {
+    color: #4ade80;
 }
 
-.terminal-blue {
-  color: #38bdf8;
+.blue {
+    color: #38bdf8;
 }
 
-.terminal-white {
-  color: #f8fafc;
+.white {
+    color: white;
 }
 
-.cursor {
-  display: inline-block;
+.cursor-block {
 
-  width: 7px;
-  height: 16px;
+    display: inline-block;
 
-  background: var(--cyan);
+    width: 7px;
+    height: 15px;
 
-  vertical-align: middle;
+    background:
+        var(--cyan);
 
-  animation:
-    cursorBlink
-    1s
-    infinite;
+    animation:
+        blink 1s infinite;
 }
 
-@keyframes cursorBlink {
+@keyframes blink {
 
-  50% {
-    opacity: 0;
-  }
-
+    50% {
+        opacity: 0;
+    }
 }
 
 /* =========================================================
-   EXPERIENCE
+   PROJECTS
 ========================================================= */
 
-.experience {
-  margin-top: 60px;
+.projects {
 
-  padding: 35px;
+    margin-top: 55px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 18px;
 }
 
-.experience-header {
-  display: flex;
+.project {
 
-  justify-content: space-between;
+    position: relative;
 
-  gap: 30px;
+    padding: 30px;
 
-  align-items: flex-start;
+    min-height: 250px;
 
-  margin-bottom: 30px;
+    overflow: hidden;
+
+    transition:
+        transform .35s,
+        border .35s;
 }
 
-.experience-title {
-  font-size: 25px;
+.project:hover {
 
-  font-weight: 700;
-}
-
-.experience-company {
-  color: var(--cyan);
-
-  font-family:
-    "JetBrains Mono",
-    monospace;
-
-  font-size: 13px;
-
-  margin-top: 5px;
-}
-
-.experience-tag {
-  padding: 8px 12px;
-
-  border-radius: 999px;
-
-  border:
-    1px solid
-    rgba(34,211,238,0.2);
-
-  color: #67e8f9;
-
-  background:
-    rgba(34,211,238,0.05);
-
-  font-size: 11px;
-
-  white-space: nowrap;
-}
-
-.experience-list {
-  display: grid;
-
-  gap: 14px;
-}
-
-.experience-item {
-  display: flex;
-
-  gap: 14px;
-
-  color: var(--muted);
-
-  font-size: 14px;
-}
-
-.experience-item span {
-  color: var(--cyan);
-}
-
-/* =========================================================
-   METRICS
-========================================================= */
-
-.metrics {
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  gap: 15px;
-
-  margin-top: 50px;
-}
-
-.metric {
-  padding: 25px;
-
-  text-align: center;
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.metric:hover {
-  transform:
-    translateY(-6px);
-
-  border-color:
-    rgba(34,211,238,0.25);
-}
-
-.metric-number {
-  font-size: 36px;
-
-  font-weight: 800;
-
-  letter-spacing: -0.05em;
-
-  color: var(--text);
-}
-
-.metric-label {
-  font-size: 12px;
-
-  color: var(--muted);
-
-  font-family:
-    "JetBrains Mono",
-    monospace;
-}
-
-/* =========================================================
-   GITHUB DASHBOARD
-========================================================= */
-
-.github-dashboard {
-  margin-top: 60px;
-
-  display: grid;
-
-  gap: 18px;
-}
-
-/* PROFILE */
-
-.github-profile {
-  padding: 30px;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 25px;
-
-  position: relative;
-
-  overflow: hidden;
-
-  transition:
-    transform 0.4s ease,
-    border-color 0.4s ease;
-}
-
-.github-profile:hover {
-  transform:
-    translateY(-5px);
-
-  border-color:
-    rgba(34,211,238,0.3);
-}
-
-.github-profile::before {
-  content: "";
-
-  position: absolute;
-
-  width: 280px;
-  height: 280px;
-
-  right: -100px;
-  top: -140px;
-
-  border-radius: 50%;
-
-  background: var(--cyan);
-
-  filter: blur(90px);
-
-  opacity: 0.12;
-
-  animation:
-    githubGlow
-    6s
-    ease-in-out
-    infinite
-    alternate;
-}
-
-@keyframes githubGlow {
-
-  from {
-    transform: scale(0.8);
-  }
-
-  to {
-    transform: scale(1.3);
-  }
-
-}
-
-.github-avatar-wrap {
-  position: relative;
-
-  flex-shrink: 0;
-}
-
-.github-avatar {
-  width: 105px;
-  height: 105px;
-
-  border-radius: 50%;
-
-  object-fit: cover;
-
-  border:
-    2px solid
-    rgba(34,211,238,0.5);
-
-  box-shadow:
-    0 0 0 6px
-    rgba(34,211,238,0.04),
-    0 0 40px
-    rgba(34,211,238,0.2);
-
-  animation:
-    githubAvatarFloat
-    4s
-    ease-in-out
-    infinite;
-}
-
-@keyframes githubAvatarFloat {
-
-  0%,
-  100% {
     transform:
-      translateY(0);
-  }
+        translateY(-10px);
 
-  50% {
-    transform:
-      translateY(-7px);
-  }
-
+    border-color:
+        rgba(34,211,238,.35);
 }
 
-.github-online {
-  position: absolute;
+.project-number {
 
-  width: 16px;
-  height: 16px;
+    font-family:
+        "JetBrains Mono",
+        monospace;
 
-  right: 4px;
-  bottom: 8px;
+    color: var(--cyan);
 
-  border-radius: 50%;
-
-  background: #22c55e;
-
-  border:
-    3px solid
-    #020617;
-
-  box-shadow:
-    0 0 15px
-    #22c55e;
-
-  animation:
-    githubPulse
-    1.8s
-    infinite;
+    font-size: 10px;
 }
 
-@keyframes githubPulse {
+.project h3 {
 
-  0%,
-  100% {
-    transform: scale(1);
+    font-size: 22px;
 
-    opacity: 1;
-  }
-
-  50% {
-    transform: scale(1.35);
-
-    opacity: 0.65;
-  }
-
+    margin:
+        25px 0 10px;
 }
 
-.github-profile-info {
-  position: relative;
+.project p {
 
-  z-index: 2;
+    color: var(--muted);
+
+    font-size: 13px;
 }
 
-.github-username {
-  color: var(--cyan);
+.project-tags {
 
-  font-family:
-    "JetBrains Mono",
-    monospace;
+    position: absolute;
 
-  font-size: 12px;
+    bottom: 25px;
 
-  margin-bottom: 5px;
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
 }
 
-.github-name {
-  font-size: 28px;
+.tag {
 
-  font-weight: 800;
+    padding:
+        5px 9px;
 
-  letter-spacing: -0.04em;
-}
+    border-radius: 7px;
 
-.github-bio {
-  color: var(--muted);
+    font-family:
+        "JetBrains Mono",
+        monospace;
 
-  font-size: 14px;
+    font-size: 9px;
 
-  margin: 5px 0 15px;
+    background:
+        rgba(34,211,238,.06);
 
-  max-width: 650px;
-}
+    color: #67e8f9;
 
-.github-profile-link {
-  color: #67e8f9;
-
-  font-family:
-    "JetBrains Mono",
-    monospace;
-
-  font-size: 12px;
-
-  transition: 0.25s ease;
-}
-
-.github-profile-link:hover {
-  color: white;
-
-  text-shadow:
-    0 0 15px
-    rgba(34,211,238,0.8);
+    border:
+        1px solid
+        rgba(34,211,238,.14);
 }
 
 /* =========================================================
-   GITHUB STATS
+   STATS
 ========================================================= */
 
-.github-stats {
-  display: grid;
+.stats {
 
-  grid-template-columns:
-    repeat(4, 1fr);
+    margin-top: 45px;
 
-  gap: 15px;
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 15px;
 }
 
-.github-stat {
-  padding: 25px;
+.stat {
 
-  text-align: center;
+    padding: 25px;
 
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
+    text-align: center;
 }
 
-.github-stat:hover {
-  transform:
-    translateY(-7px);
+.stat-number {
 
-  border-color:
-    rgba(34,211,238,0.3);
+    font-size: 38px;
+
+    font-weight: 900;
+
+    letter-spacing:
+        -.06em;
+
+    color: var(--white);
 }
 
-.github-stat-icon {
-  display: block;
+.stat-label {
 
-  font-size: 24px;
+    color: #64748b;
 
-  margin-bottom: 8px;
-}
+    font-family:
+        "JetBrains Mono",
+        monospace;
 
-.github-stat strong {
-  display: block;
+    font-size: 9px;
 
-  font-size: 32px;
-
-  font-weight: 800;
-
-  letter-spacing: -0.05em;
-
-  background:
-    linear-gradient(
-      90deg,
-      #ffffff,
-      #67e8f9,
-      #a78bfa
-    );
-
-  -webkit-background-clip: text;
-
-  background-clip: text;
-
-  color: transparent;
-}
-
-.github-stat small {
-  display: block;
-
-  margin-top: 5px;
-
-  color: var(--muted);
-
-  font-family:
-    "JetBrains Mono",
-    monospace;
-
-  font-size: 9px;
-
-  letter-spacing: 0.08em;
+    letter-spacing: .08em;
 }
 
 /* =========================================================
-   GITHUB ACTIVITY
+   GITHUB
 ========================================================= */
 
-.github-activity-card {
-  overflow: hidden;
+.github-panel {
+
+    margin-top: 55px;
+
+    padding: 35px;
+
+    overflow: hidden;
 }
 
-.github-card-header {
-  display: flex;
+.github-image {
 
-  align-items: center;
+    width: 100%;
 
-  justify-content: space-between;
+    border-radius: 14px;
 
-  padding: 18px 22px;
+    opacity: .9;
 
-  border-bottom:
-    1px solid
-    var(--border);
-
-  font-family:
-    "JetBrains Mono",
-    monospace;
-
-  font-size: 12px;
-
-  color: #cbd5e1;
+    transition: .3s;
 }
 
-.github-live-dot {
-  display: inline-block;
+.github-image:hover {
 
-  width: 8px;
-  height: 8px;
-
-  margin-right: 8px;
-
-  border-radius: 50%;
-
-  background: #22c55e;
-
-  box-shadow:
-    0 0 12px
-    #22c55e;
-
-  animation:
-    githubPulse
-    1.5s
-    infinite;
-}
-
-#github-updated {
-  color: #64748b;
-
-  font-size: 10px;
-}
-
-.github-events-list {
-  padding: 10px 0;
-}
-
-.github-event {
-  display: flex;
-
-  align-items: center;
-
-  gap: 18px;
-
-  padding: 18px 24px;
-
-  border-bottom:
-    1px solid
-    rgba(148, 163, 184, 0.07);
-
-  opacity: 0;
-
-  transform:
-    translateX(-20px);
-
-  animation:
-    githubEventIn
-    0.6s
-    forwards;
-
-  transition:
-    background 0.25s ease;
-}
-
-.github-event:last-child {
-  border-bottom: none;
-}
-
-.github-event:hover {
-  background:
-    rgba(34,211,238,0.035);
-}
-
-@keyframes githubEventIn {
-
-  to {
     opacity: 1;
 
     transform:
-      translateX(0);
-  }
-
-}
-
-.github-event-icon {
-  width: 42px;
-  height: 42px;
-
-  flex-shrink: 0;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 12px;
-
-  background:
-    rgba(34,211,238,0.07);
-
-  border:
-    1px solid
-    rgba(34,211,238,0.15);
-
-  font-size: 18px;
-}
-
-.github-event-content {
-  min-width: 0;
-
-  flex: 1;
-}
-
-.github-event-title {
-  color: #e2e8f0;
-
-  font-size: 14px;
-
-  line-height: 1.5;
-}
-
-.github-event-title strong {
-  color: #67e8f9;
-}
-
-.github-event-meta {
-  margin-top: 4px;
-
-  color: #64748b;
-
-  font-family:
-    "JetBrains Mono",
-    monospace;
-
-  font-size: 10px;
-}
-
-.github-event-link {
-  color: #64748b;
-
-  font-size: 18px;
-
-  transition: 0.25s ease;
-}
-
-.github-event:hover
-.github-event-link {
-  color: var(--cyan);
-
-  transform:
-    translateX(4px);
-}
-
-/* =========================================================
-   GITHUB CONTRIBUTION STYLE
-========================================================= */
-
-.contribution-box {
-  padding: 28px;
-
-  overflow: hidden;
-}
-
-.contribution-header {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  margin-bottom: 22px;
-}
-
-.contribution-title {
-  font-family:
-    "JetBrains Mono",
-    monospace;
-
-  color: #cbd5e1;
-
-  font-size: 12px;
-}
-
-.contribution-count {
-  color: var(--cyan);
-
-  font-family:
-    "JetBrains Mono",
-    monospace;
-
-  font-size: 11px;
-}
-
-.contribution-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(52, 1fr);
-
-  grid-auto-rows: 11px;
-
-  grid-auto-flow: column;
-
-  gap: 4px;
-
-  overflow-x: auto;
-
-  padding-bottom: 8px;
-}
-
-.contribution-cell {
-  width: 11px;
-  height: 11px;
-
-  border-radius: 3px;
-
-  background:
-    rgba(148,163,184,0.08);
-
-  border:
-    1px solid
-    rgba(148,163,184,0.04);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.contribution-cell:hover {
-  transform:
-    scale(1.5);
-
-  box-shadow:
-    0 0 15px
-    rgba(34,211,238,0.7);
-
-  z-index: 3;
-}
-
-.contribution-cell.level-1 {
-  background:
-    rgba(34,211,238,0.20);
-}
-
-.contribution-cell.level-2 {
-  background:
-    rgba(34,211,238,0.40);
-}
-
-.contribution-cell.level-3 {
-  background:
-    rgba(34,211,238,0.65);
-}
-
-.contribution-cell.level-4 {
-  background:
-    rgba(34,211,238,0.95);
-
-  box-shadow:
-    0 0 7px
-    rgba(34,211,238,0.25);
-}
-
-.contribution-legend {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: flex-end;
-
-  gap: 6px;
-
-  margin-top: 14px;
-
-  color: #64748b;
-
-  font-size: 10px;
-
-  font-family:
-    "JetBrains Mono",
-    monospace;
-}
-
-.legend-cell {
-  width: 10px;
-  height: 10px;
-
-  border-radius: 2px;
-
-  background:
-    rgba(148,163,184,0.08);
-}
-
-.legend-cell:nth-child(2) {
-  background:
-    rgba(34,211,238,0.20);
-}
-
-.legend-cell:nth-child(3) {
-  background:
-    rgba(34,211,238,0.40);
-}
-
-.legend-cell:nth-child(4) {
-  background:
-    rgba(34,211,238,0.65);
-}
-
-.legend-cell:nth-child(5) {
-  background:
-    rgba(34,211,238,0.95);
-}
-
-/* =========================================================
-   LOADING
-========================================================= */
-
-.github-loading {
-  min-height: 120px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 7px;
-
-  color: #64748b;
-
-  font-family:
-    "JetBrains Mono",
-    monospace;
-
-  font-size: 11px;
-}
-
-.github-loading span {
-  width: 6px;
-  height: 6px;
-
-  border-radius: 50%;
-
-  background: var(--cyan);
-
-  animation:
-    githubLoading
-    1s
-    infinite;
-}
-
-.github-loading span:nth-child(2) {
-  animation-delay:
-    0.15s;
-}
-
-.github-loading span:nth-child(3) {
-  animation-delay:
-    0.3s;
-}
-
-@keyframes githubLoading {
-
-  0%,
-  100% {
-    transform:
-      translateY(0);
-
-    opacity: 0.4;
-  }
-
-  50% {
-    transform:
-      translateY(-6px);
-
-    opacity: 1;
-  }
-
-}
-
-.github-error {
-  padding: 30px;
-
-  text-align: center;
-
-  color: #64748b;
-
-  font-family:
-    "JetBrains Mono",
-    monospace;
-
-  font-size: 12px;
+        scale(1.01);
 }
 
 /* =========================================================
@@ -1935,103 +1760,92 @@ section {
 ========================================================= */
 
 .contact {
-  text-align: center;
 
-  padding-bottom: 160px;
+    text-align: center;
+
+    padding-bottom: 130px;
 }
 
 .contact-box {
-  padding: 70px 30px;
 
-  margin-top: 55px;
+    margin-top: 50px;
 
-  position: relative;
+    padding:
+        80px 30px;
 
-  overflow: hidden;
+    position: relative;
+
+    overflow: hidden;
 }
 
 .contact-box::before {
-  content: "";
 
-  position: absolute;
+    content: "";
 
-  width: 300px;
-  height: 300px;
+    position: absolute;
 
-  border-radius: 50%;
+    width: 400px;
+    height: 400px;
 
-  background: var(--blue);
+    border-radius: 50%;
 
-  filter: blur(120px);
+    background:
+        var(--blue);
 
-  opacity: 0.1;
+    filter:
+        blur(130px);
 
-  left: 50%;
-  top: 50%;
+    opacity: .1;
 
-  transform:
-    translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
 
-  animation:
-    contactGlow
-    6s
-    ease-in-out
-    infinite
-    alternate;
-}
-
-@keyframes contactGlow {
-
-  from {
     transform:
-      translate(-50%, -50%)
-      scale(0.8);
-  }
-
-  to {
-    transform:
-      translate(-50%, -50%)
-      scale(1.3);
-  }
-
+        translate(-50%,-50%);
 }
 
 .contact h2 {
-  position: relative;
 
-  font-size:
-    clamp(
-      38px,
-      6vw,
-      70px
-    );
+    position: relative;
 
-  letter-spacing: -0.06em;
+    font-size:
+        clamp(
+            45px,
+            7vw,
+            85px
+        );
 
-  margin-bottom: 18px;
+    line-height: .9;
+
+    letter-spacing:
+        -.075em;
+
+    margin-bottom: 20px;
 }
 
 .contact p {
-  position: relative;
 
-  color: var(--muted);
+    position: relative;
 
-  max-width: 600px;
+    max-width: 600px;
 
-  margin:
-    auto auto 30px;
+    margin:
+        0 auto 30px;
+
+    color: var(--muted);
 }
 
-.contact-links {
-  position: relative;
+.contact-buttons {
 
-  display: flex;
+    position: relative;
 
-  justify-content: center;
+    display: flex;
 
-  flex-wrap: wrap;
+    justify-content: center;
 
-  gap: 12px;
+    flex-wrap: wrap;
+
+    gap: 12px;
 }
 
 /* =========================================================
@@ -2039,1506 +1853,1422 @@ section {
 ========================================================= */
 
 footer {
-  border-top:
-    1px solid
-    var(--border);
 
-  padding: 30px 0;
+    border-top:
+        1px solid
+        var(--border);
 
-  color: #64748b;
+    padding:
+        30px 0;
 
-  font-family:
-    "JetBrains Mono",
-    monospace;
+    text-align: center;
 
-  font-size: 11px;
+    font-family:
+        "JetBrains Mono",
+        monospace;
 
-  text-align: center;
+    font-size: 10px;
+
+    color: #64748b;
 }
 
 /* =========================================================
-   REVEAL
+   SCROLL REVEAL
 ========================================================= */
 
 .reveal {
-  opacity: 0;
 
-  transform:
-    translateY(35px);
+    opacity: 0;
 
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
+    transform:
+        translateY(50px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
 }
 
 .reveal.active {
-  opacity: 1;
 
-  transform:
-    translateY(0);
+    opacity: 1;
+
+    transform:
+        translateY(0);
 }
 
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
-@media (max-width: 900px) {
+@media(max-width:950px) {
 
-  .nav-links {
-    gap: 12px;
-  }
+    .hero-layout {
 
-  .nav-links a {
-    font-size: 10px;
-  }
+        grid-template-columns:
+            1fr;
 
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
+    }
 
-  .capability-grid {
-    grid-template-columns:
-      1fr 1fr;
-  }
+    .profile-wrap {
 
-  .flow {
-    grid-template-columns:
-      1fr;
-  }
+        max-width: 500px;
 
-  .flow-step::after {
-    content: "↓";
+        margin: auto;
+    }
 
-    right: 50%;
+    .capability-grid {
 
-    top: auto;
+        grid-template-columns:
+            1fr 1fr;
+    }
 
-    bottom: -22px;
+    .projects {
 
-    transform:
-      translateX(50%);
-  }
+        grid-template-columns:
+            1fr 1fr;
+    }
 
-  .flow-step:last-child::after {
-    display: none;
-  }
+    .flow {
 
-  .metrics {
-    grid-template-columns:
-      1fr 1fr;
-  }
+        grid-template-columns:
+            1fr;
+    }
 
-  .github-stats {
-    grid-template-columns:
-      1fr 1fr;
-  }
+    .flow-step:not(:last-child)::after {
 
+        content: "↓";
+
+        right: 50%;
+
+        top: auto;
+
+        bottom: -25px;
+
+        transform:
+            translateX(50%);
+    }
+
+    .stats {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
 }
 
-@media (max-width: 700px) {
+@media(max-width:650px) {
 
-  .nav-links {
-    display: none;
-  }
+    .container {
 
-  .github-profile {
-    flex-direction: column;
+        width:
+            calc(100% - 28px);
+    }
 
-    text-align: center;
-  }
+    nav {
 
-  .github-bio {
-    margin-left: auto;
-    margin-right: auto;
-  }
+        top: 10px;
+    }
 
-  .github-dashboard {
-    margin-top: 40px;
-  }
+    .nav-links {
 
-  .github-event {
-    padding:
-      15px;
-  }
+        display: none;
+    }
 
-  .contribution-grid {
-    grid-template-columns:
-      repeat(52, 10px);
+    .nav-status {
 
-    gap: 3px;
-  }
+        display: none;
+    }
 
-  .contribution-cell {
-    width: 10px;
-    height: 10px;
-  }
+    .hero {
 
+        padding-top: 120px;
+    }
+
+    .hero h1 {
+
+        font-size: 70px;
+    }
+
+    .profile-card {
+
+        min-height: auto;
+    }
+
+    .about-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .capability-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .projects {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .stats {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .orbit-container {
+
+        height: 390px;
+
+        transform:
+            scale(.75);
+    }
+
+    .terminal-body {
+
+        font-size: 10px;
+
+        overflow-x: auto;
+    }
 }
 
-@media (max-width: 600px) {
+@media(prefers-reduced-motion:reduce) {
 
-  .container {
-    width:
-      min(
-        100% - 28px,
-        var(--max)
-      );
-  }
+    *,
+    *::before,
+    *::after {
 
-  section {
-    padding: 85px 0;
-  }
+        animation-duration:
+            .01ms !important;
 
-  .hero h1 {
-    font-size: 60px;
-  }
+        animation-iteration-count:
+            1 !important;
 
-  .hero-description {
-    font-size: 16px;
-  }
+        scroll-behavior:
+            auto !important;
 
-  .capability-grid {
-    grid-template-columns:
-      1fr;
-  }
-
-  .metrics {
-    grid-template-columns:
-      1fr 1fr;
-  }
-
-  .github-stats {
-    grid-template-columns:
-      1fr 1fr;
-  }
-
-  .experience-header {
-    flex-direction: column;
-  }
-
-  .terminal-body {
-    font-size: 11px;
-
-    overflow-x: auto;
-  }
-
-  .github-avatar {
-    width: 90px;
-    height: 90px;
-  }
-
-  .github-name {
-    font-size: 24px;
-  }
-
-  .github-event-title {
-    font-size: 12px;
-  }
-
-  .github-event-meta {
-    font-size: 9px;
-  }
-
-  .github-event-link {
-    display: none;
-  }
-
-}
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-
-    animation-iteration-count: 1 !important;
-
-    scroll-behavior: auto !important;
-
-    transition-duration: 0.01ms !important;
-  }
-
+        transition-duration:
+            .01ms !important;
+    }
 }
 
 </style>
 </head>
 
-
 <body>
 
-<!-- =======================================================
+<!-- =========================================================
      BACKGROUND
-======================================================== -->
+========================================================= -->
 
 <div class="grid"></div>
+
+<div class="scanline"></div>
 
 <div class="orb one"></div>
 <div class="orb two"></div>
 <div class="orb three"></div>
 
+<canvas id="particles"></canvas>
 
-<!-- =======================================================
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+
+<!-- =========================================================
      NAVIGATION
-======================================================== -->
+========================================================= -->
 
 <nav>
 
-  <div class="nav-logo">
-    DEEPAK.G
-  </div>
+    <div class="logo">
+        DEEPAK<span>.G</span>
+    </div>
 
-  <div class="nav-links">
+    <div class="nav-links">
 
-    <a href="#about">
-      ABOUT
-    </a>
+        <a href="#about">ABOUT</a>
 
-    <a href="#capabilities">
-      CAPABILITIES
-    </a>
+        <a href="#capabilities">
+            CAPABILITIES
+        </a>
 
-    <a href="#stack">
-      STACK
-    </a>
+        <a href="#stack">
+            STACK
+        </a>
 
-    <a href="#experience">
-      EXPERIENCE
-    </a>
+        <a href="#projects">
+            WORK
+        </a>
 
-    <a href="#github">
-      GITHUB
-    </a>
+        <a href="#contact">
+            CONTACT
+        </a>
 
-    <a href="#contact">
-      CONTACT
-    </a>
+    </div>
 
-  </div>
+    <div class="nav-status">
+
+        <span class="status-dot"></span>
+
+        SYSTEM ONLINE
+
+    </div>
 
 </nav>
 
 
-<!-- =======================================================
+<!-- =========================================================
      HERO
-======================================================== -->
+========================================================= -->
 
 <header class="hero">
 
-  <div class="container">
+<div class="container">
 
-    <div class="hero-content reveal">
-
-      <div class="status">
-
-        <span class="status-dot"></span>
-
-        FORWARD DEPLOYED ENGINEER
-
-      </div>
+<div class="hero-layout">
 
 
-      <h1>
+<!-- HERO TEXT -->
 
-        <span class="gradient-text">
-          DEEPAK
-        </span>
+<div class="reveal">
 
-        <br>
+<div class="eyebrow">
 
-        G.
+<span class="status-dot"></span>
 
-      </h1>
+FORWARD DEPLOYED ENGINEER
 
-
-      <div
-        class="hero-role"
-        id="hero-role"
-      >
-        @ Ephron Tech LLC
-      </div>
+</div>
 
 
-      <p class="hero-description">
+<h1>
 
-        I build, integrate, debug and deploy practical
-        software solutions across backend systems, APIs,
-        cloud infrastructure, authentication and modern
-        engineering workflows.
+<span class="gradient">
+DEEPAK
+</span>
 
-      </p>
+<br>
 
+G.
 
-      <div class="hero-buttons">
-
-        <a
-          class="btn btn-primary"
-          href="#experience"
-        >
-          Explore My Work →
-        </a>
+</h1>
 
 
-        <a
-          class="btn btn-secondary"
-          href="https://www.linkedin.com/in/deepak-govindaraj-402524274/"
-          target="_blank"
-          rel="noopener"
-        >
-          LinkedIn ↗
-        </a>
+<div
+class="role"
+id="typingRole"
+></div>
 
 
-        <a
-          class="btn btn-secondary"
-          href="https://github.com/gdeepak2201-dot"
-          target="_blank"
-          rel="noopener"
-        >
-          GitHub ↗
-        </a>
+<p class="description">
 
-      </div>
+I build, integrate, debug and deploy
+practical software solutions across
+backend systems, APIs, cloud
+infrastructure, authentication and
+modern engineering workflows.
 
-    </div>
-
-  </div>
+</p>
 
 
-  <div class="scroll-indicator">
+<div class="buttons">
 
-    SCROLL
+<a
+href="#projects"
+class="btn primary magnetic"
+>
+Explore My Work →
+</a>
 
-    <div class="scroll-line"></div>
+<a
+href="https://www.linkedin.com/in/deepak-govindaraj-402524274/"
+target="_blank"
+class="btn secondary magnetic"
+>
+LinkedIn ↗
+</a>
 
-  </div>
+<a
+href="https://github.com/gdeepak2201-dot"
+target="_blank"
+class="btn secondary magnetic"
+>
+GitHub ↗
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PROFILE CARD -->
+
+<div class="profile-wrap reveal">
+
+<div
+class="profile-card"
+id="profileCard"
+>
+
+
+<div class="avatar-area">
+
+<div class="avatar-ring">
+
+<img
+class="avatar"
+src="https://github.com/gdeepak2201-dot.png"
+alt="Deepak G"
+>
+
+</div>
+
+</div>
+
+
+<div class="profile-name">
+Deepak G
+</div>
+
+<div class="profile-role">
+FORWARD DEPLOYED ENGINEER
+</div>
+
+<div class="company">
+Ephron Tech LLC
+</div>
+
+
+<div class="profile-line"></div>
+
+
+<div class="details">
+
+
+<div class="detail">
+
+<div class="detail-label">
+FOCUS
+</div>
+
+<div class="detail-value">
+Software Engineering
+</div>
+
+</div>
+
+
+<div class="detail">
+
+<div class="detail-label">
+SYSTEMS
+</div>
+
+<div class="detail-value">
+Cloud & APIs
+</div>
+
+</div>
+
+
+<div class="detail">
+
+<div class="detail-label">
+IDENTITY
+</div>
+
+<div class="detail-value">
+OAuth / OIDC
+</div>
+
+</div>
+
+
+<div class="detail">
+
+<div class="detail-label">
+INFRA
+</div>
+
+<div class="detail-value">
+Docker / AWS
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="clock">
+
+LOCAL TIME
+
+<span id="clock">
+--:--:--
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </header>
 
 
-<!-- =======================================================
+<!-- =========================================================
      ABOUT
-======================================================== -->
+========================================================= -->
 
 <section id="about">
 
-  <div class="container reveal">
+<div class="container reveal">
 
-    <div class="section-label">
-      01 / ABOUT
-    </div>
+<div class="section-label">
+01 / ABOUT
+</div>
 
+<h2 class="section-title">
 
-    <h2 class="section-title">
+Engineering at the
+<br>
 
-      Engineering at the
-      <br>
-      intersection of systems.
+intersection of systems.
 
-    </h2>
+</h2>
 
+<p class="section-description">
 
-    <p class="section-description">
+I work across software, infrastructure
+and integrations — connecting technical
+requirements with practical solutions.
 
-      I work across software, infrastructure and
-      integrations — connecting technical requirements
-      with practical solutions.
-
-    </p>
-
-
-    <div class="about-grid">
-
-      <div class="glass about-card">
-
-        <p>
-
-          As a Forward Deployed Engineer, I focus on
-          understanding real-world requirements and
-          turning them into working, testable and
-          deployable engineering solutions.
-
-        </p>
+</p>
 
 
-        <p>
-
-          My work involves navigating existing systems,
-          APIs, databases, authentication flows,
-          containers and deployment environments to
-          solve problems end-to-end.
-
-        </p>
+<div class="about-grid">
 
 
-        <p>
+<div class="glass about-card">
 
-          I enjoy working where software engineering
-          meets integration, infrastructure and
-          problem solving.
+<p>
 
-        </p>
+As a Forward Deployed Engineer,
+I focus on understanding real-world
+requirements and turning them into
+working, testable and deployable
+engineering solutions.
 
-      </div>
+</p>
 
+<p>
 
-      <div class="glass identity-card">
+My work involves navigating existing
+systems, APIs, databases,
+authentication flows, containers
+and deployment environments.
 
-        <div>
+</p>
 
-          <div class="identity-top">
-            CURRENT ROLE
-          </div>
+<p>
 
+I enjoy working where software
+engineering meets integration,
+infrastructure and problem solving.
 
-          <div class="identity-name">
-            Deepak G.
-          </div>
+</p>
 
-
-          <div class="identity-role">
-            Forward Deployed Engineer
-          </div>
-
-
-          <div class="identity-company">
-            Ephron Tech LLC
-          </div>
-
-        </div>
+</div>
 
 
-        <div class="identity-bottom">
+<div class="glass identity">
 
-          SYSTEMS • CLOUD • APIs • SECURITY
+<div>
 
-        </div>
+<div class="identity-label">
+CURRENT ROLE
+</div>
 
-      </div>
+<h3>
+Deepak G.
+</h3>
 
-    </div>
+<div class="identity-role">
+Forward Deployed Engineer
+</div>
 
-  </div>
+<div class="identity-company">
+Ephron Tech LLC
+</div>
+
+</div>
+
+
+<div class="identity-bottom">
+
+SYSTEMS • CLOUD • APIs • SECURITY
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
      CAPABILITIES
-======================================================== -->
+========================================================= -->
 
 <section id="capabilities">
 
-  <div class="container reveal">
+<div class="container reveal">
 
-    <div class="section-label">
-      02 / CAPABILITIES
-    </div>
+<div class="section-label">
+02 / CAPABILITIES
+</div>
 
+<h2 class="section-title">
 
-    <h2 class="section-title">
+Build.
+Integrate.
+<br>
 
-      Build. Integrate.
-      <br>
-      Solve. Deploy.
+Solve. Deploy.
 
-    </h2>
+</h2>
 
+<p class="section-description">
 
-    <p class="section-description">
+Engineering capabilities focused on
+delivering practical solutions across
+the full system lifecycle.
 
-      Engineering capabilities focused on delivering
-      practical solutions across the full system lifecycle.
-
-    </p>
-
-
-    <div class="capability-grid">
+</p>
 
 
-      <div class="glass capability">
-
-        <div class="capability-icon">
-          🔧
-        </div>
-
-        <h3>
-          Build
-        </h3>
-
-        <p>
-          Backend systems, APIs, application features,
-          database workflows and engineering tooling.
-        </p>
-
-      </div>
+<div class="capability-grid">
 
 
-      <div class="glass capability">
+<div class="glass capability">
 
-        <div class="capability-icon">
-          🔗
-        </div>
+<div class="icon">
+🔧
+</div>
 
-        <h3>
-          Integrate
-        </h3>
+<h3>
+Build
+</h3>
 
-        <p>
-          REST APIs, external services, identity providers
-          and business systems.
-        </p>
+<p>
+Backend systems, APIs, application
+features, databases and engineering
+tooling.
+</p>
 
-      </div>
-
-
-      <div class="glass capability">
-
-        <div class="capability-icon">
-          🐛
-        </div>
-
-        <h3>
-          Debug
-        </h3>
-
-        <p>
-          Investigating application issues, legacy systems,
-          containers and deployment problems.
-        </p>
-
-      </div>
+</div>
 
 
-      <div class="glass capability">
+<div class="glass capability">
 
-        <div class="capability-icon">
-          ☁️
-        </div>
+<div class="icon">
+🔗
+</div>
 
-        <h3>
-          Cloud
-        </h3>
+<h3>
+Integrate
+</h3>
 
-        <p>
-          AWS, containers, infrastructure and deployment
-          workflows for engineering environments.
-        </p>
+<p>
+REST APIs, external services,
+identity providers and business
+systems.
+</p>
 
-      </div>
-
-
-      <div class="glass capability">
-
-        <div class="capability-icon">
-          🔐
-        </div>
-
-        <h3>
-          Identity
-        </h3>
-
-        <p>
-          OAuth 2.0, OpenID Connect, Microsoft identity
-          integrations and application security.
-        </p>
-
-      </div>
+</div>
 
 
-      <div class="glass capability">
+<div class="glass capability">
 
-        <div class="capability-icon">
-          🚀
-        </div>
+<div class="icon">
+🐛
+</div>
 
-        <h3>
-          Deliver
-        </h3>
+<h3>
+Debug
+</h3>
 
-        <p>
-          Requirements, implementation, testing,
-          verification and deployment.
-        </p>
+<p>
+Investigating applications,
+legacy systems, containers and
+deployment problems.
+</p>
 
-      </div>
+</div>
 
-    </div>
 
-  </div>
+<div class="glass capability">
+
+<div class="icon">
+☁️
+</div>
+
+<h3>
+Cloud
+</h3>
+
+<p>
+AWS, containers, infrastructure
+and deployment workflows.
+</p>
+
+</div>
+
+
+<div class="glass capability">
+
+<div class="icon">
+🔐
+</div>
+
+<h3>
+Identity
+</h3>
+
+<p>
+OAuth 2.0, OpenID Connect,
+Microsoft identity and security.
+</p>
+
+</div>
+
+
+<div class="glass capability">
+
+<div class="icon">
+🚀
+</div>
+
+<h3>
+Deliver
+</h3>
+
+<p>
+Requirements, implementation,
+testing, verification and deployment.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =======================================================
-     TECHNOLOGY
-======================================================== -->
+<!-- =========================================================
+     TECH STACK
+========================================================= -->
 
 <section id="stack">
 
-  <div class="container reveal">
+<div class="container reveal">
 
-    <div class="section-label">
-      03 / TECHNOLOGY
-    </div>
+<div class="section-label">
+03 / TECHNOLOGY
+</div>
+
+<h2 class="section-title">
+Engineering stack.
+</h2>
+
+<p class="section-description">
+
+Technology I work with across
+application development,
+infrastructure and integration.
+
+</p>
 
 
-    <h2 class="section-title">
-      Tools I work with.
-    </h2>
+<div class="orbit-container">
 
 
-    <p class="section-description">
+<div class="orbit orbit-one">
 
-      A practical engineering stack spanning application
-      development, cloud infrastructure and system integration.
+<div class="tech-node node-a">
+JAVA
+</div>
 
-    </p>
+<div class="tech-node node-b">
+NODE
+</div>
+
+<div class="tech-node node-c">
+PHP
+</div>
+
+<div class="tech-node node-d">
+JS
+</div>
+
+</div>
 
 
-    <div class="tech-wrapper">
+<div class="orbit orbit-two">
 
-      <div class="tech">Java</div>
-      <div class="tech">JavaScript</div>
-      <div class="tech">Node.js</div>
-      <div class="tech">PHP</div>
+<div class="tech-node node-a">
+AWS
+</div>
 
-      <div class="tech">REST APIs</div>
-      <div class="tech">Express</div>
+<div class="tech-node node-b">
+DOCKER
+</div>
 
-      <div class="tech">MySQL</div>
-      <div class="tech">PostgreSQL</div>
+<div class="tech-node node-c">
+MYSQL
+</div>
 
-      <div class="tech">AWS</div>
-      <div class="tech">Docker</div>
-      <div class="tech">GitHub Actions</div>
-      <div class="tech">Terraform</div>
+<div class="tech-node node-d">
+GIT
+</div>
 
-      <div class="tech">Linux</div>
-      <div class="tech">Bash</div>
-      <div class="tech">Git</div>
-      <div class="tech">GitHub</div>
+</div>
 
-      <div class="tech">OAuth 2.0</div>
-      <div class="tech">OpenID Connect</div>
 
-      <div class="tech">
-        Microsoft Identity
-      </div>
+<div class="orbit-center">
 
-    </div>
+ENGINEERING
+<br>
+CORE
 
-  </div>
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
      ENGINEERING FLOW
-======================================================== -->
+========================================================= -->
 
 <section>
 
-  <div class="container reveal">
+<div class="container reveal">
 
-    <div class="section-label">
-      04 / ENGINEERING PROCESS
-    </div>
+<div class="section-label">
+04 / ENGINEERING PROCESS
+</div>
 
+<h2 class="section-title">
 
-    <h2 class="section-title">
+From problem
+<br>
+to production.
 
-      From problem
-      <br>
-      to production.
+</h2>
 
-    </h2>
+<p class="section-description">
 
+A structured approach to understanding
+systems, solving problems and delivering
+verified solutions.
 
-    <p class="section-description">
-
-      A structured approach to understanding systems,
-      solving problems and delivering verified solutions.
-
-    </p>
-
-
-    <div class="flow">
+</p>
 
 
-      <div class="flow-step">
-
-        <div class="flow-icon">
-          🧩
-        </div>
-
-        <h3>
-          Understand
-        </h3>
-
-      </div>
+<div class="flow">
 
 
-      <div class="flow-step">
+<div class="flow-step">
 
-        <div class="flow-icon">
-          🔍
-        </div>
+<div class="flow-icon">
+🧩
+</div>
 
-        <h3>
-          Investigate
-        </h3>
+<h3>
+UNDERSTAND
+</h3>
 
-      </div>
-
-
-      <div class="flow-step">
-
-        <div class="flow-icon">
-          🔗
-        </div>
-
-        <h3>
-          Integrate
-        </h3>
-
-      </div>
+</div>
 
 
-      <div class="flow-step">
+<div class="flow-step">
 
-        <div class="flow-icon">
-          🧪
-        </div>
+<div class="flow-icon">
+🔍
+</div>
 
-        <h3>
-          Verify
-        </h3>
+<h3>
+INVESTIGATE
+</h3>
 
-      </div>
+</div>
 
 
-      <div class="flow-step">
+<div class="flow-step">
 
-        <div class="flow-icon">
-          🚀
-        </div>
+<div class="flow-icon">
+🔗
+</div>
 
-        <h3>
-          Deploy
-        </h3>
+<h3>
+INTEGRATE
+</h3>
 
-      </div>
+</div>
 
-    </div>
 
-  </div>
+<div class="flow-step">
+
+<div class="flow-icon">
+🧪
+</div>
+
+<h3>
+VERIFY
+</h3>
+
+</div>
+
+
+<div class="flow-step">
+
+<div class="flow-icon">
+🚀
+</div>
+
+<h3>
+DEPLOY
+</h3>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
      TERMINAL
-======================================================== -->
+========================================================= -->
 
 <section>
 
-  <div class="container reveal">
+<div class="container reveal">
 
-    <div class="section-label">
-      05 / SYSTEM
-    </div>
+<div class="section-label">
+05 / SYSTEM
+</div>
 
-
-    <h2 class="section-title">
-      Engineering mindset.
-    </h2>
-
-
-    <div class="terminal">
-
-      <div class="terminal-header">
-
-        <span class="terminal-dot"></span>
-        <span class="terminal-dot"></span>
-        <span class="terminal-dot"></span>
-
-        <span class="terminal-title">
-          deepak@engineering ~
-        </span>
-
-      </div>
+<h2 class="section-title">
+Engineering mindset.
+</h2>
 
 
-      <div class="terminal-body">
+<div class="terminal">
 
-        <div>
+<div class="terminal-header">
 
-          <span class="terminal-green">
-            deepak@engineering
-          </span>:~
+<span class="terminal-dot"></span>
+<span class="terminal-dot"></span>
+<span class="terminal-dot"></span>
 
-          <span class="terminal-white">
-            $ ./solve-problem.sh
-          </span>
+<span class="terminal-title">
+deepak@engineering ~
+</span>
 
-        </div>
-
-
-        <div>
-          &gt; Initializing engineering workflow...
-        </div>
+</div>
 
 
-        <br>
+<div class="terminal-body">
+
+<div>
+
+<span class="green">
+deepak@engineering
+</span>:~$
+
+<span class="white">
+./solve-problem.sh
+</span>
+
+</div>
 
 
-        <div>
-          <span class="terminal-green">
-            [✓]
-          </span>
+<div>
+&gt; Initializing engineering workflow...
+</div>
 
-          Understand the requirement
-        </div>
+<br>
 
 
-        <div>
-          <span class="terminal-green">
-            [✓]
-          </span>
+<div>
+<span class="green">[✓]</span>
+Requirement understood
+</div>
 
-          Explore the existing system
-        </div>
+<div>
+<span class="green">[✓]</span>
+Existing system investigated
+</div>
 
+<div>
+<span class="green">[✓]</span>
+Integration points identified
+</div>
 
-        <div>
-          <span class="terminal-green">
-            [✓]
-          </span>
+<div>
+<span class="green">[✓]</span>
+Solution implemented
+</div>
 
-          Identify integration points
-        </div>
+<div>
+<span class="green">[✓]</span>
+Tests executed
+</div>
 
+<div>
+<span class="green">[✓]</span>
+Changes verified
+</div>
 
-        <div>
-          <span class="terminal-green">
-            [✓]
-          </span>
+<div>
+<span class="green">[✓]</span>
+Ready for deployment
+</div>
 
-          Build the solution
-        </div>
+<br>
 
+<div class="blue">
 
-        <div>
-          <span class="terminal-green">
-            [✓]
-          </span>
+&gt; SYSTEM STATUS:
 
-          Test and verify
-        </div>
+<span class="white">
+READY
+</span>
 
+</div>
 
-        <div>
-          <span class="terminal-green">
-            [✓]
-          </span>
+<div>
 
-          Deploy with confidence
-        </div>
+&gt; ENGINEERING STATUS:
 
+<span class="green">
+ACTIVE
+</span>
 
-        <br>
+</div>
 
+<br>
 
-        <div class="terminal-blue">
+<div>
 
-          &gt; SYSTEM STATUS:
+<span class="green">
+deepak@engineering
+</span>:~$
 
-          <span class="terminal-white">
-            READY
-          </span>
+<span class="cursor-block"></span>
 
-        </div>
+</div>
 
+</div>
 
-        <div>
+</div>
 
-          &gt; DELIVERY STATUS:
-
-          <span class="terminal-green">
-            COMPLETE
-          </span>
-
-        </div>
-
-
-        <br>
-
-
-        <div>
-
-          <span class="terminal-green">
-            deepak@engineering
-          </span>:~$
-
-          <span class="cursor"></span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- =======================================================
-     EXPERIENCE
-======================================================== -->
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
 
-<section id="experience">
+<section id="projects">
 
-  <div class="container reveal">
+<div class="container reveal">
 
-    <div class="section-label">
-      06 / EXPERIENCE
-    </div>
+<div class="section-label">
+06 / WORK
+</div>
 
+<h2 class="section-title">
+Engineering projects.
+</h2>
 
-    <h2 class="section-title">
-      Where I engineer.
-    </h2>
+<p class="section-description">
 
+Selected areas where software,
+infrastructure and integration
+come together.
 
-    <p class="section-description">
+</p>
 
-      Working on practical engineering problems across
-      applications, integrations, cloud and infrastructure.
 
-    </p>
+<div class="projects">
 
 
-    <div class="glass experience">
+<div class="glass project">
 
-      <div class="experience-header">
+<div class="project-number">
+PROJECT / 01
+</div>
 
-        <div>
+<h3>
+System Integration
+</h3>
 
-          <div class="experience-title">
-            Forward Deployed Engineer
-          </div>
+<p>
 
-          <div class="experience-company">
-            Ephron Tech LLC
-          </div>
+Connecting applications,
+APIs, authentication systems
+and external services.
 
-        </div>
+</p>
 
+<div class="project-tags">
 
-        <div class="experience-tag">
-          ENGINEERING
-        </div>
+<span class="tag">REST</span>
+<span class="tag">API</span>
+<span class="tag">OAuth</span>
 
-      </div>
+</div>
 
+</div>
 
-      <div class="experience-list">
 
+<div class="glass project">
 
-        <div class="experience-item">
+<div class="project-number">
+PROJECT / 02
+</div>
 
-          <span>▸</span>
+<h3>
+Cloud Infrastructure
+</h3>
 
-          <div>
-            Translate real-world requirements into practical
-            engineering solutions.
-          </div>
+<p>
 
-        </div>
+Containerized development,
+infrastructure automation
+and cloud deployment workflows.
 
+</p>
 
-        <div class="experience-item">
+<div class="project-tags">
 
-          <span>▸</span>
+<span class="tag">AWS</span>
+<span class="tag">Docker</span>
+<span class="tag">Terraform</span>
 
-          <div>
-            Work across backend systems, APIs, databases,
-            containers and infrastructure.
-          </div>
+</div>
 
-        </div>
+</div>
 
 
-        <div class="experience-item">
+<div class="glass project">
 
-          <span>▸</span>
+<div class="project-number">
+PROJECT / 03
+</div>
 
-          <div>
-            Integrate authentication and identity workflows
-            using modern standards.
-          </div>
+<h3>
+Legacy Systems
+</h3>
 
-        </div>
+<p>
 
+Understanding, debugging and
+modernizing existing application
+environments.
 
-        <div class="experience-item">
+</p>
 
-          <span>▸</span>
+<div class="project-tags">
 
-          <div>
-            Investigate existing systems and debug issues
-            across application and deployment environments.
-          </div>
+<span class="tag">PHP</span>
+<span class="tag">MySQL</span>
+<span class="tag">Linux</span>
 
-        </div>
+</div>
 
+</div>
 
-        <div class="experience-item">
 
-          <span>▸</span>
+</div>
 
-          <div>
-            Work with cloud and CI/CD workflows to support
-            reliable deployments.
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="metrics">
-
-
-      <div class="glass metric">
-
-        <div
-          class="metric-number"
-          data-target="01"
-        >
-          01
-        </div>
-
-        <div class="metric-label">
-          ENGINEERING ROLE
-        </div>
-
-      </div>
-
-
-      <div class="glass metric">
-
-        <div
-          class="metric-number"
-          data-target="24"
-        >
-          24
-        </div>
-
-        <div class="metric-label">
-          / 7 PROBLEM SOLVING
-        </div>
-
-      </div>
-
-
-      <div class="glass metric">
-
-        <div
-          class="metric-number"
-          data-target="∞"
-        >
-          ∞
-        </div>
-
-        <div class="metric-label">
-          SYSTEMS TO LEARN
-        </div>
-
-      </div>
-
-
-      <div class="glass metric">
-
-        <div
-          class="metric-number"
-          data-target="100"
-        >
-          100%
-        </div>
-
-        <div class="metric-label">
-          ENGINEERING MINDSET
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
+     METRICS
+========================================================= -->
+
+<section>
+
+<div class="container reveal">
+
+<div class="section-label">
+07 / ENGINEERING METRICS
+</div>
+
+<h2 class="section-title">
+Always learning.
+</h2>
+
+
+<div class="stats">
+
+
+<div class="glass stat">
+
+<div
+class="stat-number"
+data-target="1"
+>
+0
+</div>
+
+<div class="stat-label">
+ENGINEERING ROLE
+</div>
+
+</div>
+
+
+<div class="glass stat">
+
+<div
+class="stat-number"
+data-target="24"
+>
+0
+</div>
+
+<div class="stat-label">
+HOURS / DAY TO IMPROVE
+</div>
+
+</div>
+
+
+<div class="glass stat">
+
+<div
+class="stat-number"
+data-target="100"
+>
+0
+</div>
+
+<div class="stat-label">
+COMMITMENT %
+</div>
+
+</div>
+
+
+<div class="glass stat">
+
+<div
+class="stat-number"
+data-target="∞"
+>
+∞
+</div>
+
+<div class="stat-label">
+SYSTEMS TO LEARN
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
      GITHUB
-======================================================== -->
+========================================================= -->
 
-<section id="github">
+<section>
 
-  <div class="container reveal">
+<div class="container reveal">
 
-    <div class="section-label">
-      07 / GITHUB ACTIVITY
-    </div>
+<div class="section-label">
+08 / GITHUB
+</div>
 
+<h2 class="section-title">
+Open source activity.
+</h2>
 
-    <h2 class="section-title">
-      Building in public.
-    </h2>
+<p class="section-description">
 
+Explore my repositories and engineering
+activity on GitHub.
 
-    <p class="section-description">
+</p>
 
-      Live public development activity, repositories and
-      engineering work from my GitHub profile.
 
-    </p>
+<div class="glass github-panel">
 
-
-    <div class="github-dashboard">
-
-
-      <!-- PROFILE -->
-
-      <div class="github-profile glass">
-
-        <div class="github-avatar-wrap">
-
-          <img
-            id="github-avatar"
-            src="https://github.com/gdeepak2201-dot.png"
-            alt="Deepak GitHub profile"
-            class="github-avatar"
-          >
-
-          <span class="github-online"></span>
-
-        </div>
-
-
-        <div class="github-profile-info">
-
-          <div class="github-username">
-            @gdeepak2201-dot
-          </div>
-
-
-          <div
-            id="github-name"
-            class="github-name"
-          >
-            Loading...
-          </div>
-
-
-          <div
-            id="github-bio"
-            class="github-bio"
-          >
-            Loading GitHub profile...
-          </div>
-
-
-          <a
-            href="https://github.com/gdeepak2201-dot"
-            target="_blank"
-            rel="noopener"
-            class="github-profile-link"
-          >
-            View GitHub Profile ↗
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- STATISTICS -->
-
-      <div class="github-stats">
-
-
-        <div class="github-stat glass">
-
-          <span class="github-stat-icon">
-            📦
-          </span>
-
-          <strong id="github-repos">
-            —
-          </strong>
-
-          <small>
-            PUBLIC REPOSITORIES
-          </small>
-
-        </div>
-
-
-        <div class="github-stat glass">
-
-          <span class="github-stat-icon">
-            👥
-          </span>
-
-          <strong id="github-followers">
-            —
-          </strong>
-
-          <small>
-            FOLLOWERS
-          </small>
-
-        </div>
-
-
-        <div class="github-stat glass">
-
-          <span class="github-stat-icon">
-            ⭐
-          </span>
-
-          <strong id="github-stars">
-            —
-          </strong>
-
-          <small>
-            REPOSITORY STARS
-          </small>
-
-        </div>
-
-
-        <div class="github-stat glass">
-
-          <span class="github-stat-icon">
-            💻
-          </span>
-
-          <strong id="github-events">
-            —
-          </strong>
-
-          <small>
-            RECENT EVENTS
-          </small>
-
-        </div>
-
-      </div>
-
-
-      <!-- ACTIVITY -->
-
-      <div class="github-activity-card glass">
-
-        <div class="github-card-header">
-
-          <div>
-
-            <span class="github-live-dot"></span>
-
-            LIVE PUBLIC ACTIVITY
-
-          </div>
-
-
-          <span id="github-updated">
-            CONNECTING...
-          </span>
-
-        </div>
-
-
-        <div
-          id="github-events-list"
-          class="github-events-list"
-        >
-
-          <div class="github-loading">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-            Loading GitHub activity...
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- CONTRIBUTION VISUAL -->
-
-      <div class="contribution-box glass">
-
-        <div class="contribution-header">
-
-          <div class="contribution-title">
-            CONTRIBUTION ACTIVITY
-          </div>
-
-          <div
-            class="contribution-count"
-            id="contribution-count"
-          >
-            LIVE
-          </div>
-
-        </div>
-
-
-        <div
-          class="contribution-grid"
-          id="contribution-grid"
-        ></div>
-
-
-        <div class="contribution-legend">
-
-          Less
-
-          <span class="legend-cell"></span>
-          <span class="legend-cell"></span>
-          <span class="legend-cell"></span>
-          <span class="legend-cell"></span>
-
-          More
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =======================================================
-     CONTACT
-======================================================== -->
-
-<section
-  id="contact"
-  class="contact"
+<a
+href="https://github.com/gdeepak2201-dot"
+target="_blank"
 >
 
-  <div class="container reveal">
+<img
+class="github-image"
+src="https://github-readme-activity-graph.vercel.app/graph?username=gdeepak2201-dot&bg_color=00000000&color=22d3ee&line=3b82f6&point=ffffff&area=true&hide_border=true"
+alt="GitHub Activity"
+>
 
-    <div class="section-label">
-      08 / CONNECT
-    </div>
+</a>
 
+</div>
 
-    <div class="contact-box glass">
-
-      <h2>
-
-        Let's build
-        <br>
-        something useful.
-
-      </h2>
-
-
-      <p>
-
-        Interested in engineering, system integration,
-        cloud infrastructure, APIs or solving difficult
-        technical problems?
-
-      </p>
-
-
-      <div class="contact-links">
-
-
-        <a
-          class="btn btn-primary"
-          href="https://www.linkedin.com/in/deepak-govindaraj-402524274/"
-          target="_blank"
-          rel="noopener"
-        >
-          Connect on LinkedIn ↗
-        </a>
-
-
-        <a
-          class="btn btn-secondary"
-          href="https://github.com/gdeepak2201-dot"
-          target="_blank"
-          rel="noopener"
-        >
-          View GitHub ↗
-        </a>
-
-
-        <a
-          class="btn btn-secondary"
-          href="mailto:deepakg@ephrontech.com"
-        >
-          Email Me ↗
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+id="contact"
+class="contact"
+>
+
+<div class="container reveal">
+
+<div class="section-label">
+09 / CONNECT
+</div>
+
+
+<div class="glass contact-box">
+
+<h2>
+
+Let's build
+<br>
+
+something useful.
+
+</h2>
+
+
+<p>
+
+Interested in engineering,
+system integration, APIs,
+cloud infrastructure or solving
+difficult technical problems?
+
+</p>
+
+
+<div class="contact-buttons">
+
+
+<a
+href="https://www.linkedin.com/in/deepak-govindaraj-402524274/"
+target="_blank"
+class="btn primary magnetic"
+>
+
+Connect on LinkedIn ↗
+
+</a>
+
+
+<a
+href="https://github.com/gdeepak2201-dot"
+target="_blank"
+class="btn secondary magnetic"
+>
+
+View GitHub ↗
+
+</a>
+
+
+<a
+href="mailto:deepakg@ephrontech.com"
+class="btn secondary magnetic"
+>
+
+Email Me ↗
+
+</a>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
      FOOTER
-======================================================== -->
+========================================================= -->
 
 <footer>
 
-  <div class="container">
+<div class="container">
 
-    DEEPAK G
+DEEPAK G
+<br>
 
-    <br>
+FORWARD DEPLOYED ENGINEER
+<br>
 
-    FORWARD DEPLOYED ENGINEER
+EPHRON TECH LLC
 
-    <br>
+<br><br>
 
-    EPHRON TECH LLC
+<span>
+BUILD • INTEGRATE • DEBUG • VERIFY • DEPLOY
+</span>
 
-    <br><br>
+<br><br>
 
-    BUILD • INTEGRATE • SOLVE • SHIP 🚀
+© <span id="year"></span> Deepak G
 
-    <br>
-
-    <span id="footer-year"></span>
-
-  </div>
+</div>
 
 </footer>
 
@@ -3546,1158 +3276,707 @@ footer {
 <script>
 
 /* =========================================================
-   SCROLL REVEAL
+   CUSTOM CURSOR
 ========================================================= */
 
-const observer =
-  new IntersectionObserver(
-    entries => {
+const cursor =
+document.querySelector(".cursor");
 
-      entries.forEach(entry => {
+const cursorRing =
+document.querySelector(".cursor-ring");
 
-        if (entry.isIntersecting) {
+let mouseX = 0;
+let mouseY = 0;
 
-          entry.target
-            .classList
-            .add("active");
+let ringX = 0;
+let ringY = 0;
 
-        }
+document.addEventListener(
+"mousemove",
+e => {
 
-      });
+    mouseX = e.clientX;
+    mouseY = e.clientY;
 
-    },
-    {
-      threshold: 0.12
-    }
-  );
+    cursor.style.left =
+        mouseX + "px";
 
+    cursor.style.top =
+        mouseY + "px";
 
-document
-  .querySelectorAll(".reveal")
-  .forEach(element => {
+});
 
-    observer.observe(element);
+function animateCursor() {
 
-  });
+    ringX +=
+        (mouseX - ringX) * .15;
+
+    ringY +=
+        (mouseY - ringY) * .15;
+
+    cursorRing.style.left =
+        ringX + "px";
+
+    cursorRing.style.top =
+        ringY + "px";
+
+    requestAnimationFrame(
+        animateCursor
+    );
+}
+
+animateCursor();
 
 
 /* =========================================================
-   MOUSE PARALLAX
+   HOVER CURSOR
 ========================================================= */
 
-document.addEventListener(
-  "mousemove",
-  event => {
+document
+.querySelectorAll("a, button, .capability, .project")
+.forEach(element => {
 
-    const x =
-      (
-        event.clientX /
-        window.innerWidth -
-        0.5
-      ) * 20;
+    element.addEventListener(
+        "mouseenter",
+        () => {
+
+            cursorRing.style.width =
+                "55px";
+
+            cursorRing.style.height =
+                "55px";
+
+            cursorRing.style.borderColor =
+                "rgba(34,211,238,.8)";
+        }
+    );
+
+    element.addEventListener(
+        "mouseleave",
+        () => {
+
+            cursorRing.style.width =
+                "36px";
+
+            cursorRing.style.height =
+                "36px";
+
+            cursorRing.style.borderColor =
+                "rgba(34,211,238,.55)";
+        }
+    );
+
+});
 
 
-    const y =
-      (
-        event.clientY /
-        window.innerHeight -
-        0.5
-      ) * 20;
+/* =========================================================
+   PARTICLE SYSTEM
+========================================================= */
 
+const canvas =
+document.getElementById("particles");
 
-    const orbOne =
-      document.querySelector(".orb.one");
+const ctx =
+canvas.getContext("2d");
 
-    const orbTwo =
-      document.querySelector(".orb.two");
+let particles = [];
 
+function resizeCanvas() {
 
-    if (orbOne) {
+    canvas.width =
+        window.innerWidth;
 
-      orbOne.style.transform =
-        `translate(${x}px, ${y}px)`;
+    canvas.height =
+        window.innerHeight;
+}
 
-    }
+resizeCanvas();
 
-
-    if (orbTwo) {
-
-      orbTwo.style.transform =
-        `translate(${-x}px, ${-y}px)`;
-
-    }
-
-  }
+window.addEventListener(
+"resize",
+resizeCanvas
 );
 
 
+class Particle {
+
+    constructor() {
+
+        this.x =
+            Math.random() *
+            canvas.width;
+
+        this.y =
+            Math.random() *
+            canvas.height;
+
+        this.vx =
+            (Math.random() - .5)
+            * .35;
+
+        this.vy =
+            (Math.random() - .5)
+            * .35;
+
+        this.size =
+            Math.random() * 1.6 + .4;
+    }
+
+    update() {
+
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (
+            this.x < 0 ||
+            this.x > canvas.width
+        ) {
+
+            this.vx *= -1;
+        }
+
+        if (
+            this.y < 0 ||
+            this.y > canvas.height
+        ) {
+
+            this.vy *= -1;
+        }
+    }
+
+    draw() {
+
+        ctx.beginPath();
+
+        ctx.arc(
+            this.x,
+            this.y,
+            this.size,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle =
+            "rgba(34,211,238,.55)";
+
+        ctx.fill();
+    }
+}
+
+
+for (
+    let i = 0;
+    i < 100;
+    i++
+) {
+
+    particles.push(
+        new Particle()
+    );
+}
+
+
+function particleAnimation() {
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    particles.forEach(
+        particle =>
+            particle.update()
+    );
+
+    particles.forEach(
+        particle =>
+            particle.draw()
+    );
+
+
+    for (
+        let i = 0;
+        i < particles.length;
+        i++
+    ) {
+
+        for (
+            let j = i + 1;
+            j < particles.length;
+            j++
+        ) {
+
+            const dx =
+                particles[i].x -
+                particles[j].x;
+
+            const dy =
+                particles[i].y -
+                particles[j].y;
+
+            const distance =
+                Math.sqrt(
+                    dx * dx +
+                    dy * dy
+                );
+
+            if (
+                distance < 120
+            ) {
+
+                ctx.beginPath();
+
+                ctx.strokeStyle =
+                    `rgba(
+                        34,
+                        211,
+                        238,
+                        ${(
+                            1 -
+                            distance / 120
+                        ) * .08}
+                    )`;
+
+                ctx.lineWidth = .5;
+
+                ctx.moveTo(
+                    particles[i].x,
+                    particles[i].y
+                );
+
+                ctx.lineTo(
+                    particles[j].x,
+                    particles[j].y
+                );
+
+                ctx.stroke();
+            }
+        }
+    }
+
+    requestAnimationFrame(
+        particleAnimation
+    );
+}
+
+particleAnimation();
+
+
 /* =========================================================
-   HERO TYPING
+   TYPING EFFECT
 ========================================================= */
 
-const roleElement =
-  document.getElementById(
-    "hero-role"
-  );
-
+const role =
+document.getElementById(
+    "typingRole"
+);
 
 const roles = [
 
-  "@ Ephron Tech LLC",
+    "@ Ephron Tech LLC",
 
-  "Software Engineering",
+    "Software Engineering",
 
-  "Cloud & Infrastructure",
+    "Cloud & Infrastructure",
 
-  "API & System Integration",
+    "API & System Integration",
 
-  "Authentication & Security",
+    "Authentication & Security",
 
-  "Build • Integrate • Solve • Ship"
+    "Build • Integrate • Debug • Deploy"
 
 ];
 
-
 let roleIndex = 0;
 
-let characterIndex = 0;
+let charIndex = 0;
 
 let deleting = false;
 
 
 function typeRole() {
 
-  const currentRole =
-    roles[roleIndex];
+    const current =
+        roles[roleIndex];
 
 
-  if (!deleting) {
+    if (!deleting) {
 
-    characterIndex++;
+        charIndex++;
 
+        role.textContent =
+            current.substring(
+                0,
+                charIndex
+            );
 
-    roleElement.textContent =
-      currentRole.substring(
-        0,
-        characterIndex
-      );
+        if (
+            charIndex >=
+            current.length
+        ) {
 
+            deleting = true;
 
-    if (
-      characterIndex ===
-      currentRole.length
-    ) {
+            setTimeout(
+                typeRole,
+                1400
+            );
 
-      deleting = true;
+            return;
+        }
 
-      setTimeout(
+    } else {
+
+        charIndex--;
+
+        role.textContent =
+            current.substring(
+                0,
+                charIndex
+            );
+
+        if (
+            charIndex <= 0
+        ) {
+
+            deleting = false;
+
+            roleIndex =
+                (
+                    roleIndex + 1
+                ) %
+                roles.length;
+        }
+    }
+
+    setTimeout(
         typeRole,
-        1500
-      );
-
-      return;
-
-    }
-
-  }
-
-  else {
-
-    characterIndex--;
-
-
-    roleElement.textContent =
-      currentRole.substring(
-        0,
-        characterIndex
-      );
-
-
-    if (characterIndex === 0) {
-
-      deleting = false;
-
-      roleIndex =
-        (
-          roleIndex + 1
-        ) %
-        roles.length;
-
-    }
-
-  }
-
-
-  setTimeout(
-    typeRole,
-    deleting ? 40 : 80
-  );
-
+        deleting ? 40 : 75
+    );
 }
-
 
 typeRole();
 
 
 /* =========================================================
-   CARD TILT
+   LIVE CLOCK
 ========================================================= */
 
-document
-  .querySelectorAll(".capability")
-  .forEach(card => {
+function updateClock() {
 
+    const now =
+        new Date();
 
-    card.addEventListener(
-      "mousemove",
-      event => {
+    const time =
+        now.toLocaleTimeString(
+            "en-IN",
+            {
+                hour12: false,
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit"
+            }
+        );
 
-        const rect =
-          card.getBoundingClientRect();
-
-
-        const x =
-          event.clientX -
-          rect.left;
-
-
-        const y =
-          event.clientY -
-          rect.top;
-
-
-        const centerX =
-          rect.width / 2;
-
-
-        const centerY =
-          rect.height / 2;
-
-
-        const rotateX =
-          (
-            (y - centerY) /
-            centerY
-          ) * -4;
-
-
-        const rotateY =
-          (
-            (x - centerX) /
-            centerX
-          ) * 4;
-
-
-        card.style.transform =
-          `
-          perspective(700px)
-          rotateX(${rotateX}deg)
-          rotateY(${rotateY}deg)
-          translateY(-8px)
-          `;
-
-      }
-    );
-
-
-    card.addEventListener(
-      "mouseleave",
-      () => {
-
-        card.style.transform =
-          "";
-
-      }
-    );
-
-  });
-
-
-/* =========================================================
-   GITHUB CONFIGURATION
-========================================================= */
-
-const GITHUB_USERNAME =
-  "gdeepak2201-dot";
-
-
-const githubAPI =
-  `https://api.github.com/users/${GITHUB_USERNAME}`;
-
-
-const githubEventsAPI =
-  `https://api.github.com/users/${GITHUB_USERNAME}/events/public?per_page=30`;
-
-
-const githubReposAPI =
-  `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`;
-
-
-/* =========================================================
-   HTML ESCAPE
-========================================================= */
-
-function escapeHTML(value) {
-
-  return String(value || "")
-    .replace(
-      /&/g,
-      "&amp;"
-    )
-    .replace(
-      /</g,
-      "&lt;"
-    )
-    .replace(
-      />/g,
-      "&gt;"
-    )
-    .replace(
-      /"/g,
-      "&quot;"
-    )
-    .replace(
-      /'/g,
-      "&#039;"
-    );
-
+    document
+        .getElementById("clock")
+        .textContent =
+        time;
 }
 
-
-/* =========================================================
-   TIME AGO
-========================================================= */
-
-function timeAgo(date) {
-
-  const seconds =
-    Math.floor(
-      (
-        Date.now() -
-        new Date(date).getTime()
-      ) / 1000
-    );
-
-
-  if (seconds < 60) {
-
-    return `${seconds}s ago`;
-
-  }
-
-
-  const minutes =
-    Math.floor(
-      seconds / 60
-    );
-
-
-  if (minutes < 60) {
-
-    return `${minutes}m ago`;
-
-  }
-
-
-  const hours =
-    Math.floor(
-      minutes / 60
-    );
-
-
-  if (hours < 24) {
-
-    return `${hours}h ago`;
-
-  }
-
-
-  const days =
-    Math.floor(
-      hours / 24
-    );
-
-
-  if (days < 30) {
-
-    return `${days}d ago`;
-
-  }
-
-
-  const months =
-    Math.floor(
-      days / 30
-    );
-
-
-  return `${months}mo ago`;
-
-}
-
-
-/* =========================================================
-   EVENT ICON
-========================================================= */
-
-function getEventIcon(type) {
-
-  const icons = {
-
-    PushEvent: "🚀",
-
-    CreateEvent: "✨",
-
-    PullRequestEvent: "🔀",
-
-    IssuesEvent: "🐛",
-
-    IssueCommentEvent: "💬",
-
-    WatchEvent: "⭐",
-
-    ForkEvent: "🍴",
-
-    DeleteEvent: "🗑️",
-
-    ReleaseEvent: "📦",
-
-    PublicEvent: "🌐",
-
-    MemberEvent: "👥",
-
-    GollumEvent: "📖"
-
-  };
-
-
-  return (
-    icons[type] ||
-    "💻"
-  );
-
-}
-
-
-/* =========================================================
-   EVENT DESCRIPTION
-========================================================= */
-
-function getEventDescription(event) {
-
-  const repo =
-    event.repo?.name ||
-    "GitHub";
-
-
-  switch (event.type) {
-
-
-    case "PushEvent": {
-
-      const count =
-        event.payload?.commits?.length ||
-        1;
-
-
-      return `
-        Pushed
-        <strong>${count}</strong>
-        commit${count === 1 ? "" : "s"}
-        to
-        <strong>${escapeHTML(repo)}</strong>
-      `;
-
-    }
-
-
-    case "CreateEvent":
-
-      return `
-        Created
-        <strong>
-          ${escapeHTML(
-            event.payload?.ref_type ||
-            "repository"
-          )}
-        </strong>
-        in
-        <strong>
-          ${escapeHTML(repo)}
-        </strong>
-      `;
-
-
-    case "PullRequestEvent":
-
-      return `
-        ${escapeHTML(
-          event.payload?.action ||
-          "Updated"
-        )}
-        pull request in
-        <strong>
-          ${escapeHTML(repo)}
-        </strong>
-      `;
-
-
-    case "IssuesEvent":
-
-      return `
-        ${escapeHTML(
-          event.payload?.action ||
-          "Updated"
-        )}
-        an issue in
-        <strong>
-          ${escapeHTML(repo)}
-        </strong>
-      `;
-
-
-    case "IssueCommentEvent":
-
-      return `
-        Commented on an issue or
-        pull request in
-        <strong>
-          ${escapeHTML(repo)}
-        </strong>
-      `;
-
-
-    case "WatchEvent":
-
-      return `
-        Starred
-        <strong>
-          ${escapeHTML(repo)}
-        </strong>
-      `;
-
-
-    case "ForkEvent":
-
-      return `
-        Forked
-        <strong>
-          ${escapeHTML(repo)}
-        </strong>
-      `;
-
-
-    case "ReleaseEvent":
-
-      return `
-        Published a release in
-        <strong>
-          ${escapeHTML(repo)}
-        </strong>
-      `;
-
-
-    case "DeleteEvent":
-
-      return `
-        Deleted a
-        ${escapeHTML(
-          event.payload?.ref_type ||
-          "reference"
-        )}
-        in
-        <strong>
-          ${escapeHTML(repo)}
-        </strong>
-      `;
-
-
-    default:
-
-      return `
-        Activity in
-        <strong>
-          ${escapeHTML(repo)}
-        </strong>
-      `;
-
-  }
-
-}
-
-
-/* =========================================================
-   LOAD GITHUB PROFILE
-========================================================= */
-
-async function loadGitHubProfile() {
-
-  try {
-
-    const response =
-      await fetch(
-        githubAPI,
-        {
-          headers: {
-            "Accept":
-              "application/vnd.github+json"
-          }
-        }
-      );
-
-
-    if (!response.ok) {
-
-      throw new Error(
-        "GitHub profile request failed"
-      );
-
-    }
-
-
-    const data =
-      await response.json();
-
-
-    document
-      .getElementById(
-        "github-name"
-      )
-      .textContent =
-      data.name ||
-      GITHUB_USERNAME;
-
-
-    document
-      .getElementById(
-        "github-bio"
-      )
-      .textContent =
-      data.bio ||
-      "Software engineer building practical systems.";
-
-
-    document
-      .getElementById(
-        "github-avatar"
-      )
-      .src =
-      data.avatar_url;
-
-
-    document
-      .getElementById(
-        "github-repos"
-      )
-      .textContent =
-      data.public_repos;
-
-
-    document
-      .getElementById(
-        "github-followers"
-      )
-      .textContent =
-      data.followers;
-
-  }
-
-  catch (error) {
-
-    console.error(
-      "GitHub profile error:",
-      error
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   LOAD GITHUB REPOSITORIES + STARS
-========================================================= */
-
-async function loadGitHubRepos() {
-
-  try {
-
-    const response =
-      await fetch(
-        githubReposAPI,
-        {
-          headers: {
-            "Accept":
-              "application/vnd.github+json"
-          }
-        }
-      );
-
-
-    if (!response.ok) {
-
-      throw new Error(
-        "GitHub repository request failed"
-      );
-
-    }
-
-
-    const repos =
-      await response.json();
-
-
-    const stars =
-      repos.reduce(
-        (
-          total,
-          repo
-        ) =>
-          total +
-          (
-            repo.stargazers_count ||
-            0
-          ),
-        0
-      );
-
-
-    document
-      .getElementById(
-        "github-stars"
-      )
-      .textContent =
-      stars;
-
-  }
-
-  catch (error) {
-
-    console.error(
-      "GitHub repository error:",
-      error
-    );
-
-    document
-      .getElementById(
-        "github-stars"
-      )
-      .textContent =
-      "—";
-
-  }
-
-}
-
-
-/* =========================================================
-   LOAD GITHUB ACTIVITY
-========================================================= */
-
-async function loadGitHubActivity() {
-
-  const container =
-    document.getElementById(
-      "github-events-list"
-    );
-
-
-  try {
-
-    const response =
-      await fetch(
-        githubEventsAPI,
-        {
-          headers: {
-            "Accept":
-              "application/vnd.github+json"
-          }
-        }
-      );
-
-
-    if (!response.ok) {
-
-      throw new Error(
-        "GitHub events request failed"
-      );
-
-    }
-
-
-    const events =
-      await response.json();
-
-
-    document
-      .getElementById(
-        "github-events"
-      )
-      .textContent =
-      events.length;
-
-
-    if (!events.length) {
-
-      container.innerHTML = `
-
-        <div class="github-error">
-
-          No recent public GitHub
-          activity found.
-
-          <br><br>
-
-          <a
-            href="https://github.com/${GITHUB_USERNAME}"
-            target="_blank"
-            rel="noopener"
-            style="color:#67e8f9"
-          >
-            Open GitHub Profile ↗
-          </a>
-
-        </div>
-
-      `;
-
-      return;
-
-    }
-
-
-    container.innerHTML =
-      events
-        .slice(0, 12)
-        .map(
-          (
-            event,
-            index
-          ) => {
-
-            const repo =
-              event.repo?.name ||
-              "";
-
-
-            const repoUrl =
-              `https://github.com/${repo}`;
-
-
-            return `
-
-              <div
-                class="github-event"
-                style="
-                  animation-delay:
-                  ${index * 70}ms
-                "
-              >
-
-                <div
-                  class="github-event-icon"
-                >
-                  ${getEventIcon(
-                    event.type
-                  )}
-                </div>
-
-
-                <div
-                  class="github-event-content"
-                >
-
-                  <div
-                    class="github-event-title"
-                  >
-
-                    ${getEventDescription(
-                      event
-                    )}
-
-                  </div>
-
-
-                  <div
-                    class="github-event-meta"
-                  >
-
-                    ${escapeHTML(
-                      event.type
-                    )}
-
-                    •
-
-                    ${timeAgo(
-                      event.created_at
-                    )}
-
-                  </div>
-
-                </div>
-
-
-                <a
-                  href="${repoUrl}"
-                  target="_blank"
-                  rel="noopener"
-                  class="github-event-link"
-                  aria-label="Open repository"
-                >
-                  ↗
-                </a>
-
-              </div>
-
-            `;
-
-          }
-        )
-        .join("");
-
-
-    document
-      .getElementById(
-        "github-updated"
-      )
-      .textContent =
-      `UPDATED ${new Date().toLocaleTimeString()}`;
-
-  }
-
-  catch (error) {
-
-    console.error(
-      "GitHub activity error:",
-      error
-    );
-
-
-    container.innerHTML = `
-
-      <div class="github-error">
-
-        GitHub activity is temporarily
-        unavailable.
-
-        <br><br>
-
-        <a
-          href="https://github.com/${GITHUB_USERNAME}"
-          target="_blank"
-          rel="noopener"
-          style="color:#67e8f9"
-        >
-          Open GitHub Profile ↗
-        </a>
-
-      </div>
-
-    `;
-
-  }
-
-}
-
-
-/* =========================================================
-   GENERATE CONTRIBUTION VISUAL
-========================================================= */
-
-function generateContributionVisual() {
-
-  const grid =
-    document.getElementById(
-      "contribution-grid"
-    );
-
-
-  if (!grid) {
-    return;
-  }
-
-
-  grid.innerHTML = "";
-
-
-  /*
-    This creates a dynamic visual
-    based on recent public GitHub events.
-
-    GitHub's actual private contribution
-    graph requires authenticated GraphQL
-    access, so this avoids putting a
-    personal token inside a public website.
-  */
-
-
-  const totalCells =
-    52 * 7;
-
-
-  for (
-    let i = 0;
-    i < totalCells;
-    i++
-  ) {
-
-    const cell =
-      document.createElement(
-        "div"
-      );
-
-
-    cell.className =
-      "contribution-cell";
-
-
-    /*
-      Deterministic pseudo-random
-      pattern for cinematic appearance.
-    */
-
-    const value =
-      (
-        Math.sin(i * 12.9898) *
-        43758.5453
-      ) % 1;
-
-
-    const normalized =
-      Math.abs(value);
-
-
-    let level = 0;
-
-
-    if (normalized > 0.82) {
-
-      level = 4;
-
-    }
-
-    else if (normalized > 0.65) {
-
-      level = 3;
-
-    }
-
-    else if (normalized > 0.42) {
-
-      level = 2;
-
-    }
-
-    else if (normalized > 0.25) {
-
-      level = 1;
-
-    }
-
-
-    if (level > 0) {
-
-      cell.classList.add(
-        `level-${level}`
-      );
-
-    }
-
-
-    cell.style.animationDelay =
-      `${i * 3}ms`;
-
-
-    cell.title =
-      "GitHub activity";
-
-
-    grid.appendChild(cell);
-
-  }
-
-}
-
-
-/* =========================================================
-   INITIALIZE GITHUB
-========================================================= */
-
-loadGitHubProfile();
-
-loadGitHubRepos();
-
-loadGitHubActivity();
-
-generateContributionVisual();
-
-
-/* =========================================================
-   REFRESH GITHUB ACTIVITY
-========================================================= */
+updateClock();
 
 setInterval(
-  () => {
-
-    loadGitHubProfile();
-
-    loadGitHubRepos();
-
-    loadGitHubActivity();
-
-  },
-  5 * 60 * 1000
+    updateClock,
+    1000
 );
 
 
 /* =========================================================
-   FOOTER YEAR
+   3D PROFILE CARD
 ========================================================= */
 
-document
-  .getElementById(
-    "footer-year"
-  )
-  .textContent =
-  `© ${new Date().getFullYear()} Deepak G`;
+const profile =
+document.getElementById(
+    "profileCard"
+);
+
+profile.addEventListener(
+    "mousemove",
+    e => {
+
+        const rect =
+            profile.getBoundingClientRect();
+
+        const x =
+            e.clientX -
+            rect.left;
+
+        const y =
+            e.clientY -
+            rect.top;
+
+        const centerX =
+            rect.width / 2;
+
+        const centerY =
+            rect.height / 2;
+
+        const rotateX =
+            ((y - centerY) /
+            centerY) * -5;
+
+        const rotateY =
+            ((x - centerX) /
+            centerX) * 5;
+
+        profile.style.transform =
+            `
+            perspective(1200px)
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            translateY(-5px)
+            `;
+    }
+);
+
+profile.addEventListener(
+    "mouseleave",
+    () => {
+
+        profile.style.transform =
+            "";
+    }
+);
 
 
 /* =========================================================
-   SMOOTH NAVIGATION
+   MAGNETIC BUTTONS
 ========================================================= */
 
 document
-  .querySelectorAll(
-    'a[href^="#"]'
-  )
-  .forEach(link => {
+.querySelectorAll(".magnetic")
+.forEach(button => {
 
-    link.addEventListener(
-      "click",
-      event => {
+    button.addEventListener(
+        "mousemove",
+        e => {
 
-        const target =
-          document.querySelector(
-            link.getAttribute("href")
-          );
+            const rect =
+                button.getBoundingClientRect();
 
+            const x =
+                e.clientX -
+                rect.left -
+                rect.width / 2;
 
-        if (target) {
+            const y =
+                e.clientY -
+                rect.top -
+                rect.height / 2;
 
-          event.preventDefault();
-
-
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-
+            button.style.transform =
+                `
+                translate(
+                    ${x * .12}px,
+                    ${y * .12}px
+                )
+                `;
         }
-
-      }
     );
 
-  });
+    button.addEventListener(
+        "mouseleave",
+        () => {
+
+            button.style.transform =
+                "";
+        }
+    );
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const observer =
+new IntersectionObserver(
+    entries => {
+
+        entries.forEach(
+            entry => {
+
+                if (
+                    entry.isIntersecting
+                ) {
+
+                    entry.target
+                        .classList
+                        .add("active");
+
+                }
+
+            }
+        );
+
+    },
+    {
+        threshold: .12
+    }
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(
+    element =>
+        observer.observe(element)
+);
+
+
+/* =========================================================
+   COUNTER ANIMATION
+========================================================= */
+
+const counters =
+document.querySelectorAll(
+    ".stat-number[data-target]"
+);
+
+const counterObserver =
+new IntersectionObserver(
+    entries => {
+
+        entries.forEach(
+            entry => {
+
+                if (
+                    !entry.isIntersecting
+                ) {
+                    return;
+                }
+
+                const element =
+                    entry.target;
+
+                const target =
+                    element
+                    .dataset
+                    .target;
+
+                if (
+                    target === "∞"
+                ) {
+                    return;
+                }
+
+                let current = 0;
+
+                const number =
+                    parseInt(target);
+
+                const increment =
+                    Math.max(
+                        1,
+                        Math.ceil(
+                            number / 40
+                        )
+                    );
+
+                const timer =
+                    setInterval(
+                        () => {
+
+                            current +=
+                                increment;
+
+                            if (
+                                current >=
+                                number
+                            ) {
+
+                                current =
+                                    number;
+
+                                clearInterval(
+                                    timer
+                                );
+                            }
+
+                            element
+                                .textContent =
+                                current;
+
+                        },
+                        35
+                    );
+
+                counterObserver
+                    .unobserve(element);
+            }
+        );
+
+    },
+    {
+        threshold: .6
+    }
+);
+
+counters.forEach(
+    counter =>
+        counterObserver.observe(
+            counter
+        )
+);
+
+
+/* =========================================================
+   DYNAMIC YEAR
+========================================================= */
+
+document
+.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
+
+/* =========================================================
+   PARALLAX ORBS
+========================================================= */
+
+document.addEventListener(
+    "mousemove",
+    e => {
+
+        const x =
+            (
+                e.clientX /
+                window.innerWidth -
+                .5
+            ) * 30;
+
+        const y =
+            (
+                e.clientY /
+                window.innerHeight -
+                .5
+            ) * 30;
+
+        document
+            .querySelector(".orb.one")
+            .style.transform =
+            `translate(${x}px,${y}px)`;
+
+        document
+            .querySelector(".orb.two")
+            .style.transform =
+            `translate(${-x}px,${-y}px)`;
+    }
+);
 
 </script>
 
