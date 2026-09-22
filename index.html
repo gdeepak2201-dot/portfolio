@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<meta name="theme-color" content="#050816">
-
-<title>Deepak G | Forward Deployed Engineer</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <meta
-name="description"
-content="Deepak G — Forward Deployed Engineer at Ephron Tech LLC. Software engineering, cloud, APIs, authentication, system integration and deployment."
+    name="theme-color"
+    content="#050816"
+>
+
+<title>Deepak G | Software Developer</title>
+
+<meta
+    name="description"
+    content="Deepak G — Software Developer and Forward Deployed Engineer at Ephron Tech LLC. Software development, APIs, databases, testing, cloud, authentication and system integration."
 >
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
 >
 
 <style>
@@ -37,6 +44,7 @@ rel="stylesheet"
     --cyan: #22d3ee;
     --blue: #3b82f6;
     --violet: #8b5cf6;
+    --purple: #a855f7;
     --green: #22c55e;
 
     --white: #f8fafc;
@@ -44,14 +52,15 @@ rel="stylesheet"
     --muted: #94a3b8;
 
     --glass: rgba(15, 23, 42, .55);
-    --glass-heavy: rgba(15, 23, 42, .78);
+    --glass-heavy: rgba(15, 23, 42, .80);
 
-    --border: rgba(148,163,184,.14);
+    --border: rgba(148, 163, 184, .14);
 
     --radius: 24px;
 
     --max: 1250px;
 }
+
 
 /* =========================================================
    RESET
@@ -72,21 +81,25 @@ body {
     font-family: "Inter", sans-serif;
 
     background:
+
         radial-gradient(
             circle at 15% 10%,
-            rgba(34,211,238,.10),
+            rgba(34, 211, 238, .10),
             transparent 28%
         ),
+
         radial-gradient(
             circle at 85% 20%,
-            rgba(139,92,246,.10),
+            rgba(139, 92, 246, .12),
             transparent 30%
         ),
+
         radial-gradient(
             circle at 50% 90%,
-            rgba(59,130,246,.08),
+            rgba(59, 130, 246, .08),
             transparent 30%
         ),
+
         var(--bg);
 
     color: var(--white);
@@ -106,9 +119,12 @@ button {
 }
 
 ::selection {
+
     background: var(--cyan);
+
     color: #020617;
 }
+
 
 /* =========================================================
    CUSTOM CURSOR
@@ -118,8 +134,8 @@ button {
 
     position: fixed;
 
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
 
     background: var(--cyan);
 
@@ -131,10 +147,11 @@ button {
 
     box-shadow:
         0 0 20px var(--cyan),
-        0 0 50px rgba(34,211,238,.6);
+        0 0 50px rgba(34, 211, 238, .6);
 
     transform: translate(-50%, -50%);
 }
+
 
 .cursor-ring {
 
@@ -143,7 +160,9 @@ button {
     width: 36px;
     height: 36px;
 
-    border: 1px solid rgba(34,211,238,.55);
+    border:
+        1px solid
+        rgba(34, 211, 238, .55);
 
     border-radius: 50%;
 
@@ -158,6 +177,7 @@ button {
         height .25s,
         border-color .25s;
 }
+
 
 /* =========================================================
    BACKGROUND GRID
@@ -174,13 +194,15 @@ button {
     z-index: -10;
 
     background-image:
+
         linear-gradient(
-            rgba(148,163,184,.035) 1px,
+            rgba(148, 163, 184, .035) 1px,
             transparent 1px
         ),
+
         linear-gradient(
             90deg,
-            rgba(148,163,184,.035) 1px,
+            rgba(148, 163, 184, .035) 1px,
             transparent 1px
         );
 
@@ -190,9 +212,10 @@ button {
         linear-gradient(
             to bottom,
             black,
-            transparent 85%
+            transparent 90%
         );
 }
+
 
 /* =========================================================
    SCANLINE
@@ -211,6 +234,7 @@ button {
     opacity: .025;
 
     background:
+
         repeating-linear-gradient(
             to bottom,
             transparent 0px,
@@ -218,6 +242,7 @@ button {
             #fff 4px
         );
 }
+
 
 /* =========================================================
    FLOATING ORBS
@@ -244,6 +269,7 @@ button {
         orbFloat 15s ease-in-out infinite alternate;
 }
 
+
 .orb.one {
 
     background: var(--cyan);
@@ -251,6 +277,7 @@ button {
     top: -160px;
     left: -180px;
 }
+
 
 .orb.two {
 
@@ -262,6 +289,7 @@ button {
     animation-delay: -5s;
 }
 
+
 .orb.three {
 
     background: var(--blue);
@@ -272,20 +300,24 @@ button {
     animation-delay: -9s;
 }
 
+
 @keyframes orbFloat {
 
     from {
+
         transform:
-            translate3d(0,0,0)
+            translate3d(0, 0, 0)
             scale(1);
     }
 
     to {
+
         transform:
-            translate3d(80px,-50px,0)
+            translate3d(80px, -50px, 0)
             scale(1.2);
     }
 }
+
 
 /* =========================================================
    PARTICLES
@@ -302,6 +334,7 @@ button {
     pointer-events: none;
 }
 
+
 /* =========================================================
    CONTAINER
 ========================================================= */
@@ -317,8 +350,9 @@ button {
     margin: auto;
 }
 
+
 /* =========================================================
-   NAV
+   NAVIGATION
 ========================================================= */
 
 nav {
@@ -332,7 +366,7 @@ nav {
 
     width:
         min(
-            1050px,
+            1100px,
             calc(100% - 30px)
         );
 
@@ -347,19 +381,22 @@ nav {
     padding: 13px 18px;
 
     background:
-        rgba(3,7,18,.65);
+        rgba(3, 7, 18, .68);
 
     backdrop-filter:
         blur(22px);
 
     border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
     border-radius: 18px;
 
     box-shadow:
-        0 20px 80px rgba(0,0,0,.35);
+        0 20px 80px
+        rgba(0, 0, 0, .35);
 }
+
 
 .logo {
 
@@ -374,16 +411,19 @@ nav {
     letter-spacing: -.05em;
 }
 
+
 .logo span {
     color: white;
 }
+
 
 .nav-links {
 
     display: flex;
 
-    gap: 26px;
+    gap: 24px;
 }
+
 
 .nav-links a {
 
@@ -393,12 +433,13 @@ nav {
         "JetBrains Mono",
         monospace;
 
-    font-size: 11px;
+    font-size: 10px;
 
     letter-spacing: .08em;
 
     transition: .25s;
 }
+
 
 .nav-links a:hover {
 
@@ -407,6 +448,7 @@ nav {
     text-shadow:
         0 0 15px var(--cyan);
 }
+
 
 .nav-status {
 
@@ -420,10 +462,11 @@ nav {
         "JetBrains Mono",
         monospace;
 
-    font-size: 10px;
+    font-size: 9px;
 
     color: #86efac;
 }
+
 
 .status-dot {
 
@@ -437,16 +480,21 @@ nav {
     box-shadow:
         0 0 15px var(--green);
 
-    animation: pulse 1.5s infinite;
+    animation:
+        pulse 1.5s infinite;
 }
+
 
 @keyframes pulse {
 
     50% {
+
         transform: scale(.55);
+
         opacity: .5;
     }
 }
+
 
 /* =========================================================
    HERO
@@ -465,6 +513,7 @@ nav {
     padding-top: 100px;
 }
 
+
 .hero-layout {
 
     display: grid;
@@ -476,6 +525,7 @@ nav {
 
     align-items: center;
 }
+
 
 /* =========================================================
    HERO TEXT
@@ -493,12 +543,12 @@ nav {
 
     border:
         1px solid
-        rgba(34,211,238,.25);
+        rgba(34, 211, 238, .25);
 
     border-radius: 999px;
 
     background:
-        rgba(34,211,238,.045);
+        rgba(34, 211, 238, .045);
 
     color:
         #a5f3fc;
@@ -507,10 +557,11 @@ nav {
         "JetBrains Mono",
         monospace;
 
-    font-size: 11px;
+    font-size: 10px;
 
     margin-bottom: 25px;
 }
+
 
 .hero h1 {
 
@@ -531,9 +582,11 @@ nav {
     margin-bottom: 30px;
 }
 
+
 .gradient {
 
     background:
+
         linear-gradient(
             110deg,
             white,
@@ -555,13 +608,16 @@ nav {
         gradientMove 6s linear infinite;
 }
 
+
 @keyframes gradientMove {
 
     to {
+
         background-position:
             300% center;
     }
 }
+
 
 .role {
 
@@ -574,10 +630,15 @@ nav {
     color: var(--cyan);
 
     font-size:
-        clamp(17px,2vw,24px);
+        clamp(
+            17px,
+            2vw,
+            24px
+        );
 
     margin-bottom: 20px;
 }
+
 
 .description {
 
@@ -592,6 +653,7 @@ nav {
     margin-bottom: 32px;
 }
 
+
 /* =========================================================
    BUTTONS
 ========================================================= */
@@ -605,6 +667,7 @@ nav {
     gap: 12px;
 }
 
+
 .btn {
 
     position: relative;
@@ -617,7 +680,8 @@ nav {
     border-radius: 12px;
 
     border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
     font-size: 13px;
 
@@ -629,6 +693,7 @@ nav {
         box-shadow .3s;
 }
 
+
 .btn::before {
 
     content: "";
@@ -638,6 +703,7 @@ nav {
     inset: 0;
 
     background:
+
         linear-gradient(
             110deg,
             transparent,
@@ -652,11 +718,13 @@ nav {
         transform .5s;
 }
 
+
 .btn:hover::before {
 
     transform:
         translateX(120%);
 }
+
 
 .btn:hover {
 
@@ -664,16 +732,18 @@ nav {
         translateY(-4px);
 
     border-color:
-        rgba(34,211,238,.5);
+        rgba(34, 211, 238, .5);
 
     box-shadow:
         0 15px 40px
-        rgba(34,211,238,.12);
+        rgba(34, 211, 238, .12);
 }
+
 
 .primary {
 
     background:
+
         linear-gradient(
             135deg,
             #0891b2,
@@ -684,11 +754,13 @@ nav {
         transparent;
 }
 
+
 .secondary {
 
     background:
-        rgba(15,23,42,.55);
+        rgba(15, 23, 42, .55);
 }
+
 
 /* =========================================================
    PROFILE CARD
@@ -699,44 +771,49 @@ nav {
     perspective: 1200px;
 }
 
+
 .profile-card {
 
     position: relative;
 
-    min-height: 520px;
+    min-height: 540px;
 
     padding: 28px;
 
     border-radius: 30px;
 
     background:
+
         linear-gradient(
             145deg,
-            rgba(15,23,42,.88),
-            rgba(2,6,23,.72)
+            rgba(15, 23, 42, .88),
+            rgba(2, 6, 23, .72)
         );
 
     border:
         1px solid
-        rgba(148,163,184,.18);
+        rgba(148, 163, 184, .18);
 
     backdrop-filter:
         blur(25px);
 
     box-shadow:
+
         0 40px 100px
-        rgba(0,0,0,.5),
+        rgba(0, 0, 0, .5),
 
         inset 0 1px
-        rgba(255,255,255,.05);
+        rgba(255, 255, 255, .05);
 
     overflow: hidden;
 
-    transform-style: preserve-3d;
+    transform-style:
+        preserve-3d;
 
     transition:
         transform .15s ease;
 }
+
 
 .profile-card::before {
 
@@ -761,6 +838,7 @@ nav {
     left: -100px;
 }
 
+
 .profile-card::after {
 
     content: "";
@@ -784,6 +862,7 @@ nav {
     right: -100px;
 }
 
+
 /* =========================================================
    PROFILE PHOTO
 ========================================================= */
@@ -796,8 +875,10 @@ nav {
 
     justify-content: center;
 
-    padding: 25px 0 35px;
+    padding:
+        25px 0 30px;
 }
+
 
 .avatar-ring {
 
@@ -811,6 +892,7 @@ nav {
     border-radius: 50%;
 
     background:
+
         conic-gradient(
             var(--cyan),
             var(--blue),
@@ -823,15 +905,18 @@ nav {
 
     box-shadow:
         0 0 35px
-        rgba(34,211,238,.25);
+        rgba(34, 211, 238, .25);
 }
+
 
 @keyframes rotateRing {
 
     to {
-        transform: rotate(360deg);
+        transform:
+            rotate(360deg);
     }
 }
+
 
 .avatar-ring::before {
 
@@ -841,10 +926,12 @@ nav {
 
     inset: 5px;
 
-    background: var(--bg);
+    background:
+        var(--bg);
 
     border-radius: 50%;
 }
+
 
 .avatar {
 
@@ -867,12 +954,15 @@ nav {
         counterRotate 7s linear infinite;
 }
 
+
 @keyframes counterRotate {
 
     to {
-        transform: rotate(-360deg);
+        transform:
+            rotate(-360deg);
     }
 }
+
 
 /* =========================================================
    PROFILE INFORMATION
@@ -892,6 +982,7 @@ nav {
     margin-bottom: 3px;
 }
 
+
 .profile-role {
 
     text-align: center;
@@ -902,8 +993,9 @@ nav {
         "JetBrains Mono",
         monospace;
 
-    font-size: 12px;
+    font-size: 11px;
 }
+
 
 .company {
 
@@ -916,11 +1008,13 @@ nav {
     margin-top: 4px;
 }
 
+
 .profile-line {
 
     height: 1px;
 
     background:
+
         linear-gradient(
             90deg,
             transparent,
@@ -928,8 +1022,9 @@ nav {
             transparent
         );
 
-    margin: 25px 0;
+    margin: 23px 0;
 }
+
 
 /* =========================================================
    PROFILE DETAILS
@@ -945,12 +1040,13 @@ nav {
     gap: 10px;
 }
 
+
 .detail {
 
     padding: 13px;
 
     background:
-        rgba(15,23,42,.45);
+        rgba(15, 23, 42, .45);
 
     border:
         1px solid
@@ -958,6 +1054,7 @@ nav {
 
     border-radius: 13px;
 }
+
 
 .detail-label {
 
@@ -972,6 +1069,7 @@ nav {
     margin-bottom: 3px;
 }
 
+
 .detail-value {
 
     font-size: 12px;
@@ -980,6 +1078,49 @@ nav {
 
     color: #cbd5e1;
 }
+
+
+/* =========================================================
+   PROFILE SKILLS
+========================================================= */
+
+.mini-skills {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 20px;
+}
+
+
+.mini-skill {
+
+    padding:
+        5px 9px;
+
+    border-radius: 7px;
+
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 8px;
+
+    color: #67e8f9;
+
+    background:
+        rgba(34, 211, 238, .05);
+
+    border:
+        1px solid
+        rgba(34, 211, 238, .13);
+}
+
 
 /* =========================================================
    LIVE CLOCK
@@ -995,17 +1136,19 @@ nav {
         "JetBrains Mono",
         monospace;
 
-    font-size: 11px;
+    font-size: 10px;
 
     color: #64748b;
 }
+
 
 .clock span {
     color: var(--cyan);
 }
 
+
 /* =========================================================
-   SECTION
+   SECTIONS
 ========================================================= */
 
 section {
@@ -1013,13 +1156,14 @@ section {
     padding: 120px 0;
 }
 
+
 .section-label {
 
     font-family:
         "JetBrains Mono",
         monospace;
 
-    font-size: 11px;
+    font-size: 10px;
 
     letter-spacing: .18em;
 
@@ -1027,6 +1171,7 @@ section {
 
     margin-bottom: 14px;
 }
+
 
 .section-title {
 
@@ -1045,14 +1190,16 @@ section {
     margin-bottom: 22px;
 }
 
+
 .section-description {
 
     color: var(--muted);
 
-    max-width: 700px;
+    max-width: 750px;
 
     font-size: 16px;
 }
+
 
 /* =========================================================
    GLASS
@@ -1075,8 +1222,9 @@ section {
 
     box-shadow:
         0 30px 80px
-        rgba(0,0,0,.18);
+        rgba(0, 0, 0, .18);
 }
+
 
 /* =========================================================
    ABOUT
@@ -1094,10 +1242,12 @@ section {
     gap: 20px;
 }
 
+
 .about-card {
 
     padding: 35px;
 }
+
 
 .about-card p {
 
@@ -1107,6 +1257,7 @@ section {
 
     margin-bottom: 18px;
 }
+
 
 .identity {
 
@@ -1119,6 +1270,7 @@ section {
     justify-content: space-between;
 }
 
+
 .identity-label {
 
     font-family:
@@ -1127,8 +1279,9 @@ section {
 
     color: var(--cyan);
 
-    font-size: 11px;
+    font-size: 10px;
 }
+
 
 .identity h3 {
 
@@ -1140,12 +1293,14 @@ section {
     margin-top: 15px;
 }
 
+
 .identity-role {
 
     color: var(--muted);
 
     margin-top: 3px;
 }
+
 
 .identity-company {
 
@@ -1154,19 +1309,21 @@ section {
     margin-top: 4px;
 }
 
+
 .identity-bottom {
 
     font-family:
         "JetBrains Mono",
         monospace;
 
-    font-size: 10px;
+    font-size: 9px;
 
     color: #64748b;
 }
 
+
 /* =========================================================
-   CAPABILITIES
+   SOFTWARE DEVELOPMENT CAPABILITIES
 ========================================================= */
 
 .capability-grid {
@@ -1176,10 +1333,11 @@ section {
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
     gap: 15px;
 }
+
 
 .capability {
 
@@ -1191,8 +1349,10 @@ section {
 
     transition:
         transform .35s,
-        border .35s;
+        border .35s,
+        box-shadow .35s;
 }
+
 
 .capability:hover {
 
@@ -1200,12 +1360,13 @@ section {
         translateY(-9px);
 
     border-color:
-        rgba(34,211,238,.35);
+        rgba(34, 211, 238, .35);
 
     box-shadow:
         0 25px 70px
-        rgba(34,211,238,.08);
+        rgba(34, 211, 238, .08);
 }
+
 
 .icon {
 
@@ -1214,12 +1375,14 @@ section {
     margin-bottom: 18px;
 }
 
+
 .capability h3 {
 
-    font-size: 19px;
+    font-size: 18px;
 
     margin-bottom: 8px;
 }
+
 
 .capability p {
 
@@ -1228,8 +1391,110 @@ section {
     font-size: 13px;
 }
 
+
 /* =========================================================
-   TECH ORBIT
+   SKILLS
+========================================================= */
+
+.skills-container {
+
+    margin-top: 55px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.skill-box {
+
+    padding: 30px;
+}
+
+
+.skill-title {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+
+.skill-title h3 {
+
+    font-size: 18px;
+}
+
+
+.skill-title span {
+
+    color: var(--cyan);
+
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 10px;
+}
+
+
+.skill-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.skill-tag {
+
+    padding:
+        8px 12px;
+
+    border-radius: 9px;
+
+    background:
+        rgba(15, 23, 42, .65);
+
+    border:
+        1px solid
+        rgba(148, 163, 184, .12);
+
+    color: #cbd5e1;
+
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 10px;
+
+    transition: .25s;
+}
+
+
+.skill-tag:hover {
+
+    color: var(--cyan);
+
+    border-color:
+        rgba(34, 211, 238, .35);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   ORBIT TECHNOLOGY
 ========================================================= */
 
 .orbit-container {
@@ -1246,6 +1511,7 @@ section {
 
     align-items: center;
 }
+
 
 .orbit-center {
 
@@ -1270,7 +1536,7 @@ section {
         "JetBrains Mono",
         monospace;
 
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: 700;
 
@@ -1278,15 +1544,16 @@ section {
 
     border:
         1px solid
-        rgba(34,211,238,.5);
+        rgba(34, 211, 238, .5);
 
     background:
-        rgba(2,6,23,.8);
+        rgba(2, 6, 23, .8);
 
     box-shadow:
         0 0 50px
-        rgba(34,211,238,.15);
+        rgba(34, 211, 238, .15);
 }
+
 
 .orbit {
 
@@ -1294,7 +1561,7 @@ section {
 
     border:
         1px dashed
-        rgba(148,163,184,.16);
+        rgba(148, 163, 184, .16);
 
     border-radius: 50%;
 
@@ -1302,11 +1569,13 @@ section {
         orbitSpin 20s linear infinite;
 }
 
+
 .orbit-one {
 
     width: 280px;
     height: 280px;
 }
+
 
 .orbit-two {
 
@@ -1319,12 +1588,15 @@ section {
         reverse;
 }
 
+
 @keyframes orbitSpin {
 
     to {
-        transform: rotate(360deg);
+        transform:
+            rotate(360deg);
     }
 }
+
 
 .tech-node {
 
@@ -1342,11 +1614,11 @@ section {
     border-radius: 16px;
 
     background:
-        rgba(15,23,42,.9);
+        rgba(15, 23, 42, .9);
 
     border:
         1px solid
-        rgba(34,211,238,.22);
+        rgba(34, 211, 238, .22);
 
     font-family:
         "JetBrains Mono",
@@ -1360,33 +1632,48 @@ section {
 
     box-shadow:
         0 10px 30px
-        rgba(0,0,0,.3);
+        rgba(0, 0, 0, .3);
 }
 
-/* orbit positions */
 
 .node-a {
+
     top: -29px;
-    left: calc(50% - 29px);
+
+    left:
+        calc(50% - 29px);
 }
+
 
 .node-b {
+
     right: -29px;
-    top: calc(50% - 29px);
+
+    top:
+        calc(50% - 29px);
 }
+
 
 .node-c {
+
     bottom: -29px;
-    left: calc(50% - 29px);
+
+    left:
+        calc(50% - 29px);
 }
+
 
 .node-d {
+
     left: -29px;
-    top: calc(50% - 29px);
+
+    top:
+        calc(50% - 29px);
 }
 
+
 /* =========================================================
-   ENGINEERING FLOW
+   ENGINEERING PROCESS
 ========================================================= */
 
 .flow {
@@ -1396,21 +1683,22 @@ section {
     display: grid;
 
     grid-template-columns:
-        repeat(5,1fr);
+        repeat(6, 1fr);
 
     gap: 12px;
 }
+
 
 .flow-step {
 
     position: relative;
 
-    padding: 30px 15px;
+    padding: 30px 12px;
 
     text-align: center;
 
     background:
-        rgba(15,23,42,.4);
+        rgba(15, 23, 42, .4);
 
     border:
         1px solid
@@ -1421,14 +1709,20 @@ section {
     transition: .3s;
 }
 
+
 .flow-step:hover {
 
     transform:
         translateY(-7px);
 
     border-color:
-        rgba(34,211,238,.3);
+        rgba(34, 211, 238, .3);
+
+    box-shadow:
+        0 20px 50px
+        rgba(34, 211, 238, .06);
 }
+
 
 .flow-step:not(:last-child)::after {
 
@@ -1448,6 +1742,7 @@ section {
     z-index: 5;
 }
 
+
 .flow-icon {
 
     font-size: 28px;
@@ -1455,14 +1750,16 @@ section {
     margin-bottom: 10px;
 }
 
+
 .flow-step h3 {
 
-    font-size: 12px;
+    font-size: 10px;
 
     font-family:
         "JetBrains Mono",
         monospace;
 }
+
 
 /* =========================================================
    TERMINAL
@@ -1481,12 +1778,13 @@ section {
 
     border:
         1px solid
-        rgba(34,211,238,.18);
+        rgba(34, 211, 238, .18);
 
     box-shadow:
         0 35px 100px
-        rgba(0,0,0,.45);
+        rgba(0, 0, 0, .45);
 }
+
 
 .terminal-header {
 
@@ -1501,8 +1799,9 @@ section {
 
     border-bottom:
         1px solid
-        rgba(148,163,184,.1);
+        rgba(148, 163, 184, .1);
 }
+
 
 .terminal-dot {
 
@@ -1511,8 +1810,10 @@ section {
 
     border-radius: 50%;
 
-    background: #334155;
+    background:
+        #334155;
 }
+
 
 .terminal-title {
 
@@ -1527,6 +1828,7 @@ section {
     color: #64748b;
 }
 
+
 .terminal-body {
 
     padding: 30px;
@@ -1540,17 +1842,26 @@ section {
     line-height: 2;
 }
 
+
 .green {
     color: #4ade80;
 }
+
 
 .blue {
     color: #38bdf8;
 }
 
+
 .white {
     color: white;
 }
+
+
+.purple {
+    color: #c084fc;
+}
+
 
 .cursor-block {
 
@@ -1566,6 +1877,7 @@ section {
         blink 1s infinite;
 }
 
+
 @keyframes blink {
 
     50% {
@@ -1573,8 +1885,9 @@ section {
     }
 }
 
+
 /* =========================================================
-   PROJECTS
+   SOFTWARE ENGINEERING AREAS
 ========================================================= */
 
 .projects {
@@ -1584,10 +1897,11 @@ section {
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
     gap: 18px;
 }
+
 
 .project {
 
@@ -1595,14 +1909,16 @@ section {
 
     padding: 30px;
 
-    min-height: 250px;
+    min-height: 280px;
 
     overflow: hidden;
 
     transition:
         transform .35s,
-        border .35s;
+        border .35s,
+        box-shadow .35s;
 }
+
 
 .project:hover {
 
@@ -1610,8 +1926,13 @@ section {
         translateY(-10px);
 
     border-color:
-        rgba(34,211,238,.35);
+        rgba(34, 211, 238, .35);
+
+    box-shadow:
+        0 25px 70px
+        rgba(34, 211, 238, .07);
 }
+
 
 .project-number {
 
@@ -1624,13 +1945,15 @@ section {
     font-size: 10px;
 }
 
+
 .project h3 {
 
-    font-size: 22px;
+    font-size: 21px;
 
     margin:
         25px 0 10px;
 }
+
 
 .project p {
 
@@ -1638,6 +1961,7 @@ section {
 
     font-size: 13px;
 }
+
 
 .project-tags {
 
@@ -1651,6 +1975,7 @@ section {
 
     gap: 7px;
 }
+
 
 .tag {
 
@@ -1666,17 +1991,18 @@ section {
     font-size: 9px;
 
     background:
-        rgba(34,211,238,.06);
+        rgba(34, 211, 238, .06);
 
     color: #67e8f9;
 
     border:
         1px solid
-        rgba(34,211,238,.14);
+        rgba(34, 211, 238, .14);
 }
 
+
 /* =========================================================
-   STATS
+   ENGINEER PROFILE
 ========================================================= */
 
 .stats {
@@ -1686,21 +2012,37 @@ section {
     display: grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+        repeat(4, 1fr);
 
     gap: 15px;
 }
 
+
 .stat {
 
-    padding: 25px;
+    padding: 30px 20px;
 
     text-align: center;
+
+    transition:
+        transform .3s,
+        border .3s;
 }
+
+
+.stat:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(34, 211, 238, .3);
+}
+
 
 .stat-number {
 
-    font-size: 38px;
+    font-size: 36px;
 
     font-weight: 900;
 
@@ -1708,7 +2050,10 @@ section {
         -.06em;
 
     color: var(--white);
+
+    margin-bottom: 8px;
 }
+
 
 .stat-label {
 
@@ -1718,42 +2063,87 @@ section {
         "JetBrains Mono",
         monospace;
 
-    font-size: 9px;
+    font-size: 8px;
 
     letter-spacing: .08em;
 }
 
+
 /* =========================================================
-   GITHUB
+   DEVELOPMENT LIFECYCLE
 ========================================================= */
 
-.github-panel {
+.lifecycle {
 
     margin-top: 55px;
 
-    padding: 35px;
+    display: grid;
 
-    overflow: hidden;
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 15px;
 }
 
-.github-image {
 
-    width: 100%;
+.lifecycle-card {
 
-    border-radius: 14px;
+    padding: 30px 20px;
 
-    opacity: .9;
+    text-align: center;
 
     transition: .3s;
 }
 
-.github-image:hover {
 
-    opacity: 1;
+.lifecycle-card:hover {
 
     transform:
-        scale(1.01);
+        translateY(-8px);
+
+    border-color:
+        rgba(139, 92, 246, .35);
 }
+
+
+.lifecycle-number {
+
+    color:
+        var(--violet);
+
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 10px;
+
+    margin-bottom: 14px;
+}
+
+
+.lifecycle-icon {
+
+    font-size: 30px;
+
+    margin-bottom: 13px;
+}
+
+
+.lifecycle-card h3 {
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+
+.lifecycle-card p {
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
 
 /* =========================================================
    CONTACT
@@ -1766,6 +2156,7 @@ section {
     padding-bottom: 130px;
 }
 
+
 .contact-box {
 
     margin-top: 50px;
@@ -1777,6 +2168,7 @@ section {
 
     overflow: hidden;
 }
+
 
 .contact-box::before {
 
@@ -1801,8 +2193,9 @@ section {
     top: 50%;
 
     transform:
-        translate(-50%,-50%);
+        translate(-50%, -50%);
 }
+
 
 .contact h2 {
 
@@ -1823,17 +2216,19 @@ section {
     margin-bottom: 20px;
 }
 
+
 .contact p {
 
     position: relative;
 
-    max-width: 600px;
+    max-width: 650px;
 
     margin:
         0 auto 30px;
 
     color: var(--muted);
 }
+
 
 .contact-buttons {
 
@@ -1847,6 +2242,7 @@ section {
 
     gap: 12px;
 }
+
 
 /* =========================================================
    FOOTER
@@ -1867,10 +2263,17 @@ footer {
         "JetBrains Mono",
         monospace;
 
-    font-size: 10px;
+    font-size: 9px;
 
     color: #64748b;
 }
+
+
+footer span {
+
+    color: var(--cyan);
+}
+
 
 /* =========================================================
    SCROLL REVEAL
@@ -1888,6 +2291,7 @@ footer {
         transform .9s ease;
 }
 
+
 .reveal.active {
 
     opacity: 1;
@@ -1896,22 +2300,22 @@ footer {
         translateY(0);
 }
 
+
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
-@media(max-width:950px) {
+@media(max-width: 1050px) {
 
     .hero-layout {
 
         grid-template-columns:
             1fr;
-
     }
 
     .profile-wrap {
 
-        max-width: 500px;
+        max-width: 520px;
 
         margin: auto;
     }
@@ -1919,43 +2323,41 @@ footer {
     .capability-grid {
 
         grid-template-columns:
-            1fr 1fr;
+            repeat(2, 1fr);
     }
 
     .projects {
 
         grid-template-columns:
-            1fr 1fr;
+            repeat(2, 1fr);
     }
 
     .flow {
 
         grid-template-columns:
-            1fr;
+            repeat(3, 1fr);
     }
 
-    .flow-step:not(:last-child)::after {
+    .flow-step::after {
 
-        content: "↓";
+        display: none;
+    }
 
-        right: 50%;
+    .lifecycle {
 
-        top: auto;
-
-        bottom: -25px;
-
-        transform:
-            translateX(50%);
+        grid-template-columns:
+            repeat(3, 1fr);
     }
 
     .stats {
 
         grid-template-columns:
-            1fr 1fr;
+            repeat(2, 1fr);
     }
 }
 
-@media(max-width:650px) {
+
+@media(max-width: 750px) {
 
     .container {
 
@@ -1985,12 +2387,7 @@ footer {
 
     .hero h1 {
 
-        font-size: 70px;
-    }
-
-    .profile-card {
-
-        min-height: auto;
+        font-size: 72px;
     }
 
     .about-grid {
@@ -2005,13 +2402,25 @@ footer {
             1fr;
     }
 
+    .skills-container {
+
+        grid-template-columns:
+            1fr;
+    }
+
     .projects {
 
         grid-template-columns:
             1fr;
     }
 
-    .stats {
+    .flow {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .lifecycle {
 
         grid-template-columns:
             1fr 1fr;
@@ -2024,6 +2433,44 @@ footer {
         transform:
             scale(.75);
     }
+}
+
+
+@media(max-width: 500px) {
+
+    .hero h1 {
+
+        font-size: 60px;
+    }
+
+    .profile-card {
+
+        min-height: auto;
+    }
+
+    .avatar-ring {
+
+        width: 170px;
+        height: 170px;
+    }
+
+    .flow {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .lifecycle {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .stats {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
 
     .terminal-body {
 
@@ -2031,9 +2478,16 @@ footer {
 
         overflow-x: auto;
     }
+
+    .orbit-container {
+
+        transform:
+            scale(.62);
+    }
 }
 
-@media(prefers-reduced-motion:reduce) {
+
+@media(prefers-reduced-motion: reduce) {
 
     *,
     *::before,
@@ -2054,9 +2508,12 @@ footer {
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- =========================================================
      BACKGROUND
@@ -2086,12 +2543,15 @@ footer {
         DEEPAK<span>.G</span>
     </div>
 
+
     <div class="nav-links">
 
-        <a href="#about">ABOUT</a>
+        <a href="#about">
+            ABOUT
+        </a>
 
         <a href="#capabilities">
-            CAPABILITIES
+            SKILLS
         </a>
 
         <a href="#stack">
@@ -2099,7 +2559,7 @@ footer {
         </a>
 
         <a href="#projects">
-            WORK
+            DEVELOPMENT
         </a>
 
         <a href="#contact">
@@ -2107,6 +2567,7 @@ footer {
         </a>
 
     </div>
+
 
     <div class="nav-status">
 
@@ -2138,7 +2599,7 @@ footer {
 
 <span class="status-dot"></span>
 
-FORWARD DEPLOYED ENGINEER
+SOFTWARE DEVELOPER
 
 </div>
 
@@ -2157,18 +2618,18 @@ G.
 
 
 <div
-class="role"
-id="typingRole"
+    class="role"
+    id="typingRole"
 ></div>
 
 
 <p class="description">
 
-I build, integrate, debug and deploy
-practical software solutions across
-backend systems, APIs, cloud
-infrastructure, authentication and
-modern engineering workflows.
+I design, develop, test and maintain
+software solutions while working closely
+with requirements, APIs, databases,
+authentication, cloud infrastructure
+and real-world business systems.
 
 </p>
 
@@ -2176,26 +2637,28 @@ modern engineering workflows.
 <div class="buttons">
 
 <a
-href="#projects"
-class="btn primary magnetic"
+    href="#projects"
+    class="btn primary magnetic"
 >
-Explore My Work →
+    Explore My Work →
 </a>
 
-<a
-href="https://www.linkedin.com/in/deepak-govindaraj-402524274/"
-target="_blank"
-class="btn secondary magnetic"
->
-LinkedIn ↗
-</a>
 
 <a
-href="https://github.com/gdeepak2201-dot"
-target="_blank"
-class="btn secondary magnetic"
+    href="https://www.linkedin.com/in/deepak-govindaraj-402524274/"
+    target="_blank"
+    class="btn secondary magnetic"
 >
-GitHub ↗
+    LinkedIn ↗
+</a>
+
+
+<a
+    href="https://github.com/gdeepak2201-dot"
+    target="_blank"
+    class="btn secondary magnetic"
+>
+    GitHub ↗
 </a>
 
 </div>
@@ -2208,8 +2671,8 @@ GitHub ↗
 <div class="profile-wrap reveal">
 
 <div
-class="profile-card"
-id="profileCard"
+    class="profile-card"
+    id="profileCard"
 >
 
 
@@ -2218,9 +2681,9 @@ id="profileCard"
 <div class="avatar-ring">
 
 <img
-class="avatar"
-src="https://github.com/gdeepak2201-dot.png"
-alt="Deepak G"
+    class="avatar"
+    src="https://github.com/gdeepak2201-dot.png"
+    alt="Deepak G"
 >
 
 </div>
@@ -2232,12 +2695,14 @@ alt="Deepak G"
 Deepak G
 </div>
 
+
 <div class="profile-role">
-FORWARD DEPLOYED ENGINEER
+SOFTWARE DEVELOPER
 </div>
 
+
 <div class="company">
-Ephron Tech LLC
+Forward Deployed Engineer · Ephron Tech LLC
 </div>
 
 
@@ -2250,11 +2715,11 @@ Ephron Tech LLC
 <div class="detail">
 
 <div class="detail-label">
-FOCUS
+DEVELOPMENT
 </div>
 
 <div class="detail-value">
-Software Engineering
+Java · Node.js · PHP
 </div>
 
 </div>
@@ -2263,11 +2728,11 @@ Software Engineering
 <div class="detail">
 
 <div class="detail-label">
-SYSTEMS
+APIs
 </div>
 
 <div class="detail-value">
-Cloud & APIs
+REST · Express
 </div>
 
 </div>
@@ -2276,11 +2741,11 @@ Cloud & APIs
 <div class="detail">
 
 <div class="detail-label">
-IDENTITY
+DATABASE
 </div>
 
 <div class="detail-value">
-OAuth / OIDC
+MySQL · PostgreSQL
 </div>
 
 </div>
@@ -2289,15 +2754,40 @@ OAuth / OIDC
 <div class="detail">
 
 <div class="detail-label">
-INFRA
+CLOUD
 </div>
 
 <div class="detail-value">
-Docker / AWS
+AWS · Docker
 </div>
 
 </div>
 
+
+</div>
+
+
+<div class="mini-skills">
+
+<span class="mini-skill">
+TESTING
+</span>
+
+<span class="mini-skill">
+DEBUGGING
+</span>
+
+<span class="mini-skill">
+OAUTH
+</span>
+
+<span class="mini-skill">
+OIDC
+</span>
+
+<span class="mini-skill">
+GIT
+</span>
 
 </div>
 
@@ -2336,20 +2826,22 @@ LOCAL TIME
 01 / ABOUT
 </div>
 
+
 <h2 class="section-title">
 
-Engineering at the
+Software development
 <br>
 
-intersection of systems.
+with a systems mindset.
 
 </h2>
 
+
 <p class="section-description">
 
-I work across software, infrastructure
-and integrations — connecting technical
-requirements with practical solutions.
+I work across the software development lifecycle —
+from understanding client requirements to developing,
+testing, debugging, deploying and maintaining software.
 
 </p>
 
@@ -2361,28 +2853,37 @@ requirements with practical solutions.
 
 <p>
 
-As a Forward Deployed Engineer,
-I focus on understanding real-world
-requirements and turning them into
-working, testable and deployable
-engineering solutions.
+As a Software Developer and Forward Deployed Engineer,
+I focus on understanding real-world requirements and
+turning them into practical technical solutions.
 
 </p>
 
+
 <p>
 
-My work involves navigating existing
-systems, APIs, databases,
-authentication flows, containers
-and deployment environments.
+My work involves application development, backend
+systems, REST APIs, databases, authentication,
+containers, cloud environments and deployment workflows.
 
 </p>
 
+
 <p>
 
-I enjoy working where software
-engineering meets integration,
-infrastructure and problem solving.
+I also work with existing applications, investigate
+technical issues, reproduce problems, implement fixes
+and verify changes before delivery.
+
+</p>
+
+
+<p>
+
+I believe good software development is not only about
+writing code — it is also about understanding the
+requirement, communicating clearly, testing properly
+and delivering reliable solutions.
 
 </p>
 
@@ -2397,13 +2898,16 @@ infrastructure and problem solving.
 CURRENT ROLE
 </div>
 
+
 <h3>
 Deepak G.
 </h3>
 
+
 <div class="identity-role">
-Forward Deployed Engineer
+Software Developer
 </div>
+
 
 <div class="identity-company">
 Ephron Tech LLC
@@ -2414,11 +2918,12 @@ Ephron Tech LLC
 
 <div class="identity-bottom">
 
-SYSTEMS • CLOUD • APIs • SECURITY
+DEVELOPMENT · TESTING · INTEGRATION · DELIVERY
 
 </div>
 
 </div>
+
 
 </div>
 
@@ -2428,7 +2933,7 @@ SYSTEMS • CLOUD • APIs • SECURITY
 
 
 <!-- =========================================================
-     CAPABILITIES
+     SOFTWARE DEVELOPMENT CAPABILITIES
 ========================================================= -->
 
 <section id="capabilities">
@@ -2436,24 +2941,25 @@ SYSTEMS • CLOUD • APIs • SECURITY
 <div class="container reveal">
 
 <div class="section-label">
-02 / CAPABILITIES
+02 / SOFTWARE DEVELOPMENT
 </div>
+
 
 <h2 class="section-title">
 
-Build.
-Integrate.
+From client requirement
 <br>
 
-Solve. Deploy.
+to working software.
 
 </h2>
 
+
 <p class="section-description">
 
-Engineering capabilities focused on
-delivering practical solutions across
-the full system lifecycle.
+My software development work covers requirements,
+development, testing, debugging, integration,
+deployment and maintenance.
 
 </p>
 
@@ -2464,17 +2970,19 @@ the full system lifecycle.
 <div class="glass capability">
 
 <div class="icon">
-🔧
+💡
 </div>
 
 <h3>
-Build
+Requirement Analysis
 </h3>
 
 <p>
-Backend systems, APIs, application
-features, databases and engineering
-tooling.
+
+Understand client and business requirements,
+identify technical needs and translate them
+into practical software solutions.
+
 </p>
 
 </div>
@@ -2483,17 +2991,79 @@ tooling.
 <div class="glass capability">
 
 <div class="icon">
-🔗
+💻
 </div>
 
 <h3>
-Integrate
+Software Development
 </h3>
 
 <p>
-REST APIs, external services,
-identity providers and business
-systems.
+
+Develop application features, business logic,
+backend systems and maintainable software
+using appropriate technologies.
+
+</p>
+
+</div>
+
+
+<div class="glass capability">
+
+<div class="icon">
+🔌
+</div>
+
+<h3>
+API Development
+</h3>
+
+<p>
+
+Develop and integrate REST APIs, backend services,
+external systems and application integrations.
+
+</p>
+
+</div>
+
+
+<div class="glass capability">
+
+<div class="icon">
+🗄️
+</div>
+
+<h3>
+Database Development
+</h3>
+
+<p>
+
+Work with relational databases, queries,
+application data and database-driven systems.
+
+</p>
+
+</div>
+
+
+<div class="glass capability">
+
+<div class="icon">
+🧪
+</div>
+
+<h3>
+Testing & Validation
+</h3>
+
+<p>
+
+Test functionality, validate expected behavior,
+verify changes and identify issues before delivery.
+
 </p>
 
 </div>
@@ -2506,31 +3076,14 @@ systems.
 </div>
 
 <h3>
-Debug
+Debugging & Troubleshooting
 </h3>
 
 <p>
-Investigating applications,
-legacy systems, containers and
-deployment problems.
-</p>
 
-</div>
+Investigate errors, reproduce problems,
+identify root causes and implement reliable fixes.
 
-
-<div class="glass capability">
-
-<div class="icon">
-☁️
-</div>
-
-<h3>
-Cloud
-</h3>
-
-<p>
-AWS, containers, infrastructure
-and deployment workflows.
 </p>
 
 </div>
@@ -2543,12 +3096,14 @@ and deployment workflows.
 </div>
 
 <h3>
-Identity
+Authentication & Security
 </h3>
 
 <p>
-OAuth 2.0, OpenID Connect,
-Microsoft identity and security.
+
+Work with authentication, authorization,
+OAuth 2.0, OpenID Connect and identity systems.
+
 </p>
 
 </div>
@@ -2557,16 +3112,98 @@ Microsoft identity and security.
 <div class="glass capability">
 
 <div class="icon">
-🚀
+☁️
 </div>
 
 <h3>
-Deliver
+Deployment & DevOps
 </h3>
 
 <p>
-Requirements, implementation,
-testing, verification and deployment.
+
+Work with Docker, AWS, CI/CD pipelines,
+deployment workflows and infrastructure automation.
+
+</p>
+
+</div>
+
+
+<div class="glass capability">
+
+<div class="icon">
+📚
+</div>
+
+<h3>
+Documentation
+</h3>
+
+<p>
+
+Document application behavior, technical decisions,
+setup procedures and development workflows.
+
+</p>
+
+</div>
+
+
+<div class="glass capability">
+
+<div class="icon">
+🔍
+</div>
+
+<h3>
+Code Review
+</h3>
+
+<p>
+
+Review code for correctness, maintainability,
+scope, quality and reliable implementation.
+
+</p>
+
+</div>
+
+
+<div class="glass capability">
+
+<div class="icon">
+🤝
+</div>
+
+<h3>
+Client Collaboration
+</h3>
+
+<p>
+
+Understand client needs, discuss technical
+solutions and work toward practical outcomes.
+
+</p>
+
+</div>
+
+
+<div class="glass capability">
+
+<div class="icon">
+🔄
+</div>
+
+<h3>
+Maintenance & Support
+</h3>
+
+<p>
+
+Maintain existing applications, investigate
+issues and safely improve software systems.
+
 </p>
 
 </div>
@@ -2580,7 +3217,7 @@ testing, verification and deployment.
 
 
 <!-- =========================================================
-     TECH STACK
+     TECHNICAL SKILLS
 ========================================================= -->
 
 <section id="stack">
@@ -2588,20 +3225,379 @@ testing, verification and deployment.
 <div class="container reveal">
 
 <div class="section-label">
-03 / TECHNOLOGY
+03 / TECHNICAL SKILLS
 </div>
 
+
 <h2 class="section-title">
-Engineering stack.
+
+Technical
+<br>
+
+toolbox.
+
 </h2>
+
 
 <p class="section-description">
 
-Technology I work with across
-application development,
-infrastructure and integration.
+Technologies and engineering practices I use
+across software development and system delivery.
 
 </p>
+
+
+<div class="skills-container">
+
+
+<div class="glass skill-box">
+
+<div class="skill-title">
+
+<h3>
+Programming
+</h3>
+
+<span>
+01
+</span>
+
+</div>
+
+
+<div class="skill-tags">
+
+<span class="skill-tag">
+Java
+</span>
+
+<span class="skill-tag">
+JavaScript
+</span>
+
+<span class="skill-tag">
+PHP
+</span>
+
+<span class="skill-tag">
+Bash
+</span>
+
+</div>
+
+</div>
+
+
+<div class="glass skill-box">
+
+<div class="skill-title">
+
+<h3>
+Backend & APIs
+</h3>
+
+<span>
+02
+</span>
+
+</div>
+
+
+<div class="skill-tags">
+
+<span class="skill-tag">
+Node.js
+</span>
+
+<span class="skill-tag">
+Express
+</span>
+
+<span class="skill-tag">
+REST APIs
+</span>
+
+<span class="skill-tag">
+Backend Development
+</span>
+
+</div>
+
+</div>
+
+
+<div class="glass skill-box">
+
+<div class="skill-title">
+
+<h3>
+Databases
+</h3>
+
+<span>
+03
+</span>
+
+</div>
+
+
+<div class="skill-tags">
+
+<span class="skill-tag">
+MySQL
+</span>
+
+<span class="skill-tag">
+PostgreSQL
+</span>
+
+<span class="skill-tag">
+SQL
+</span>
+
+<span class="skill-tag">
+Database Design
+</span>
+
+</div>
+
+</div>
+
+
+<div class="glass skill-box">
+
+<div class="skill-title">
+
+<h3>
+Testing & Quality
+</h3>
+
+<span>
+04
+</span>
+
+</div>
+
+
+<div class="skill-tags">
+
+<span class="skill-tag">
+Functional Testing
+</span>
+
+<span class="skill-tag">
+Validation
+</span>
+
+<span class="skill-tag">
+Debugging
+</span>
+
+<span class="skill-tag">
+Troubleshooting
+</span>
+
+<span class="skill-tag">
+Code Review
+</span>
+
+</div>
+
+</div>
+
+
+<div class="glass skill-box">
+
+<div class="skill-title">
+
+<h3>
+Security & Identity
+</h3>
+
+<span>
+05
+</span>
+
+</div>
+
+
+<div class="skill-tags">
+
+<span class="skill-tag">
+OAuth 2.0
+</span>
+
+<span class="skill-tag">
+OpenID Connect
+</span>
+
+<span class="skill-tag">
+Microsoft Identity
+</span>
+
+<span class="skill-tag">
+Authentication
+</span>
+
+<span class="skill-tag">
+Authorization
+</span>
+
+</div>
+
+</div>
+
+
+<div class="glass skill-box">
+
+<div class="skill-title">
+
+<h3>
+Cloud & DevOps
+</h3>
+
+<span>
+06
+</span>
+
+</div>
+
+
+<div class="skill-tags">
+
+<span class="skill-tag">
+AWS
+</span>
+
+<span class="skill-tag">
+Docker
+</span>
+
+<span class="skill-tag">
+Terraform
+</span>
+
+<span class="skill-tag">
+GitHub Actions
+</span>
+
+<span class="skill-tag">
+Linux
+</span>
+
+</div>
+
+</div>
+
+
+<div class="glass skill-box">
+
+<div class="skill-title">
+
+<h3>
+Development Tools
+</h3>
+
+<span>
+07
+</span>
+
+</div>
+
+
+<div class="skill-tags">
+
+<span class="skill-tag">
+Git
+</span>
+
+<span class="skill-tag">
+GitHub
+</span>
+
+<span class="skill-tag">
+VS Code
+</span>
+
+<span class="skill-tag">
+CLI
+</span>
+
+</div>
+
+</div>
+
+
+<div class="glass skill-box">
+
+<div class="skill-title">
+
+<h3>
+Engineering Practices
+</h3>
+
+<span>
+08
+</span>
+
+</div>
+
+
+<div class="skill-tags">
+
+<span class="skill-tag">
+Requirement Analysis
+</span>
+
+<span class="skill-tag">
+Documentation
+</span>
+
+<span class="skill-tag">
+CI/CD
+</span>
+
+<span class="skill-tag">
+Integration
+</span>
+
+<span class="skill-tag">
+Maintenance
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     TECHNOLOGY ORBIT
+========================================================= -->
+
+<section>
+
+<div class="container reveal">
+
+<div class="section-label">
+04 / TECHNOLOGY
+</div>
+
+
+<h2 class="section-title">
+
+Technologies around
+<br>
+
+the engineering core.
+
+</h2>
 
 
 <div class="orbit-container">
@@ -2651,9 +3647,9 @@ GIT
 
 <div class="orbit-center">
 
-ENGINEERING
+SOFTWARE
 <br>
-CORE
+ENGINEERING
 
 </div>
 
@@ -2666,7 +3662,7 @@ CORE
 
 
 <!-- =========================================================
-     ENGINEERING FLOW
+     ENGINEERING PROCESS
 ========================================================= -->
 
 <section>
@@ -2674,22 +3670,25 @@ CORE
 <div class="container reveal">
 
 <div class="section-label">
-04 / ENGINEERING PROCESS
+05 / DEVELOPMENT PROCESS
 </div>
+
 
 <h2 class="section-title">
 
-From problem
+From requirement
 <br>
-to production.
+
+to delivery.
 
 </h2>
 
+
 <p class="section-description">
 
-A structured approach to understanding
-systems, solving problems and delivering
-verified solutions.
+A practical development workflow focused on
+understanding requirements, building the solution,
+testing it and delivering reliable software.
 
 </p>
 
@@ -2700,11 +3699,11 @@ verified solutions.
 <div class="flow-step">
 
 <div class="flow-icon">
-🧩
+📋
 </div>
 
 <h3>
-UNDERSTAND
+REQUIREMENT
 </h3>
 
 </div>
@@ -2713,11 +3712,11 @@ UNDERSTAND
 <div class="flow-step">
 
 <div class="flow-icon">
-🔍
+🧠
 </div>
 
 <h3>
-INVESTIGATE
+ANALYZE
 </h3>
 
 </div>
@@ -2726,11 +3725,11 @@ INVESTIGATE
 <div class="flow-step">
 
 <div class="flow-icon">
-🔗
+💻
 </div>
 
 <h3>
-INTEGRATE
+DEVELOP
 </h3>
 
 </div>
@@ -2743,7 +3742,20 @@ INTEGRATE
 </div>
 
 <h3>
-VERIFY
+TEST
+</h3>
+
+</div>
+
+
+<div class="flow-step">
+
+<div class="flow-icon">
+🔍
+</div>
+
+<h3>
+DEBUG
 </h3>
 
 </div>
@@ -2756,7 +3768,7 @@ VERIFY
 </div>
 
 <h3>
-DEPLOY
+DELIVER
 </h3>
 
 </div>
@@ -2778,24 +3790,33 @@ DEPLOY
 <div class="container reveal">
 
 <div class="section-label">
-05 / SYSTEM
+06 / ENGINEERING MODE
 </div>
 
+
 <h2 class="section-title">
-Engineering mindset.
+
+Inside the
+<br>
+
+development workflow.
+
 </h2>
 
 
 <div class="terminal">
 
+
 <div class="terminal-header">
 
 <span class="terminal-dot"></span>
+
 <span class="terminal-dot"></span>
+
 <span class="terminal-dot"></span>
 
 <span class="terminal-title">
-deepak@engineering ~
+deepak@software-engineer ~
 </span>
 
 </div>
@@ -2803,66 +3824,144 @@ deepak@engineering ~
 
 <div class="terminal-body">
 
+
 <div>
 
 <span class="green">
-deepak@engineering
+deepak@software-engineer
 </span>:~$
 
 <span class="white">
-./solve-problem.sh
+./develop.sh
 </span>
 
 </div>
 
 
 <div>
-&gt; Initializing engineering workflow...
+&gt; Reading client requirement...
 </div>
+
 
 <br>
 
 
 <div>
-<span class="green">[✓]</span>
+
+<span class="green">
+[✓]
+</span>
+
 Requirement understood
+
 </div>
 
-<div>
-<span class="green">[✓]</span>
-Existing system investigated
-</div>
 
 <div>
-<span class="green">[✓]</span>
-Integration points identified
+
+<span class="green">
+[✓]
+</span>
+
+Technical approach identified
+
 </div>
 
-<div>
-<span class="green">[✓]</span>
-Solution implemented
-</div>
 
 <div>
-<span class="green">[✓]</span>
-Tests executed
+
+<span class="green">
+[✓]
+</span>
+
+Application changes implemented
+
 </div>
 
-<div>
-<span class="green">[✓]</span>
-Changes verified
-</div>
 
 <div>
-<span class="green">[✓]</span>
-Ready for deployment
+
+<span class="green">
+[✓]
+</span>
+
+API and database behavior checked
+
 </div>
+
+
+<div>
+
+<span class="green">
+[✓]
+</span>
+
+Functional testing completed
+
+</div>
+
+
+<div>
+
+<span class="green">
+[✓]
+</span>
+
+Issues investigated and fixed
+
+</div>
+
+
+<div>
+
+<span class="green">
+[✓]
+</span>
+
+Code reviewed
+
+</div>
+
+
+<div>
+
+<span class="green">
+[✓]
+</span>
+
+Documentation updated
+
+</div>
+
+
+<div>
+
+<span class="green">
+[✓]
+</span>
+
+Solution verified
+
+</div>
+
+
+<div>
+
+<span class="green">
+[✓]
+</span>
+
+Ready for delivery
+
+</div>
+
 
 <br>
+
 
 <div class="blue">
 
-&gt; SYSTEM STATUS:
+&gt; SOFTWARE STATUS:
 
 <span class="white">
 READY
@@ -2870,9 +3969,10 @@ READY
 
 </div>
 
+
 <div>
 
-&gt; ENGINEERING STATUS:
+&gt; DEVELOPMENT STATUS:
 
 <span class="green">
 ACTIVE
@@ -2880,17 +3980,20 @@ ACTIVE
 
 </div>
 
+
 <br>
+
 
 <div>
 
 <span class="green">
-deepak@engineering
+deepak@software-engineer
 </span>:~$
 
 <span class="cursor-block"></span>
 
 </div>
+
 
 </div>
 
@@ -2902,7 +4005,7 @@ deepak@engineering
 
 
 <!-- =========================================================
-     PROJECTS
+     SOFTWARE ENGINEERING AREAS
 ========================================================= -->
 
 <section id="projects">
@@ -2910,18 +4013,21 @@ deepak@engineering
 <div class="container reveal">
 
 <div class="section-label">
-06 / WORK
+07 / SOFTWARE ENGINEERING
 </div>
 
+
 <h2 class="section-title">
-Engineering projects.
+
+What I work on.
+
 </h2>
+
 
 <p class="section-description">
 
-Selected areas where software,
-infrastructure and integration
-come together.
+Areas of software engineering where I design,
+develop, test, integrate and maintain solutions.
 
 </p>
 
@@ -2932,26 +4038,33 @@ come together.
 <div class="glass project">
 
 <div class="project-number">
-PROJECT / 01
+01 / REQUIREMENTS
 </div>
 
+
 <h3>
-System Integration
+Client Requirements
 </h3>
+
 
 <p>
 
-Connecting applications,
-APIs, authentication systems
-and external services.
+Understand client needs, business requirements,
+expected behavior and technical constraints
+before implementation.
 
 </p>
 
+
 <div class="project-tags">
 
-<span class="tag">REST</span>
-<span class="tag">API</span>
-<span class="tag">OAuth</span>
+<span class="tag">
+ANALYSIS
+</span>
+
+<span class="tag">
+REQUIREMENTS
+</span>
 
 </div>
 
@@ -2961,26 +4074,37 @@ and external services.
 <div class="glass project">
 
 <div class="project-number">
-PROJECT / 02
+02 / DEVELOPMENT
 </div>
 
+
 <h3>
-Cloud Infrastructure
+Application Development
 </h3>
+
 
 <p>
 
-Containerized development,
-infrastructure automation
-and cloud deployment workflows.
+Develop application features, business logic,
+backend functionality and maintainable software
+based on requirements.
 
 </p>
 
+
 <div class="project-tags">
 
-<span class="tag">AWS</span>
-<span class="tag">Docker</span>
-<span class="tag">Terraform</span>
+<span class="tag">
+JAVA
+</span>
+
+<span class="tag">
+NODE.JS
+</span>
+
+<span class="tag">
+PHP
+</span>
 
 </div>
 
@@ -2990,26 +4114,268 @@ and cloud deployment workflows.
 <div class="glass project">
 
 <div class="project-number">
-PROJECT / 03
+03 / API
 </div>
 
+
 <h3>
-Legacy Systems
+API & Integration
 </h3>
+
 
 <p>
 
-Understanding, debugging and
-modernizing existing application
-environments.
+Build and integrate REST APIs, backend services,
+authentication systems and external applications.
 
 </p>
 
+
 <div class="project-tags">
 
-<span class="tag">PHP</span>
-<span class="tag">MySQL</span>
-<span class="tag">Linux</span>
+<span class="tag">
+REST
+</span>
+
+<span class="tag">
+EXPRESS
+</span>
+
+<span class="tag">
+OAUTH
+</span>
+
+</div>
+
+</div>
+
+
+<div class="glass project">
+
+<div class="project-number">
+04 / DATABASE
+</div>
+
+
+<h3>
+Database Engineering
+</h3>
+
+
+<p>
+
+Work with application data, relational databases,
+queries and database-backed software systems.
+
+</p>
+
+
+<div class="project-tags">
+
+<span class="tag">
+MYSQL
+</span>
+
+<span class="tag">
+POSTGRESQL
+</span>
+
+<span class="tag">
+SQL
+</span>
+
+</div>
+
+</div>
+
+
+<div class="glass project">
+
+<div class="project-number">
+05 / QUALITY
+</div>
+
+
+<h3>
+Testing & Debugging
+</h3>
+
+
+<p>
+
+Test functionality, reproduce issues, investigate
+root causes and verify that implementations behave
+as expected.
+
+</p>
+
+
+<div class="project-tags">
+
+<span class="tag">
+TESTING
+</span>
+
+<span class="tag">
+DEBUGGING
+</span>
+
+<span class="tag">
+VALIDATION
+</span>
+
+</div>
+
+</div>
+
+
+<div class="glass project">
+
+<div class="project-number">
+06 / SECURITY
+</div>
+
+
+<h3>
+Authentication & Security
+</h3>
+
+
+<p>
+
+Work with authentication, authorization, identity
+providers and secure application workflows.
+
+</p>
+
+
+<div class="project-tags">
+
+<span class="tag">
+OAUTH 2.0
+</span>
+
+<span class="tag">
+OIDC
+</span>
+
+<span class="tag">
+SSO
+</span>
+
+</div>
+
+</div>
+
+
+<div class="glass project">
+
+<div class="project-number">
+07 / DELIVERY
+</div>
+
+
+<h3>
+Deployment & DevOps
+</h3>
+
+
+<p>
+
+Work with containers, CI/CD, cloud environments
+and deployment workflows.
+
+</p>
+
+
+<div class="project-tags">
+
+<span class="tag">
+DOCKER
+</span>
+
+<span class="tag">
+AWS
+</span>
+
+<span class="tag">
+CI/CD
+</span>
+
+</div>
+
+</div>
+
+
+<div class="glass project">
+
+<div class="project-number">
+08 / MAINTENANCE
+</div>
+
+
+<h3>
+Maintenance & Support
+</h3>
+
+
+<p>
+
+Maintain existing applications, investigate
+production issues and safely improve software
+systems.
+
+</p>
+
+
+<div class="project-tags">
+
+<span class="tag">
+SUPPORT
+</span>
+
+<span class="tag">
+LEGACY
+</span>
+
+<span class="tag">
+MAINTENANCE
+</span>
+
+</div>
+
+</div>
+
+
+<div class="glass project">
+
+<div class="project-number">
+09 / DOCUMENTATION
+</div>
+
+
+<h3>
+Technical Documentation
+</h3>
+
+
+<p>
+
+Document technical decisions, application behavior,
+development workflows, setup and operational knowledge.
+
+</p>
+
+
+<div class="project-tags">
+
+<span class="tag">
+DOCUMENTATION
+</span>
+
+<span class="tag">
+WORKFLOW
+</span>
 
 </div>
 
@@ -3024,7 +4390,7 @@ environments.
 
 
 <!-- =========================================================
-     METRICS
+     ENGINEER PROFILE
 ========================================================= -->
 
 <section>
@@ -3032,12 +4398,24 @@ environments.
 <div class="container reveal">
 
 <div class="section-label">
-07 / ENGINEERING METRICS
+08 / ENGINEER PROFILE
 </div>
 
+
 <h2 class="section-title">
-Always learning.
+
+How I contribute.
+
 </h2>
+
+
+<p class="section-description">
+
+Software development is more than writing code.
+It includes understanding the problem, building the
+solution, validating the result and supporting it.
+
+</p>
 
 
 <div class="stats">
@@ -3045,15 +4423,12 @@ Always learning.
 
 <div class="glass stat">
 
-<div
-class="stat-number"
-data-target="1"
->
-0
+<div class="stat-number">
+01
 </div>
 
 <div class="stat-label">
-ENGINEERING ROLE
+UNDERSTAND REQUIREMENTS
 </div>
 
 </div>
@@ -3061,15 +4436,12 @@ ENGINEERING ROLE
 
 <div class="glass stat">
 
-<div
-class="stat-number"
-data-target="24"
->
-0
+<div class="stat-number">
+02
 </div>
 
 <div class="stat-label">
-HOURS / DAY TO IMPROVE
+DEVELOP SOLUTIONS
 </div>
 
 </div>
@@ -3077,15 +4449,12 @@ HOURS / DAY TO IMPROVE
 
 <div class="glass stat">
 
-<div
-class="stat-number"
-data-target="100"
->
-0
+<div class="stat-number">
+03
 </div>
 
 <div class="stat-label">
-COMMITMENT %
+TEST & DEBUG
 </div>
 
 </div>
@@ -3093,15 +4462,12 @@ COMMITMENT %
 
 <div class="glass stat">
 
-<div
-class="stat-number"
-data-target="∞"
->
-∞
+<div class="stat-number">
+04
 </div>
 
 <div class="stat-label">
-SYSTEMS TO LEARN
+DELIVER & MAINTAIN
 </div>
 
 </div>
@@ -3115,7 +4481,7 @@ SYSTEMS TO LEARN
 
 
 <!-- =========================================================
-     GITHUB
+     SOFTWARE DEVELOPMENT LIFECYCLE
 ========================================================= -->
 
 <section>
@@ -3123,35 +4489,273 @@ SYSTEMS TO LEARN
 <div class="container reveal">
 
 <div class="section-label">
-08 / GITHUB
+09 / DEVELOPMENT LIFECYCLE
 </div>
 
+
 <h2 class="section-title">
-Open source activity.
+
+A complete software
+<br>
+
+development lifecycle.
+
 </h2>
 
-<p class="section-description">
 
-Explore my repositories and engineering
-activity on GitHub.
+<div class="lifecycle">
 
+
+<div class="glass lifecycle-card">
+
+<div class="lifecycle-number">
+01
+</div>
+
+<div class="lifecycle-icon">
+📋
+</div>
+
+<h3>
+Requirement
+</h3>
+
+<p>
+Understand the client and business need.
 </p>
 
+</div>
 
-<div class="glass github-panel">
 
-<a
-href="https://github.com/gdeepak2201-dot"
-target="_blank"
->
+<div class="glass lifecycle-card">
 
-<img
-class="github-image"
-src="https://github-readme-activity-graph.vercel.app/graph?username=gdeepak2201-dot&bg_color=00000000&color=22d3ee&line=3b82f6&point=ffffff&area=true&hide_border=true"
-alt="GitHub Activity"
->
+<div class="lifecycle-number">
+02
+</div>
 
-</a>
+<div class="lifecycle-icon">
+🧠
+</div>
+
+<h3>
+Planning
+</h3>
+
+<p>
+Identify the technical approach and scope.
+</p>
+
+</div>
+
+
+<div class="glass lifecycle-card">
+
+<div class="lifecycle-number">
+03
+</div>
+
+<div class="lifecycle-icon">
+💻
+</div>
+
+<h3>
+Development
+</h3>
+
+<p>
+Build the required application functionality.
+</p>
+
+</div>
+
+
+<div class="glass lifecycle-card">
+
+<div class="lifecycle-number">
+04
+</div>
+
+<div class="lifecycle-icon">
+🧪
+</div>
+
+<h3>
+Testing
+</h3>
+
+<p>
+Validate behavior and identify issues.
+</p>
+
+</div>
+
+
+<div class="glass lifecycle-card">
+
+<div class="lifecycle-number">
+05
+</div>
+
+<div class="lifecycle-icon">
+🚀
+</div>
+
+<h3>
+Delivery
+</h3>
+
+<p>
+Deploy, document and maintain the solution.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     ENGINEERING PHILOSOPHY
+========================================================= -->
+
+<section>
+
+<div class="container reveal">
+
+<div class="section-label">
+10 / ENGINEERING PHILOSOPHY
+</div>
+
+
+<h2 class="section-title">
+
+Understand.
+<br>
+
+Build.
+Verify.
+<br>
+
+Improve.
+
+</h2>
+
+
+<div class="terminal">
+
+
+<div class="terminal-header">
+
+<span class="terminal-dot"></span>
+<span class="terminal-dot"></span>
+<span class="terminal-dot"></span>
+
+<span class="terminal-title">
+engineering-principles.txt
+</span>
+
+</div>
+
+
+<div class="terminal-body">
+
+
+<div>
+
+<span class="purple">
+01
+</span>
+
+Understand the requirement before writing code.
+
+</div>
+
+
+<div>
+
+<span class="purple">
+02
+</span>
+
+Build solutions that solve the actual problem.
+
+</div>
+
+
+<div>
+
+<span class="purple">
+03
+</span>
+
+Test functionality instead of assuming it works.
+
+</div>
+
+
+<div>
+
+<span class="purple">
+04
+</span>
+
+Debug systematically and identify root causes.
+
+</div>
+
+
+<div>
+
+<span class="purple">
+05
+</span>
+
+Review changes for correctness and maintainability.
+
+</div>
+
+
+<div>
+
+<span class="purple">
+06
+</span>
+
+Document important technical decisions.
+
+</div>
+
+
+<div>
+
+<span class="purple">
+07
+</span>
+
+Improve the system continuously.
+
+</div>
+
+
+<br>
+
+
+<div class="blue">
+
+&gt; PRINCIPLE:
+
+<span class="green">
+BUILD → VERIFY → IMPROVE
+</span>
+
+</div>
+
+
+</div>
 
 </div>
 
@@ -3165,18 +4769,20 @@ alt="GitHub Activity"
 ========================================================= -->
 
 <section
-id="contact"
-class="contact"
+    id="contact"
+    class="contact"
 >
 
 <div class="container reveal">
 
+
 <div class="section-label">
-09 / CONNECT
+11 / CONNECT
 </div>
 
 
 <div class="glass contact-box">
+
 
 <h2>
 
@@ -3190,10 +4796,10 @@ something useful.
 
 <p>
 
-Interested in engineering,
-system integration, APIs,
-cloud infrastructure or solving
-difficult technical problems?
+Interested in software development,
+system integration, APIs, cloud
+infrastructure or solving technical
+problems?
 
 </p>
 
@@ -3202,9 +4808,9 @@ difficult technical problems?
 
 
 <a
-href="https://www.linkedin.com/in/deepak-govindaraj-402524274/"
-target="_blank"
-class="btn primary magnetic"
+    href="https://www.linkedin.com/in/deepak-govindaraj-402524274/"
+    target="_blank"
+    class="btn primary magnetic"
 >
 
 Connect on LinkedIn ↗
@@ -3213,9 +4819,9 @@ Connect on LinkedIn ↗
 
 
 <a
-href="https://github.com/gdeepak2201-dot"
-target="_blank"
-class="btn secondary magnetic"
+    href="https://github.com/gdeepak2201-dot"
+    target="_blank"
+    class="btn secondary magnetic"
 >
 
 View GitHub ↗
@@ -3224,8 +4830,19 @@ View GitHub ↗
 
 
 <a
-href="mailto:deepakg@ephrontech.com"
-class="btn secondary magnetic"
+    href="https://gdeepak2201-dot.github.io/portfolio/"
+    target="_blank"
+    class="btn secondary magnetic"
+>
+
+Portfolio ↗
+
+</a>
+
+
+<a
+    href="mailto:deepakg@ephrontech.com"
+    class="btn secondary magnetic"
 >
 
 Email Me ↗
@@ -3251,9 +4868,11 @@ Email Me ↗
 <div class="container">
 
 DEEPAK G
+
 <br>
 
-FORWARD DEPLOYED ENGINEER
+SOFTWARE DEVELOPER · FORWARD DEPLOYED ENGINEER
+
 <br>
 
 EPHRON TECH LLC
@@ -3261,7 +4880,7 @@ EPHRON TECH LLC
 <br><br>
 
 <span>
-BUILD • INTEGRATE • DEBUG • VERIFY • DEPLOY
+REQUIREMENTS • DEVELOPMENT • TESTING • DEBUGGING • DELIVERY
 </span>
 
 <br><br>
@@ -3273,17 +4892,22 @@ BUILD • INTEGRATE • DEBUG • VERIFY • DEPLOY
 </footer>
 
 
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
 <script>
+
 
 /* =========================================================
    CUSTOM CURSOR
 ========================================================= */
 
 const cursor =
-document.querySelector(".cursor");
+    document.querySelector(".cursor");
 
 const cursorRing =
-document.querySelector(".cursor-ring");
+    document.querySelector(".cursor-ring");
 
 let mouseX = 0;
 let mouseY = 0;
@@ -3291,20 +4915,23 @@ let mouseY = 0;
 let ringX = 0;
 let ringY = 0;
 
+
 document.addEventListener(
-"mousemove",
-e => {
+    "mousemove",
+    e => {
 
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
 
-    cursor.style.left =
-        mouseX + "px";
+        cursor.style.left =
+            mouseX + "px";
 
-    cursor.style.top =
-        mouseY + "px";
+        cursor.style.top =
+            mouseY + "px";
 
-});
+    }
+);
+
 
 function animateCursor() {
 
@@ -3325,48 +4952,56 @@ function animateCursor() {
     );
 }
 
+
 animateCursor();
 
 
 /* =========================================================
-   HOVER CURSOR
+   CURSOR HOVER
 ========================================================= */
 
 document
-.querySelectorAll("a, button, .capability, .project")
-.forEach(element => {
+    .querySelectorAll(
+        "a, button, .capability, .project, .skill-tag"
+    )
+    .forEach(
+        element => {
 
-    element.addEventListener(
-        "mouseenter",
-        () => {
+            element.addEventListener(
+                "mouseenter",
+                () => {
 
-            cursorRing.style.width =
-                "55px";
+                    cursorRing.style.width =
+                        "55px";
 
-            cursorRing.style.height =
-                "55px";
+                    cursorRing.style.height =
+                        "55px";
 
-            cursorRing.style.borderColor =
-                "rgba(34,211,238,.8)";
+                    cursorRing.style.borderColor =
+                        "rgba(34,211,238,.8)";
+
+                }
+            );
+
+
+            element.addEventListener(
+                "mouseleave",
+                () => {
+
+                    cursorRing.style.width =
+                        "36px";
+
+                    cursorRing.style.height =
+                        "36px";
+
+                    cursorRing.style.borderColor =
+                        "rgba(34,211,238,.55)";
+
+                }
+            );
+
         }
     );
-
-    element.addEventListener(
-        "mouseleave",
-        () => {
-
-            cursorRing.style.width =
-                "36px";
-
-            cursorRing.style.height =
-                "36px";
-
-            cursorRing.style.borderColor =
-                "rgba(34,211,238,.55)";
-        }
-    );
-
-});
 
 
 /* =========================================================
@@ -3374,12 +5009,15 @@ document
 ========================================================= */
 
 const canvas =
-document.getElementById("particles");
+    document.getElementById(
+        "particles"
+    );
 
 const ctx =
-canvas.getContext("2d");
+    canvas.getContext("2d");
 
 let particles = [];
+
 
 function resizeCanvas() {
 
@@ -3390,11 +5028,13 @@ function resizeCanvas() {
         window.innerHeight;
 }
 
+
 resizeCanvas();
 
+
 window.addEventListener(
-"resize",
-resizeCanvas
+    "resize",
+    resizeCanvas
 );
 
 
@@ -3419,13 +5059,16 @@ class Particle {
             * .35;
 
         this.size =
-            Math.random() * 1.6 + .4;
+            Math.random() *
+            1.6 + .4;
     }
+
 
     update() {
 
         this.x += this.vx;
         this.y += this.vy;
+
 
         if (
             this.x < 0 ||
@@ -3433,7 +5076,9 @@ class Particle {
         ) {
 
             this.vx *= -1;
+
         }
+
 
         if (
             this.y < 0 ||
@@ -3441,12 +5086,16 @@ class Particle {
         ) {
 
             this.vy *= -1;
+
         }
+
     }
+
 
     draw() {
 
         ctx.beginPath();
+
 
         ctx.arc(
             this.x,
@@ -3456,11 +5105,15 @@ class Particle {
             Math.PI * 2
         );
 
+
         ctx.fillStyle =
             "rgba(34,211,238,.55)";
 
+
         ctx.fill();
+
     }
+
 }
 
 
@@ -3473,6 +5126,7 @@ for (
     particles.push(
         new Particle()
     );
+
 }
 
 
@@ -3485,10 +5139,12 @@ function particleAnimation() {
         canvas.height
     );
 
+
     particles.forEach(
         particle =>
             particle.update()
     );
+
 
     particles.forEach(
         particle =>
@@ -3522,44 +5178,57 @@ function particleAnimation() {
                     dy * dy
                 );
 
+
             if (
                 distance < 120
             ) {
 
                 ctx.beginPath();
 
+
                 ctx.strokeStyle =
                     `rgba(
                         34,
                         211,
                         238,
-                        ${(
-                            1 -
-                            distance / 120
-                        ) * .08}
+                        ${
+                            (
+                                1 -
+                                distance / 120
+                            ) * .08
+                        }
                     )`;
 
+
                 ctx.lineWidth = .5;
+
 
                 ctx.moveTo(
                     particles[i].x,
                     particles[i].y
                 );
 
+
                 ctx.lineTo(
                     particles[j].x,
                     particles[j].y
                 );
 
+
                 ctx.stroke();
+
             }
+
         }
+
     }
+
 
     requestAnimationFrame(
         particleAnimation
     );
 }
+
 
 particleAnimation();
 
@@ -3569,25 +5238,31 @@ particleAnimation();
 ========================================================= */
 
 const role =
-document.getElementById(
-    "typingRole"
-);
+    document.getElementById(
+        "typingRole"
+    );
+
 
 const roles = [
 
-    "@ Ephron Tech LLC",
+    "Software Developer",
 
-    "Software Engineering",
+    "Forward Deployed Engineer",
 
-    "Cloud & Infrastructure",
+    "Backend & API Developer",
 
-    "API & System Integration",
+    "Application Developer",
 
-    "Authentication & Security",
+    "Software Integration Engineer",
 
-    "Build • Integrate • Debug • Deploy"
+    "Testing & Debugging",
+
+    "Cloud & DevOps",
+
+    "Authentication & Identity"
 
 ];
+
 
 let roleIndex = 0;
 
@@ -3606,11 +5281,13 @@ function typeRole() {
 
         charIndex++;
 
+
         role.textContent =
             current.substring(
                 0,
                 charIndex
             );
+
 
         if (
             charIndex >=
@@ -3619,17 +5296,23 @@ function typeRole() {
 
             deleting = true;
 
+
             setTimeout(
                 typeRole,
                 1400
             );
 
+
             return;
+
         }
 
-    } else {
+    }
+
+    else {
 
         charIndex--;
+
 
         role.textContent =
             current.substring(
@@ -3637,25 +5320,32 @@ function typeRole() {
                 charIndex
             );
 
+
         if (
             charIndex <= 0
         ) {
 
             deleting = false;
 
+
             roleIndex =
                 (
                     roleIndex + 1
                 ) %
                 roles.length;
+
         }
+
     }
+
 
     setTimeout(
         typeRole,
         deleting ? 40 : 75
     );
+
 }
+
 
 typeRole();
 
@@ -3669,6 +5359,7 @@ function updateClock() {
     const now =
         new Date();
 
+
     const time =
         now.toLocaleTimeString(
             "en-IN",
@@ -3680,13 +5371,17 @@ function updateClock() {
             }
         );
 
+
     document
         .getElementById("clock")
         .textContent =
         time;
+
 }
 
+
 updateClock();
+
 
 setInterval(
     updateClock,
@@ -3699,9 +5394,10 @@ setInterval(
 ========================================================= */
 
 const profile =
-document.getElementById(
-    "profileCard"
-);
+    document.getElementById(
+        "profileCard"
+    );
+
 
 profile.addEventListener(
     "mousemove",
@@ -3710,27 +5406,38 @@ profile.addEventListener(
         const rect =
             profile.getBoundingClientRect();
 
+
         const x =
             e.clientX -
             rect.left;
+
 
         const y =
             e.clientY -
             rect.top;
 
+
         const centerX =
             rect.width / 2;
+
 
         const centerY =
             rect.height / 2;
 
+
         const rotateX =
-            ((y - centerY) /
-            centerY) * -5;
+            (
+                (y - centerY) /
+                centerY
+            ) * -5;
+
 
         const rotateY =
-            ((x - centerX) /
-            centerX) * 5;
+            (
+                (x - centerX) /
+                centerX
+            ) * 5;
+
 
         profile.style.transform =
             `
@@ -3739,8 +5446,10 @@ profile.addEventListener(
             rotateY(${rotateY}deg)
             translateY(-5px)
             `;
+
     }
 );
+
 
 profile.addEventListener(
     "mouseleave",
@@ -3748,6 +5457,7 @@ profile.addEventListener(
 
         profile.style.transform =
             "";
+
     }
 );
 
@@ -3757,46 +5467,56 @@ profile.addEventListener(
 ========================================================= */
 
 document
-.querySelectorAll(".magnetic")
-.forEach(button => {
+    .querySelectorAll(
+        ".magnetic"
+    )
+    .forEach(
+        button => {
 
-    button.addEventListener(
-        "mousemove",
-        e => {
+            button.addEventListener(
+                "mousemove",
+                e => {
 
-            const rect =
-                button.getBoundingClientRect();
+                    const rect =
+                        button.getBoundingClientRect();
 
-            const x =
-                e.clientX -
-                rect.left -
-                rect.width / 2;
 
-            const y =
-                e.clientY -
-                rect.top -
-                rect.height / 2;
+                    const x =
+                        e.clientX -
+                        rect.left -
+                        rect.width / 2;
 
-            button.style.transform =
-                `
-                translate(
-                    ${x * .12}px,
-                    ${y * .12}px
-                )
-                `;
+
+                    const y =
+                        e.clientY -
+                        rect.top -
+                        rect.height / 2;
+
+
+                    button.style.transform =
+                        `
+                        translate(
+                            ${x * .12}px,
+                            ${y * .12}px
+                        )
+                        `;
+
+                }
+            );
+
+
+            button.addEventListener(
+                "mouseleave",
+                () => {
+
+                    button.style.transform =
+                        "";
+
+                }
+            );
+
         }
     );
-
-    button.addEventListener(
-        "mouseleave",
-        () => {
-
-            button.style.transform =
-                "";
-        }
-    );
-
-});
 
 
 /* =========================================================
@@ -3804,144 +5524,40 @@ document
 ========================================================= */
 
 const observer =
-new IntersectionObserver(
-    entries => {
+    new IntersectionObserver(
+        entries => {
 
-        entries.forEach(
-            entry => {
+            entries.forEach(
+                entry => {
 
-                if (
-                    entry.isIntersecting
-                ) {
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-                    entry.target
-                        .classList
-                        .add("active");
+                        entry.target
+                            .classList
+                            .add("active");
+
+                    }
 
                 }
+            );
 
-            }
-        );
-
-    },
-    {
-        threshold: .12
-    }
-);
+        },
+        {
+            threshold: .12
+        }
+    );
 
 
 document
-.querySelectorAll(".reveal")
-.forEach(
-    element =>
-        observer.observe(element)
-);
-
-
-/* =========================================================
-   COUNTER ANIMATION
-========================================================= */
-
-const counters =
-document.querySelectorAll(
-    ".stat-number[data-target]"
-);
-
-const counterObserver =
-new IntersectionObserver(
-    entries => {
-
-        entries.forEach(
-            entry => {
-
-                if (
-                    !entry.isIntersecting
-                ) {
-                    return;
-                }
-
-                const element =
-                    entry.target;
-
-                const target =
-                    element
-                    .dataset
-                    .target;
-
-                if (
-                    target === "∞"
-                ) {
-                    return;
-                }
-
-                let current = 0;
-
-                const number =
-                    parseInt(target);
-
-                const increment =
-                    Math.max(
-                        1,
-                        Math.ceil(
-                            number / 40
-                        )
-                    );
-
-                const timer =
-                    setInterval(
-                        () => {
-
-                            current +=
-                                increment;
-
-                            if (
-                                current >=
-                                number
-                            ) {
-
-                                current =
-                                    number;
-
-                                clearInterval(
-                                    timer
-                                );
-                            }
-
-                            element
-                                .textContent =
-                                current;
-
-                        },
-                        35
-                    );
-
-                counterObserver
-                    .unobserve(element);
-            }
-        );
-
-    },
-    {
-        threshold: .6
-    }
-);
-
-counters.forEach(
-    counter =>
-        counterObserver.observe(
-            counter
-        )
-);
-
-
-/* =========================================================
-   DYNAMIC YEAR
-========================================================= */
-
-document
-.getElementById("year")
-.textContent =
-new Date().getFullYear();
+    .querySelectorAll(
+        ".reveal"
+    )
+    .forEach(
+        element =>
+            observer.observe(element)
+    );
 
 
 /* =========================================================
@@ -3959,6 +5575,7 @@ document.addEventListener(
                 .5
             ) * 30;
 
+
         const y =
             (
                 e.clientY /
@@ -3966,19 +5583,50 @@ document.addEventListener(
                 .5
             ) * 30;
 
+
         document
             .querySelector(".orb.one")
             .style.transform =
             `translate(${x}px,${y}px)`;
 
+
         document
             .querySelector(".orb.two")
             .style.transform =
             `translate(${-x}px,${-y}px)`;
+
     }
 );
+
+
+/* =========================================================
+   DYNAMIC YEAR
+========================================================= */
+
+document
+    .getElementById("year")
+    .textContent =
+    new Date().getFullYear();
+
+
+/* =========================================================
+   SKILL TAG ANIMATION
+========================================================= */
+
+document
+    .querySelectorAll(".skill-tag")
+    .forEach(
+        (tag, index) => {
+
+            tag.style.animationDelay =
+                `${index * 40}ms`;
+
+        }
+    );
+
 
 </script>
 
 </body>
+
 </html>
