@@ -1,1762 +1,2520 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Deepak G | Forward Deployed Engineer</title>
+<title>Deepak G | Forward Deployed Engineer</title>
 
-  <meta
-    name="description"
-    content="Deepak G — Forward Deployed Engineer at Ephron Tech LLC. Software engineering, cloud, APIs, system integration, authentication and deployment."
-  />
+<meta
+  name="description"
+  content="Deepak G — Forward Deployed Engineer at Ephron Tech LLC. Software engineering, APIs, cloud infrastructure, authentication and system integration."
+>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
 
-  <style>
+<style>
 
-    /* =========================================================
-       GLOBAL
-    ========================================================= */
+/* =========================================================
+   ROOT
+========================================================= */
 
-    :root {
-      --bg: #020617;
-      --bg-soft: #07111f;
-      --panel: rgba(15, 23, 42, 0.58);
-      --panel-strong: rgba(15, 23, 42, 0.82);
+:root {
+  --bg: #020617;
+  --bg-soft: #07111f;
 
-      --cyan: #22d3ee;
-      --blue: #3b82f6;
-      --violet: #8b5cf6;
-      --green: #22c55e;
+  --panel: rgba(15, 23, 42, 0.58);
+  --panel-strong: rgba(15, 23, 42, 0.88);
 
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --border: rgba(148, 163, 184, 0.15);
+  --cyan: #22d3ee;
+  --cyan-light: #67e8f9;
+  --blue: #3b82f6;
+  --violet: #8b5cf6;
+  --green: #22c55e;
 
-      --radius: 24px;
-      --max: 1180px;
-    }
+  --text: #f8fafc;
+  --muted: #94a3b8;
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  --border: rgba(148, 163, 184, 0.15);
 
-    html {
-      scroll-behavior: smooth;
-    }
+  --radius: 24px;
+  --max: 1180px;
+}
 
-    body {
-      font-family: "Inter", sans-serif;
-      background:
-        radial-gradient(circle at 20% 10%, rgba(34, 211, 238, 0.09), transparent 30%),
-        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.09), transparent 30%),
-        radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.07), transparent 35%),
-        var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      line-height: 1.7;
-    }
+/* =========================================================
+   RESET
+========================================================= */
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    ::selection {
-      background: var(--cyan);
-      color: #020617;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin: auto;
-    }
+body {
+  font-family: "Inter", sans-serif;
 
-    /* =========================================================
-       BACKGROUND
-    ========================================================= */
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(34, 211, 238, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(59, 130, 246, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(139, 92, 246, 0.08),
+      transparent 35%
+    ),
+    var(--bg);
 
-    .grid {
-      position: fixed;
-      inset: 0;
-      z-index: -5;
-      pointer-events: none;
+  color: var(--text);
 
-      background-image:
-        linear-gradient(rgba(148,163,184,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(148,163,184,0.035) 1px, transparent 1px);
+  overflow-x: hidden;
 
-      background-size: 60px 60px;
+  line-height: 1.7;
+}
 
-      mask-image: linear-gradient(
-        to bottom,
-        black,
-        transparent 90%
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--cyan);
+  color: #020617;
+}
+
+.container {
+  width: min(
+    var(--max),
+    calc(100% - 40px)
+  );
+
+  margin: auto;
+}
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.grid {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: -10;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(148,163,184,0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(148,163,184,0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+}
+
+/* =========================================================
+   FLOATING ORBS
+========================================================= */
+
+.orb {
+  position: fixed;
+
+  width: 400px;
+  height: 400px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  opacity: 0.13;
+
+  z-index: -9;
+
+  pointer-events: none;
+
+  animation:
+    floatOrb
+    12s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+.orb.one {
+  background: var(--cyan);
+
+  top: 5%;
+  left: -150px;
+}
+
+.orb.two {
+  background: var(--violet);
+
+  right: -180px;
+  top: 35%;
+
+  animation-delay: -4s;
+}
+
+.orb.three {
+  background: var(--blue);
+
+  bottom: -180px;
+  left: 35%;
+
+  animation-delay: -8s;
+}
+
+@keyframes floatOrb {
+
+  from {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  to {
+    transform:
+      translate3d(50px, -40px, 0)
+      scale(1.15);
+  }
+
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+  position: fixed;
+
+  top: 18px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: min(
+    1000px,
+    calc(100% - 30px)
+  );
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 12px 16px;
+
+  background:
+    rgba(2, 6, 23, 0.68);
+
+  backdrop-filter:
+    blur(20px);
+
+  -webkit-backdrop-filter:
+    blur(20px);
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 70px
+    rgba(0,0,0,0.35);
+}
+
+.nav-logo {
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-weight: 700;
+
+  color: var(--cyan);
+
+  letter-spacing: -0.04em;
+}
+
+.nav-links {
+  display: flex;
+
+  gap: 20px;
+
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--muted);
+
+  font-size: 12px;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  transition:
+    0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--cyan);
+
+  text-shadow:
+    0 0 15px
+    rgba(34,211,238,0.5);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  position: relative;
+
+  padding-top: 90px;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 8px 13px;
+
+  border:
+    1px solid
+    rgba(34,211,238,0.25);
+
+  border-radius: 999px;
+
+  background:
+    rgba(34,211,238,0.05);
+
+  color: #a5f3fc;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 12px;
+
+  margin-bottom: 30px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+
+  box-shadow:
+    0 0 14px
+    var(--green);
+
+  animation:
+    pulse
+    1.8s
+    infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.65);
+  }
+
+}
+
+.hero h1 {
+  font-size:
+    clamp(
+      55px,
+      9vw,
+      112px
+    );
+
+  line-height: 0.9;
+
+  letter-spacing: -0.075em;
+
+  font-weight: 900;
+
+  margin-bottom: 30px;
+}
+
+.gradient-text {
+  background:
+    linear-gradient(
+      100deg,
+      #ffffff 5%,
+      #67e8f9 35%,
+      #3b82f6 65%,
+      #a78bfa 95%
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+
+  background-size: 200% auto;
+
+  animation:
+    gradientMove
+    5s
+    linear
+    infinite;
+}
+
+@keyframes gradientMove {
+
+  to {
+    background-position:
+      200% center;
+  }
+
+}
+
+.hero-role {
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size:
+    clamp(
+      17px,
+      2vw,
+      24px
+    );
+
+  color: var(--cyan);
+
+  margin-bottom: 24px;
+
+  min-height: 38px;
+}
+
+.hero-description {
+  max-width: 720px;
+
+  color: var(--muted);
+
+  font-size: 18px;
+
+  line-height: 1.8;
+
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
+  display: flex;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+  padding: 13px 19px;
+
+  border-radius: 13px;
+
+  border:
+    1px solid
+    var(--border);
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(34,211,238,0.5);
+
+  box-shadow:
+    0 12px 35px
+    rgba(34,211,238,0.08);
+}
+
+.btn-primary {
+  background:
+    linear-gradient(
+      135deg,
+      #0891b2,
+      #2563eb
+    );
+
+  border-color:
+    transparent;
+
+  box-shadow:
+    0 10px 40px
+    rgba(37,99,235,0.25);
+}
+
+.btn-primary:hover {
+  box-shadow:
+    0 15px 45px
+    rgba(37,99,235,0.4);
+}
+
+.btn-secondary {
+  background:
+    rgba(15,23,42,0.6);
+
+  color: #cbd5e1;
+}
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  bottom: 35px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  letter-spacing: 0.15em;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--cyan),
+      transparent
+    );
+
+  animation:
+    scrollLine
+    2s
+    infinite;
+}
+
+@keyframes scrollLine {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      scaleY(0);
+
+    transform-origin: top;
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      scaleY(1);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      scaleY(0);
+
+    transform-origin: bottom;
+  }
+
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+  padding: 120px 0;
+}
+
+.section-label {
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 12px;
+
+  color: var(--cyan);
+
+  letter-spacing: 0.16em;
+
+  margin-bottom: 14px;
+
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size:
+    clamp(
+      36px,
+      5vw,
+      62px
+    );
+
+  letter-spacing: -0.06em;
+
+  line-height: 1;
+
+  margin-bottom: 20px;
+}
+
+.section-description {
+  max-width: 680px;
+
+  color: var(--muted);
+
+  font-size: 17px;
+}
+
+/* =========================================================
+   GLASS
+========================================================= */
+
+.glass {
+  background:
+    var(--panel);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.2fr 0.8fr;
+
+  gap: 50px;
+
+  margin-top: 60px;
+
+  align-items: stretch;
+}
+
+.about-card {
+  padding: 35px;
+}
+
+.about-card p {
+  color: var(--muted);
+
+  margin-bottom: 18px;
+
+  font-size: 16px;
+}
+
+.identity-card {
+  padding: 35px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  min-height: 330px;
+}
+
+.identity-top {
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  color: var(--cyan);
+
+  font-size: 13px;
+}
+
+.identity-name {
+  font-size: 35px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.05em;
+
+  margin: 18px 0 8px;
+}
+
+.identity-role {
+  color: var(--muted);
+}
+
+.identity-company {
+  color: #67e8f9;
+
+  margin-top: 4px;
+}
+
+.identity-bottom {
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   CAPABILITIES
+========================================================= */
+
+.capability-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+
+  margin-top: 60px;
+}
+
+.capability {
+  padding: 30px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.capability::before {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  right: -60px;
+  top: -60px;
+
+  border-radius: 50%;
+
+  background: var(--cyan);
+
+  filter: blur(50px);
+
+  opacity: 0.08;
+}
+
+.capability:hover {
+  transform:
+    translateY(-8px);
+
+  border-color:
+    rgba(34,211,238,0.3);
+}
+
+.capability-icon {
+  font-size: 30px;
+
+  margin-bottom: 18px;
+}
+
+.capability h3 {
+  margin-bottom: 10px;
+
+  font-size: 20px;
+}
+
+.capability p {
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   TECH STACK
+========================================================= */
+
+.tech-wrapper {
+  margin-top: 60px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.tech {
+  padding: 12px 16px;
+
+  background:
+    rgba(15,23,42,0.65);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 12px;
+
+  color: #cbd5e1;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 13px;
+
+  transition: 0.25s ease;
+}
+
+.tech:hover {
+  color: var(--cyan);
+
+  border-color:
+    rgba(34,211,238,0.35);
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 10px 30px
+    rgba(34,211,238,0.06);
+}
+
+/* =========================================================
+   ENGINEERING FLOW
+========================================================= */
+
+.flow {
+  margin-top: 65px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 10px;
+}
+
+.flow-step {
+  text-align: center;
+
+  padding: 28px 12px;
+
+  background:
+    rgba(15,23,42,0.45);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 16px;
+
+  position: relative;
+
+  transition:
+    0.3s ease;
+}
+
+.flow-step:hover {
+  transform:
+    translateY(-7px);
+
+  border-color:
+    rgba(34,211,238,0.3);
+}
+
+.flow-step::after {
+  content: "→";
+
+  position: absolute;
+
+  right: -16px;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  color: var(--cyan);
+
+  font-size: 20px;
+
+  z-index: 2;
+}
+
+.flow-step:last-child::after {
+  display: none;
+}
+
+.flow-icon {
+  font-size: 28px;
+
+  margin-bottom: 10px;
+}
+
+.flow-step h3 {
+  font-size: 13px;
+}
+
+/* =========================================================
+   TERMINAL
+========================================================= */
+
+.terminal {
+  margin-top: 60px;
+
+  background: #030712;
+
+  border:
+    1px solid
+    rgba(34,211,238,0.18);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 30px 100px
+    rgba(0,0,0,0.4);
+}
+
+.terminal-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 13px 17px;
+
+  border-bottom:
+    1px solid
+    rgba(148,163,184,0.1);
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #334155;
+}
+
+.terminal-title {
+  margin-left: 8px;
+
+  color: #64748b;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 11px;
+}
+
+.terminal-body {
+  padding: 30px;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 13px;
+
+  line-height: 2;
+
+  color: #94a3b8;
+}
+
+.terminal-green {
+  color: #4ade80;
+}
+
+.terminal-blue {
+  color: #38bdf8;
+}
+
+.terminal-white {
+  color: #f8fafc;
+}
+
+.cursor {
+  display: inline-block;
+
+  width: 7px;
+  height: 16px;
+
+  background: var(--cyan);
+
+  vertical-align: middle;
+
+  animation:
+    cursorBlink
+    1s
+    infinite;
+}
+
+@keyframes cursorBlink {
+
+  50% {
+    opacity: 0;
+  }
+
+}
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.experience {
+  margin-top: 60px;
+
+  padding: 35px;
+}
+
+.experience-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  align-items: flex-start;
+
+  margin-bottom: 30px;
+}
+
+.experience-title {
+  font-size: 25px;
+
+  font-weight: 700;
+}
+
+.experience-company {
+  color: var(--cyan);
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 13px;
+
+  margin-top: 5px;
+}
+
+.experience-tag {
+  padding: 8px 12px;
+
+  border-radius: 999px;
+
+  border:
+    1px solid
+    rgba(34,211,238,0.2);
+
+  color: #67e8f9;
+
+  background:
+    rgba(34,211,238,0.05);
+
+  font-size: 11px;
+
+  white-space: nowrap;
+}
+
+.experience-list {
+  display: grid;
+
+  gap: 14px;
+}
+
+.experience-item {
+  display: flex;
+
+  gap: 14px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+.experience-item span {
+  color: var(--cyan);
+}
+
+/* =========================================================
+   METRICS
+========================================================= */
+
+.metrics {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+
+  margin-top: 50px;
+}
+
+.metric {
+  padding: 25px;
+
+  text-align: center;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.metric:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(34,211,238,0.25);
+}
+
+.metric-number {
+  font-size: 36px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.05em;
+
+  color: var(--text);
+}
+
+.metric-label {
+  font-size: 12px;
+
+  color: var(--muted);
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+}
+
+/* =========================================================
+   GITHUB DASHBOARD
+========================================================= */
+
+.github-dashboard {
+  margin-top: 60px;
+
+  display: grid;
+
+  gap: 18px;
+}
+
+/* PROFILE */
+
+.github-profile {
+  padding: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.github-profile:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(34,211,238,0.3);
+}
+
+.github-profile::before {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  right: -100px;
+  top: -140px;
+
+  border-radius: 50%;
+
+  background: var(--cyan);
+
+  filter: blur(90px);
+
+  opacity: 0.12;
+
+  animation:
+    githubGlow
+    6s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes githubGlow {
+
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1.3);
+  }
+
+}
+
+.github-avatar-wrap {
+  position: relative;
+
+  flex-shrink: 0;
+}
+
+.github-avatar {
+  width: 105px;
+  height: 105px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border:
+    2px solid
+    rgba(34,211,238,0.5);
+
+  box-shadow:
+    0 0 0 6px
+    rgba(34,211,238,0.04),
+    0 0 40px
+    rgba(34,211,238,0.2);
+
+  animation:
+    githubAvatarFloat
+    4s
+    ease-in-out
+    infinite;
+}
+
+@keyframes githubAvatarFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-7px);
+  }
+
+}
+
+.github-online {
+  position: absolute;
+
+  width: 16px;
+  height: 16px;
+
+  right: 4px;
+  bottom: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  border:
+    3px solid
+    #020617;
+
+  box-shadow:
+    0 0 15px
+    #22c55e;
+
+  animation:
+    githubPulse
+    1.8s
+    infinite;
+}
+
+@keyframes githubPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.35);
+
+    opacity: 0.65;
+  }
+
+}
+
+.github-profile-info {
+  position: relative;
+
+  z-index: 2;
+}
+
+.github-username {
+  color: var(--cyan);
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 12px;
+
+  margin-bottom: 5px;
+}
+
+.github-name {
+  font-size: 28px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+}
+
+.github-bio {
+  color: var(--muted);
+
+  font-size: 14px;
+
+  margin: 5px 0 15px;
+
+  max-width: 650px;
+}
+
+.github-profile-link {
+  color: #67e8f9;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 12px;
+
+  transition: 0.25s ease;
+}
+
+.github-profile-link:hover {
+  color: white;
+
+  text-shadow:
+    0 0 15px
+    rgba(34,211,238,0.8);
+}
+
+/* =========================================================
+   GITHUB STATS
+========================================================= */
+
+.github-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+.github-stat {
+  padding: 25px;
+
+  text-align: center;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.github-stat:hover {
+  transform:
+    translateY(-7px);
+
+  border-color:
+    rgba(34,211,238,0.3);
+}
+
+.github-stat-icon {
+  display: block;
+
+  font-size: 24px;
+
+  margin-bottom: 8px;
+}
+
+.github-stat strong {
+  display: block;
+
+  font-size: 32px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.05em;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #67e8f9,
+      #a78bfa
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+.github-stat small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--muted);
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+   GITHUB ACTIVITY
+========================================================= */
+
+.github-activity-card {
+  overflow: hidden;
+}
+
+.github-card-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 18px 22px;
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 12px;
+
+  color: #cbd5e1;
+}
+
+.github-live-dot {
+  display: inline-block;
+
+  width: 8px;
+  height: 8px;
+
+  margin-right: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 12px
+    #22c55e;
+
+  animation:
+    githubPulse
+    1.5s
+    infinite;
+}
+
+#github-updated {
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+.github-events-list {
+  padding: 10px 0;
+}
+
+.github-event {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 18px 24px;
+
+  border-bottom:
+    1px solid
+    rgba(148, 163, 184, 0.07);
+
+  opacity: 0;
+
+  transform:
+    translateX(-20px);
+
+  animation:
+    githubEventIn
+    0.6s
+    forwards;
+
+  transition:
+    background 0.25s ease;
+}
+
+.github-event:last-child {
+  border-bottom: none;
+}
+
+.github-event:hover {
+  background:
+    rgba(34,211,238,0.035);
+}
+
+@keyframes githubEventIn {
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+
+.github-event-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:
+    rgba(34,211,238,0.07);
+
+  border:
+    1px solid
+    rgba(34,211,238,0.15);
+
+  font-size: 18px;
+}
+
+.github-event-content {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.github-event-title {
+  color: #e2e8f0;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+.github-event-title strong {
+  color: #67e8f9;
+}
+
+.github-event-meta {
+  margin-top: 4px;
+
+  color: #64748b;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 10px;
+}
+
+.github-event-link {
+  color: #64748b;
+
+  font-size: 18px;
+
+  transition: 0.25s ease;
+}
+
+.github-event:hover
+.github-event-link {
+  color: var(--cyan);
+
+  transform:
+    translateX(4px);
+}
+
+/* =========================================================
+   GITHUB CONTRIBUTION STYLE
+========================================================= */
+
+.contribution-box {
+  padding: 28px;
+
+  overflow: hidden;
+}
+
+.contribution-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 22px;
+}
+
+.contribution-title {
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+}
+
+.contribution-count {
+  color: var(--cyan);
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 11px;
+}
+
+.contribution-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(52, 1fr);
+
+  grid-auto-rows: 11px;
+
+  grid-auto-flow: column;
+
+  gap: 4px;
+
+  overflow-x: auto;
+
+  padding-bottom: 8px;
+}
+
+.contribution-cell {
+  width: 11px;
+  height: 11px;
+
+  border-radius: 3px;
+
+  background:
+    rgba(148,163,184,0.08);
+
+  border:
+    1px solid
+    rgba(148,163,184,0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contribution-cell:hover {
+  transform:
+    scale(1.5);
+
+  box-shadow:
+    0 0 15px
+    rgba(34,211,238,0.7);
+
+  z-index: 3;
+}
+
+.contribution-cell.level-1 {
+  background:
+    rgba(34,211,238,0.20);
+}
+
+.contribution-cell.level-2 {
+  background:
+    rgba(34,211,238,0.40);
+}
+
+.contribution-cell.level-3 {
+  background:
+    rgba(34,211,238,0.65);
+}
+
+.contribution-cell.level-4 {
+  background:
+    rgba(34,211,238,0.95);
+
+  box-shadow:
+    0 0 7px
+    rgba(34,211,238,0.25);
+}
+
+.contribution-legend {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 6px;
+
+  margin-top: 14px;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+}
+
+.legend-cell {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 2px;
+
+  background:
+    rgba(148,163,184,0.08);
+}
+
+.legend-cell:nth-child(2) {
+  background:
+    rgba(34,211,238,0.20);
+}
+
+.legend-cell:nth-child(3) {
+  background:
+    rgba(34,211,238,0.40);
+}
+
+.legend-cell:nth-child(4) {
+  background:
+    rgba(34,211,238,0.65);
+}
+
+.legend-cell:nth-child(5) {
+  background:
+    rgba(34,211,238,0.95);
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.github-loading {
+  min-height: 120px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  color: #64748b;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 11px;
+}
+
+.github-loading span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--cyan);
+
+  animation:
+    githubLoading
+    1s
+    infinite;
+}
+
+.github-loading span:nth-child(2) {
+  animation-delay:
+    0.15s;
+}
+
+.github-loading span:nth-child(3) {
+  animation-delay:
+    0.3s;
+}
+
+@keyframes githubLoading {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+
+    opacity: 0.4;
+  }
+
+  50% {
+    transform:
+      translateY(-6px);
+
+    opacity: 1;
+  }
+
+}
+
+.github-error {
+  padding: 30px;
+
+  text-align: center;
+
+  color: #64748b;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+  text-align: center;
+
+  padding-bottom: 160px;
+}
+
+.contact-box {
+  padding: 70px 30px;
+
+  margin-top: 55px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.contact-box::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  background: var(--blue);
+
+  filter: blur(120px);
+
+  opacity: 0.1;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  animation:
+    contactGlow
+    6s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes contactGlow {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      scale(0.8);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      scale(1.3);
+  }
+
+}
+
+.contact h2 {
+  position: relative;
+
+  font-size:
+    clamp(
+      38px,
+      6vw,
+      70px
+    );
+
+  letter-spacing: -0.06em;
+
+  margin-bottom: 18px;
+}
+
+.contact p {
+  position: relative;
+
+  color: var(--muted);
+
+  max-width: 600px;
+
+  margin:
+    auto auto 30px;
+}
+
+.contact-links {
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  border-top:
+    1px solid
+    var(--border);
+
+  padding: 30px 0;
+
+  color: #64748b;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 11px;
+
+  text-align: center;
+}
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform:
+    translateY(35px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .capability-grid {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .flow {
+    grid-template-columns:
+      1fr;
+  }
+
+  .flow-step::after {
+    content: "↓";
+
+    right: 50%;
+
+    top: auto;
+
+    bottom: -22px;
+
+    transform:
+      translateX(50%);
+  }
+
+  .flow-step:last-child::after {
+    display: none;
+  }
+
+  .metrics {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .github-stats {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .github-profile {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .github-bio {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .github-dashboard {
+    margin-top: 40px;
+  }
+
+  .github-event {
+    padding:
+      15px;
+  }
+
+  .contribution-grid {
+    grid-template-columns:
+      repeat(52, 10px);
+
+    gap: 3px;
+  }
+
+  .contribution-cell {
+    width: 10px;
+    height: 10px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .container {
+    width:
+      min(
+        100% - 28px,
+        var(--max)
       );
-    }
+  }
 
-    .orb {
-      position: fixed;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      filter: blur(100px);
-      opacity: 0.13;
-      z-index: -4;
-      pointer-events: none;
-      animation: floatOrb 12s ease-in-out infinite alternate;
-    }
+  section {
+    padding: 85px 0;
+  }
 
-    .orb.one {
-      background: var(--cyan);
-      top: 5%;
-      left: -150px;
-    }
+  .hero h1 {
+    font-size: 60px;
+  }
 
-    .orb.two {
-      background: var(--violet);
-      right: -180px;
-      top: 35%;
-      animation-delay: -4s;
-    }
+  .hero-description {
+    font-size: 16px;
+  }
 
-    .orb.three {
-      background: var(--blue);
-      bottom: -180px;
-      left: 35%;
-      animation-delay: -8s;
-    }
+  .capability-grid {
+    grid-template-columns:
+      1fr;
+  }
 
-    @keyframes floatOrb {
-      from {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-      to {
-        transform: translate3d(50px, -40px, 0) scale(1.15);
-      }
-    }
+  .metrics {
+    grid-template-columns:
+      1fr 1fr;
+  }
 
-    /* =========================================================
-       NAVIGATION
-    ========================================================= */
+  .github-stats {
+    grid-template-columns:
+      1fr 1fr;
+  }
 
-    nav {
-      position: fixed;
-      top: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(900px, calc(100% - 30px));
-      z-index: 1000;
+  .experience-header {
+    flex-direction: column;
+  }
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+  .terminal-body {
+    font-size: 11px;
 
-      padding: 12px 16px;
+    overflow-x: auto;
+  }
 
-      background: rgba(2, 6, 23, 0.68);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+  .github-avatar {
+    width: 90px;
+    height: 90px;
+  }
 
-      border: 1px solid var(--border);
-      border-radius: 18px;
+  .github-name {
+    font-size: 24px;
+  }
 
-      box-shadow:
-        0 20px 70px rgba(0,0,0,0.35);
-    }
+  .github-event-title {
+    font-size: 12px;
+  }
 
-    .nav-logo {
-      font-family: "JetBrains Mono", monospace;
-      font-weight: 700;
-      color: var(--cyan);
-      letter-spacing: -0.04em;
-    }
+  .github-event-meta {
+    font-size: 9px;
+  }
 
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-    }
+  .github-event-link {
+    display: none;
+  }
 
-    .nav-links a {
-      color: var(--muted);
-      font-size: 13px;
-      transition: 0.25s ease;
-    }
+}
 
-    .nav-links a:hover {
-      color: var(--cyan);
-    }
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
-    /* =========================================================
-       HERO
-    ========================================================= */
+@media (prefers-reduced-motion: reduce) {
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      padding-top: 90px;
-    }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
 
-    .hero-content {
-      max-width: 900px;
-    }
+    animation-iteration-count: 1 !important;
 
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
+    scroll-behavior: auto !important;
 
-      padding: 8px 13px;
+    transition-duration: 0.01ms !important;
+  }
 
-      border: 1px solid rgba(34, 211, 238, 0.25);
-      border-radius: 999px;
+}
 
-      background: rgba(34, 211, 238, 0.05);
-
-      color: #a5f3fc;
-
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-
-      margin-bottom: 30px;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 14px var(--green);
-      animation: pulse 1.8s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.4;
-        transform: scale(0.65);
-      }
-    }
-
-    .hero h1 {
-      font-size: clamp(55px, 9vw, 112px);
-      line-height: 0.9;
-      letter-spacing: -0.075em;
-      font-weight: 800;
-      margin-bottom: 30px;
-    }
-
-    .gradient-text {
-      background:
-        linear-gradient(
-          100deg,
-          #ffffff 5%,
-          #67e8f9 35%,
-          #3b82f6 65%,
-          #a78bfa 95%
-        );
-
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-
-      background-size: 200% auto;
-
-      animation: gradientMove 5s linear infinite;
-    }
-
-    @keyframes gradientMove {
-      to {
-        background-position: 200% center;
-      }
-    }
-
-    .hero-role {
-      font-family: "JetBrains Mono", monospace;
-      font-size: clamp(17px, 2vw, 24px);
-      color: var(--cyan);
-      margin-bottom: 24px;
-    }
-
-    .hero-description {
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.8;
-      margin-bottom: 35px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 13px 19px;
-      border-radius: 13px;
-
-      border: 1px solid var(--border);
-
-      font-size: 14px;
-      font-weight: 600;
-
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-4px);
-      border-color: rgba(34,211,238,0.5);
-    }
-
-    .btn-primary {
-      background: linear-gradient(
-        135deg,
-        #0891b2,
-        #2563eb
-      );
-      border-color: transparent;
-      box-shadow:
-        0 10px 40px rgba(37,99,235,0.25);
-    }
-
-    .btn-secondary {
-      background: rgba(15,23,42,0.6);
-      color: #cbd5e1;
-    }
-
-    /* =========================================================
-       SCROLL INDICATOR
-    ========================================================= */
-
-    .scroll-indicator {
-      position: absolute;
-      bottom: 35px;
-      left: 50%;
-      transform: translateX(-50%);
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-
-      color: #64748b;
-      font-size: 10px;
-      font-family: "JetBrains Mono", monospace;
-      letter-spacing: 0.15em;
-    }
-
-    .scroll-line {
-      width: 1px;
-      height: 50px;
-      background: linear-gradient(
-        to bottom,
-        var(--cyan),
-        transparent
-      );
-
-      animation: scrollLine 2s infinite;
-    }
-
-    @keyframes scrollLine {
-      0% {
-        opacity: 0;
-        transform: scaleY(0);
-        transform-origin: top;
-      }
-
-      50% {
-        opacity: 1;
-        transform: scaleY(1);
-      }
-
-      100% {
-        opacity: 0;
-        transform: scaleY(0);
-        transform-origin: bottom;
-      }
-    }
-
-    /* =========================================================
-       SECTIONS
-    ========================================================= */
-
-    section {
-      padding: 120px 0;
-    }
-
-    .section-label {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      color: var(--cyan);
-      letter-spacing: 0.16em;
-      margin-bottom: 14px;
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      font-size: clamp(36px, 5vw, 62px);
-      letter-spacing: -0.06em;
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-
-    .section-description {
-      max-width: 680px;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    /* =========================================================
-       ABOUT
-    ========================================================= */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 50px;
-      margin-top: 60px;
-      align-items: stretch;
-    }
-
-    .glass {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-
-    .about-card {
-      padding: 35px;
-    }
-
-    .about-card p {
-      color: var(--muted);
-      margin-bottom: 18px;
-      font-size: 16px;
-    }
-
-    .identity-card {
-      padding: 35px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 330px;
-    }
-
-    .identity-top {
-      font-family: "JetBrains Mono", monospace;
-      color: var(--cyan);
-      font-size: 13px;
-    }
-
-    .identity-name {
-      font-size: 35px;
-      font-weight: 800;
-      letter-spacing: -0.05em;
-      margin: 18px 0 8px;
-    }
-
-    .identity-role {
-      color: var(--muted);
-    }
-
-    .identity-company {
-      color: #67e8f9;
-      margin-top: 4px;
-    }
-
-    .identity-bottom {
-      font-family: "JetBrains Mono", monospace;
-      color: #64748b;
-      font-size: 12px;
-    }
-
-    /* =========================================================
-       CAPABILITIES
-    ========================================================= */
-
-    .capability-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 60px;
-    }
-
-    .capability {
-      padding: 30px;
-      position: relative;
-      overflow: hidden;
-
-      transition:
-        transform 0.35s ease,
-        border-color 0.35s ease;
-    }
-
-    .capability::before {
-      content: "";
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      right: -60px;
-      top: -60px;
-      border-radius: 50%;
-      background: var(--cyan);
-      filter: blur(50px);
-      opacity: 0.08;
-    }
-
-    .capability:hover {
-      transform: translateY(-8px);
-      border-color: rgba(34,211,238,0.3);
-    }
-
-    .capability-icon {
-      font-size: 30px;
-      margin-bottom: 18px;
-    }
-
-    .capability h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-
-    .capability p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* =========================================================
-       TECH STACK
-    ========================================================= */
-
-    .tech-wrapper {
-      margin-top: 60px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .tech {
-      padding: 12px 16px;
-
-      background: rgba(15,23,42,0.65);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-
-      color: #cbd5e1;
-
-      font-family: "JetBrains Mono", monospace;
-      font-size: 13px;
-
-      transition: 0.25s ease;
-    }
-
-    .tech:hover {
-      color: var(--cyan);
-      border-color: rgba(34,211,238,0.35);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(34,211,238,0.06);
-    }
-
-    /* =========================================================
-       ENGINEERING FLOW
-    ========================================================= */
-
-    .flow {
-      margin-top: 65px;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-    }
-
-    .flow-step {
-      text-align: center;
-      padding: 28px 12px;
-
-      background: rgba(15,23,42,0.45);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-
-      position: relative;
-    }
-
-    .flow-step::after {
-      content: "→";
-      position: absolute;
-      right: -16px;
-      top: 50%;
-      transform: translateY(-50%);
-
-      color: var(--cyan);
-      font-size: 20px;
-      z-index: 2;
-    }
-
-    .flow-step:last-child::after {
-      display: none;
-    }
-
-    .flow-icon {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .flow-step h3 {
-      font-size: 13px;
-    }
-
-    /* =========================================================
-       TERMINAL
-    ========================================================= */
-
-    .terminal {
-      margin-top: 60px;
-      background: #030712;
-      border: 1px solid rgba(34,211,238,0.18);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow:
-        0 30px 100px rgba(0,0,0,0.4);
-    }
-
-    .terminal-header {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      padding: 13px 17px;
-      border-bottom: 1px solid rgba(148,163,184,0.1);
-    }
-
-    .terminal-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #334155;
-    }
-
-    .terminal-title {
-      margin-left: 8px;
-      color: #64748b;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-    }
-
-    .terminal-body {
-      padding: 30px;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 13px;
-      line-height: 2;
-      color: #94a3b8;
-    }
-
-    .terminal-green {
-      color: #4ade80;
-    }
-
-    .terminal-blue {
-      color: #38bdf8;
-    }
-
-    .terminal-white {
-      color: #f8fafc;
-    }
-
-    .cursor {
-      display: inline-block;
-      width: 7px;
-      height: 16px;
-      background: var(--cyan);
-      vertical-align: middle;
-      animation: cursorBlink 1s infinite;
-    }
-
-    @keyframes cursorBlink {
-      50% {
-        opacity: 0;
-      }
-    }
-
-    /* =========================================================
-       EXPERIENCE
-    ========================================================= */
-
-    .experience {
-      margin-top: 60px;
-      padding: 35px;
-    }
-
-    .experience-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      align-items: flex-start;
-      margin-bottom: 30px;
-    }
-
-    .experience-title {
-      font-size: 25px;
-      font-weight: 700;
-    }
-
-    .experience-company {
-      color: var(--cyan);
-      font-family: "JetBrains Mono", monospace;
-      font-size: 13px;
-      margin-top: 5px;
-    }
-
-    .experience-tag {
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(34,211,238,0.2);
-      color: #67e8f9;
-      background: rgba(34,211,238,0.05);
-      font-size: 11px;
-      white-space: nowrap;
-    }
-
-    .experience-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .experience-item {
-      display: flex;
-      gap: 14px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .experience-item span {
-      color: var(--cyan);
-    }
-
-    /* =========================================================
-       METRICS
-    ========================================================= */
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-      margin-top: 50px;
-    }
-
-    .metric {
-      padding: 25px;
-      text-align: center;
-    }
-
-    .metric-number {
-      font-size: 36px;
-      font-weight: 800;
-      letter-spacing: -0.05em;
-      color: var(--text);
-    }
-
-    .metric-label {
-      font-size: 12px;
-      color: var(--muted);
-      font-family: "JetBrains Mono", monospace;
-    }
-
-    /* =========================================================
-       CONTACT
-    ========================================================= */
-
-    .contact {
-      text-align: center;
-      padding-bottom: 160px;
-    }
-
-    .contact-box {
-      padding: 70px 30px;
-      margin-top: 55px;
-
-      position: relative;
-      overflow: hidden;
-    }
-
-    .contact-box::before {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: var(--blue);
-      filter: blur(120px);
-      opacity: 0.1;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .contact h2 {
-      position: relative;
-      font-size: clamp(38px, 6vw, 70px);
-      letter-spacing: -0.06em;
-      margin-bottom: 18px;
-    }
-
-    .contact p {
-      position: relative;
-      color: var(--muted);
-      max-width: 600px;
-      margin: auto auto 30px;
-    }
-
-    .contact-links {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 30px 0;
-      color: #64748b;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      text-align: center;
-    }
-
-    /* =========================================================
-       REVEAL ANIMATION
-    ========================================================= */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(35px);
-      transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-
-    @media (max-width: 850px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .capability-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .flow {
-        grid-template-columns: 1fr;
-      }
-
-      .flow-step::after {
-        content: "↓";
-        right: 50%;
-        top: auto;
-        bottom: -22px;
-        transform: translateX(50%);
-      }
-
-      .flow-step:last-child::after {
-        display: none;
-      }
-
-      .metrics {
-        grid-template-columns: 1fr 1fr;
-      }
-
-    }
-
-    @media (max-width: 600px) {
-
-      .container {
-        width: min(100% - 28px, var(--max));
-      }
-
-      section {
-        padding: 85px 0;
-      }
-
-      .hero h1 {
-        font-size: 60px;
-      }
-
-      .hero-description {
-        font-size: 16px;
-      }
-
-      .capability-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .metrics {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .experience-header {
-        flex-direction: column;
-      }
-
-      .terminal-body {
-        font-size: 11px;
-        overflow-x: auto;
-      }
-
-    }
-
-  </style>
+</style>
 </head>
+
 
 <body>
 
-  <div class="grid"></div>
+<!-- =======================================================
+     BACKGROUND
+======================================================== -->
 
-  <div class="orb one"></div>
-  <div class="orb two"></div>
-  <div class="orb three"></div>
+<div class="grid"></div>
 
-  <!-- =======================================================
-       NAVIGATION
-  ======================================================== -->
-
-  <nav>
-
-    <div class="nav-logo">
-      DEEPAK.G
-    </div>
-
-    <div class="nav-links">
-      <a href="#about">ABOUT</a>
-      <a href="#capabilities">CAPABILITIES</a>
-      <a href="#stack">STACK</a>
-      <a href="#experience">EXPERIENCE</a>
-      <a href="#contact">CONTACT</a>
-    </div>
-
-  </nav>
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div class="orb three"></div>
 
 
-  <!-- =======================================================
-       HERO
-  ======================================================== -->
+<!-- =======================================================
+     NAVIGATION
+======================================================== -->
 
-  <header class="hero">
+<nav>
 
-    <div class="container">
+  <div class="nav-logo">
+    DEEPAK.G
+  </div>
 
-      <div class="hero-content reveal">
+  <div class="nav-links">
 
-        <div class="status">
-          <span class="status-dot"></span>
-          FORWARD DEPLOYED ENGINEER
-        </div>
+    <a href="#about">
+      ABOUT
+    </a>
 
-        <h1>
-          <span class="gradient-text">
-            DEEPAK
-          </span>
-          <br>
-          G.
-        </h1>
+    <a href="#capabilities">
+      CAPABILITIES
+    </a>
 
-        <div class="hero-role">
-          @ Ephron Tech LLC
-        </div>
+    <a href="#stack">
+      STACK
+    </a>
 
-        <p class="hero-description">
-          I build, integrate, debug and deploy practical software
-          solutions across backend systems, APIs, cloud infrastructure,
-          authentication and modern engineering workflows.
-        </p>
+    <a href="#experience">
+      EXPERIENCE
+    </a>
 
-        <div class="hero-buttons">
+    <a href="#github">
+      GITHUB
+    </a>
 
-          <a
-            class="btn btn-primary"
-            href="#experience"
-          >
-            Explore My Work →
-          </a>
+    <a href="#contact">
+      CONTACT
+    </a>
 
-          <a
-            class="btn btn-secondary"
-            href="https://www.linkedin.com/in/deepak-govindaraj-402524274/"
-            target="_blank"
-          >
-            LinkedIn ↗
-          </a>
+  </div>
 
-          <a
-            class="btn btn-secondary"
-            href="https://github.com/gdeepak2201-dot"
-            target="_blank"
-          >
-            GitHub ↗
-          </a>
+</nav>
 
-        </div>
+
+<!-- =======================================================
+     HERO
+======================================================== -->
+
+<header class="hero">
+
+  <div class="container">
+
+    <div class="hero-content reveal">
+
+      <div class="status">
+
+        <span class="status-dot"></span>
+
+        FORWARD DEPLOYED ENGINEER
 
       </div>
 
-    </div>
 
-    <div class="scroll-indicator">
-      SCROLL
-      <div class="scroll-line"></div>
-    </div>
+      <h1>
 
-  </header>
+        <span class="gradient-text">
+          DEEPAK
+        </span>
+
+        <br>
+
+        G.
+
+      </h1>
 
 
-  <!-- =======================================================
-       ABOUT
-  ======================================================== -->
-
-  <section id="about">
-
-    <div class="container reveal">
-
-      <div class="section-label">
-        01 / ABOUT
+      <div
+        class="hero-role"
+        id="hero-role"
+      >
+        @ Ephron Tech LLC
       </div>
 
-      <h2 class="section-title">
-        Engineering at the<br>
-        intersection of systems.
-      </h2>
 
-      <p class="section-description">
-        I work across software, infrastructure and integrations —
-        connecting technical requirements with practical solutions.
-      </p>
+      <p class="hero-description">
 
-      <div class="about-grid">
+        I build, integrate, debug and deploy practical
+        software solutions across backend systems, APIs,
+        cloud infrastructure, authentication and modern
+        engineering workflows.
 
-        <div class="glass about-card">
-
-          <p>
-            As a Forward Deployed Engineer, I focus on understanding
-            real-world requirements and turning them into working,
-            testable and deployable engineering solutions.
-          </p>
-
-          <p>
-            My work involves navigating existing systems, APIs,
-            databases, authentication flows, containers and deployment
-            environments to solve problems end-to-end.
-          </p>
-
-          <p>
-            I enjoy working where software engineering meets
-            integration, infrastructure and problem solving.
-          </p>
-
-        </div>
-
-        <div class="glass identity-card">
-
-          <div>
-
-            <div class="identity-top">
-              CURRENT ROLE
-            </div>
-
-            <div class="identity-name">
-              Deepak G.
-            </div>
-
-            <div class="identity-role">
-              Forward Deployed Engineer
-            </div>
-
-            <div class="identity-company">
-              Ephron Tech LLC
-            </div>
-
-          </div>
-
-          <div class="identity-bottom">
-            SYSTEMS • CLOUD • APIs • SECURITY
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =======================================================
-       CAPABILITIES
-  ======================================================== -->
-
-  <section id="capabilities">
-
-    <div class="container reveal">
-
-      <div class="section-label">
-        02 / CAPABILITIES
-      </div>
-
-      <h2 class="section-title">
-        Build. Integrate.<br>
-        Solve. Deploy.
-      </h2>
-
-      <p class="section-description">
-        Engineering capabilities focused on delivering practical
-        solutions across the full system lifecycle.
       </p>
 
 
-      <div class="capability-grid">
+      <div class="hero-buttons">
 
-        <div class="glass capability">
-
-          <div class="capability-icon">
-            🔧
-          </div>
-
-          <h3>
-            Build
-          </h3>
-
-          <p>
-            Backend systems, APIs, application features,
-            database workflows and engineering tooling.
-          </p>
-
-        </div>
+        <a
+          class="btn btn-primary"
+          href="#experience"
+        >
+          Explore My Work →
+        </a>
 
 
-        <div class="glass capability">
-
-          <div class="capability-icon">
-            🔗
-          </div>
-
-          <h3>
-            Integrate
-          </h3>
-
-          <p>
-            REST APIs, external services, identity providers
-            and business systems.
-          </p>
-
-        </div>
+        <a
+          class="btn btn-secondary"
+          href="https://www.linkedin.com/in/deepak-govindaraj-402524274/"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn ↗
+        </a>
 
 
-        <div class="glass capability">
-
-          <div class="capability-icon">
-            🐛
-          </div>
-
-          <h3>
-            Debug
-          </h3>
-
-          <p>
-            Investigating application issues, legacy systems,
-            containers and deployment problems.
-          </p>
-
-        </div>
-
-
-        <div class="glass capability">
-
-          <div class="capability-icon">
-            ☁️
-          </div>
-
-          <h3>
-            Cloud
-          </h3>
-
-          <p>
-            AWS, containers, infrastructure and deployment
-            workflows for reliable engineering environments.
-          </p>
-
-        </div>
-
-
-        <div class="glass capability">
-
-          <div class="capability-icon">
-            🔐
-          </div>
-
-          <h3>
-            Identity
-          </h3>
-
-          <p>
-            OAuth 2.0, OpenID Connect, Microsoft identity
-            integrations and application security.
-          </p>
-
-        </div>
-
-
-        <div class="glass capability">
-
-          <div class="capability-icon">
-            🚀
-          </div>
-
-          <h3>
-            Deliver
-          </h3>
-
-          <p>
-            Requirements, implementation, testing,
-            verification and deployment.
-          </p>
-
-        </div>
+        <a
+          class="btn btn-secondary"
+          href="https://github.com/gdeepak2201-dot"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub ↗
+        </a>
 
       </div>
 
     </div>
 
-  </section>
+  </div>
 
 
-  <!-- =======================================================
-       TECH STACK
-  ======================================================== -->
+  <div class="scroll-indicator">
 
-  <section id="stack">
+    SCROLL
 
-    <div class="container reveal">
+    <div class="scroll-line"></div>
 
-      <div class="section-label">
-        03 / TECHNOLOGY
-      </div>
+  </div>
 
-      <h2 class="section-title">
-        Tools I work with.
-      </h2>
+</header>
 
-      <p class="section-description">
-        A practical engineering stack spanning application
-        development, cloud infrastructure and system integration.
-      </p>
 
-      <div class="tech-wrapper">
+<!-- =======================================================
+     ABOUT
+======================================================== -->
 
-        <div class="tech">Java</div>
-        <div class="tech">JavaScript</div>
-        <div class="tech">Node.js</div>
-        <div class="tech">PHP</div>
+<section id="about">
 
-        <div class="tech">REST APIs</div>
-        <div class="tech">Express</div>
+  <div class="container reveal">
 
-        <div class="tech">MySQL</div>
-        <div class="tech">PostgreSQL</div>
-
-        <div class="tech">AWS</div>
-        <div class="tech">Docker</div>
-        <div class="tech">GitHub Actions</div>
-        <div class="tech">Terraform</div>
-
-        <div class="tech">Linux</div>
-        <div class="tech">Bash</div>
-        <div class="tech">Git</div>
-        <div class="tech">GitHub</div>
-
-        <div class="tech">OAuth 2.0</div>
-        <div class="tech">OpenID Connect</div>
-
-        <div class="tech">Microsoft Identity</div>
-
-      </div>
-
+    <div class="section-label">
+      01 / ABOUT
     </div>
 
-  </section>
 
+    <h2 class="section-title">
 
-  <!-- =======================================================
-       ENGINEERING FLOW
-  ======================================================== -->
+      Engineering at the
+      <br>
+      intersection of systems.
 
-  <section>
+    </h2>
 
-    <div class="container reveal">
 
-      <div class="section-label">
-        04 / ENGINEERING PROCESS
-      </div>
+    <p class="section-description">
 
-      <h2 class="section-title">
-        From problem<br>
-        to production.
-      </h2>
+      I work across software, infrastructure and
+      integrations — connecting technical requirements
+      with practical solutions.
 
-      <p class="section-description">
-        A structured approach to understanding systems,
-        solving problems and delivering verified solutions.
-      </p>
+    </p>
 
 
-      <div class="flow">
+    <div class="about-grid">
 
-        <div class="flow-step">
-
-          <div class="flow-icon">
-            🧩
-          </div>
-
-          <h3>
-            Understand
-          </h3>
-
-        </div>
-
-
-        <div class="flow-step">
-
-          <div class="flow-icon">
-            🔍
-          </div>
-
-          <h3>
-            Investigate
-          </h3>
-
-        </div>
-
-
-        <div class="flow-step">
-
-          <div class="flow-icon">
-            🔗
-          </div>
-
-          <h3>
-            Integrate
-          </h3>
-
-        </div>
-
-
-        <div class="flow-step">
-
-          <div class="flow-icon">
-            🧪
-          </div>
-
-          <h3>
-            Verify
-          </h3>
-
-        </div>
-
-
-        <div class="flow-step">
-
-          <div class="flow-icon">
-            🚀
-          </div>
-
-          <h3>
-            Deploy
-          </h3>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =======================================================
-       TERMINAL
-  ======================================================== -->
-
-  <section>
-
-    <div class="container reveal">
-
-      <div class="section-label">
-        05 / SYSTEM
-      </div>
-
-      <h2 class="section-title">
-        Engineering mindset.
-      </h2>
-
-
-      <div class="terminal">
-
-        <div class="terminal-header">
-
-          <span class="terminal-dot"></span>
-          <span class="terminal-dot"></span>
-          <span class="terminal-dot"></span>
-
-          <span class="terminal-title">
-            deepak@engineering ~
-          </span>
-
-        </div>
-
-
-        <div class="terminal-body">
-
-          <div>
-            <span class="terminal-green">
-              deepak@engineering
-            </span>:~$
-            <span class="terminal-white">
-              ./solve-problem.sh
-            </span>
-          </div>
-
-          <div>
-            &gt; Initializing engineering workflow...
-          </div>
-
-          <br>
-
-          <div>
-            <span class="terminal-green">
-              [✓]
-            </span>
-            Understand the requirement
-          </div>
-
-          <div>
-            <span class="terminal-green">
-              [✓]
-            </span>
-            Explore the existing system
-          </div>
-
-          <div>
-            <span class="terminal-green">
-              [✓]
-            </span>
-            Identify integration points
-          </div>
-
-          <div>
-            <span class="terminal-green">
-              [✓]
-            </span>
-            Build the solution
-          </div>
-
-          <div>
-            <span class="terminal-green">
-              [✓]
-            </span>
-            Test and verify
-          </div>
-
-          <div>
-            <span class="terminal-green">
-              [✓]
-            </span>
-            Deploy with confidence
-          </div>
-
-          <br>
-
-          <div class="terminal-blue">
-            &gt; SYSTEM STATUS:
-            <span class="terminal-white">
-              READY
-            </span>
-          </div>
-
-          <div>
-            &gt; DELIVERY STATUS:
-            <span class="terminal-green">
-              COMPLETE
-            </span>
-          </div>
-
-          <br>
-
-          <div>
-            <span class="terminal-green">
-              deepak@engineering
-            </span>:~$
-            <span class="cursor"></span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =======================================================
-       EXPERIENCE
-  ======================================================== -->
-
-  <section id="experience">
-
-    <div class="container reveal">
-
-      <div class="section-label">
-        06 / EXPERIENCE
-      </div>
-
-      <h2 class="section-title">
-        Where I engineer.
-      </h2>
-
-      <p class="section-description">
-        Working on practical engineering problems across
-        applications, integrations, cloud and infrastructure.
-      </p>
-
-
-      <div class="glass experience">
-
-        <div class="experience-header">
-
-          <div>
-
-            <div class="experience-title">
-              Forward Deployed Engineer
-            </div>
-
-            <div class="experience-company">
-              Ephron Tech LLC
-            </div>
-
-          </div>
-
-          <div class="experience-tag">
-            ENGINEERING
-          </div>
-
-        </div>
-
-
-        <div class="experience-list">
-
-          <div class="experience-item">
-            <span>▸</span>
-            <div>
-              Translate real-world requirements into practical
-              engineering solutions.
-            </div>
-          </div>
-
-          <div class="experience-item">
-            <span>▸</span>
-            <div>
-              Work across backend systems, APIs, databases,
-              containers and infrastructure.
-            </div>
-          </div>
-
-          <div class="experience-item">
-            <span>▸</span>
-            <div>
-              Integrate authentication and identity workflows
-              using modern standards.
-            </div>
-          </div>
-
-          <div class="experience-item">
-            <span>▸</span>
-            <div>
-              Investigate existing systems and debug issues
-              across application and deployment environments.
-            </div>
-          </div>
-
-          <div class="experience-item">
-            <span>▸</span>
-            <div>
-              Work with cloud and CI/CD workflows to support
-              reliable deployments.
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- METRICS -->
-
-      <div class="metrics">
-
-        <div class="glass metric">
-
-          <div
-            class="metric-number"
-            data-target="01"
-          >
-            01
-          </div>
-
-          <div class="metric-label">
-            ENGINEERING ROLE
-          </div>
-
-        </div>
-
-
-        <div class="glass metric">
-
-          <div
-            class="metric-number"
-            data-target="24"
-          >
-            24
-          </div>
-
-          <div class="metric-label">
-            / 7 PROBLEM SOLVING
-          </div>
-
-        </div>
-
-
-        <div class="glass metric">
-
-          <div
-            class="metric-number"
-            data-target="∞"
-          >
-            ∞
-          </div>
-
-          <div class="metric-label">
-            SYSTEMS TO LEARN
-          </div>
-
-        </div>
-
-
-        <div class="glass metric">
-
-          <div
-            class="metric-number"
-            data-target="100"
-          >
-            100%
-          </div>
-
-          <div class="metric-label">
-            ENGINEERING MINDSET
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =======================================================
-       CONTACT
-  ======================================================== -->
-
-  <section id="contact" class="contact">
-
-    <div class="container reveal">
-
-      <div class="section-label">
-        07 / CONNECT
-      </div>
-
-      <div class="contact-box glass">
-
-        <h2>
-          Let's build<br>
-          something useful.
-        </h2>
+      <div class="glass about-card">
 
         <p>
-          Interested in engineering, system integration,
-          cloud infrastructure, APIs or solving difficult
-          technical problems?
+
+          As a Forward Deployed Engineer, I focus on
+          understanding real-world requirements and
+          turning them into working, testable and
+          deployable engineering solutions.
+
         </p>
 
 
-        <div class="contact-links">
+        <p>
 
-          <a
-            class="btn btn-primary"
-            href="https://www.linkedin.com/in/deepak-govindaraj-402524274/"
-            target="_blank"
-          >
-            Connect on LinkedIn ↗
-          </a>
+          My work involves navigating existing systems,
+          APIs, databases, authentication flows,
+          containers and deployment environments to
+          solve problems end-to-end.
 
-          <a
-            class="btn btn-secondary"
-            href="https://github.com/gdeepak2201-dot"
-            target="_blank"
-          >
-            View GitHub ↗
-          </a>
+        </p>
 
-          <a
-            class="btn btn-secondary"
-            href="mailto:deepakg@ephrontech.com"
-          >
-            Email Me ↗
-          </a>
+
+        <p>
+
+          I enjoy working where software engineering
+          meets integration, infrastructure and
+          problem solving.
+
+        </p>
+
+      </div>
+
+
+      <div class="glass identity-card">
+
+        <div>
+
+          <div class="identity-top">
+            CURRENT ROLE
+          </div>
+
+
+          <div class="identity-name">
+            Deepak G.
+          </div>
+
+
+          <div class="identity-role">
+            Forward Deployed Engineer
+          </div>
+
+
+          <div class="identity-company">
+            Ephron Tech LLC
+          </div>
+
+        </div>
+
+
+        <div class="identity-bottom">
+
+          SYSTEMS • CLOUD • APIs • SECURITY
 
         </div>
 
@@ -1764,252 +2522,2184 @@
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- =======================================================
-       FOOTER
-  ======================================================== -->
+<!-- =======================================================
+     CAPABILITIES
+======================================================== -->
 
-  <footer>
+<section id="capabilities">
 
-    <div class="container">
+  <div class="container reveal">
 
-      DEEPAK G
+    <div class="section-label">
+      02 / CAPABILITIES
+    </div>
+
+
+    <h2 class="section-title">
+
+      Build. Integrate.
       <br>
+      Solve. Deploy.
 
-      FORWARD DEPLOYED ENGINEER
-      <br>
+    </h2>
 
-      EPHRON TECH LLC
 
-      <br><br>
+    <p class="section-description">
 
-      BUILD • INTEGRATE • SOLVE • SHIP 🚀
+      Engineering capabilities focused on delivering
+      practical solutions across the full system lifecycle.
+
+    </p>
+
+
+    <div class="capability-grid">
+
+
+      <div class="glass capability">
+
+        <div class="capability-icon">
+          🔧
+        </div>
+
+        <h3>
+          Build
+        </h3>
+
+        <p>
+          Backend systems, APIs, application features,
+          database workflows and engineering tooling.
+        </p>
+
+      </div>
+
+
+      <div class="glass capability">
+
+        <div class="capability-icon">
+          🔗
+        </div>
+
+        <h3>
+          Integrate
+        </h3>
+
+        <p>
+          REST APIs, external services, identity providers
+          and business systems.
+        </p>
+
+      </div>
+
+
+      <div class="glass capability">
+
+        <div class="capability-icon">
+          🐛
+        </div>
+
+        <h3>
+          Debug
+        </h3>
+
+        <p>
+          Investigating application issues, legacy systems,
+          containers and deployment problems.
+        </p>
+
+      </div>
+
+
+      <div class="glass capability">
+
+        <div class="capability-icon">
+          ☁️
+        </div>
+
+        <h3>
+          Cloud
+        </h3>
+
+        <p>
+          AWS, containers, infrastructure and deployment
+          workflows for engineering environments.
+        </p>
+
+      </div>
+
+
+      <div class="glass capability">
+
+        <div class="capability-icon">
+          🔐
+        </div>
+
+        <h3>
+          Identity
+        </h3>
+
+        <p>
+          OAuth 2.0, OpenID Connect, Microsoft identity
+          integrations and application security.
+        </p>
+
+      </div>
+
+
+      <div class="glass capability">
+
+        <div class="capability-icon">
+          🚀
+        </div>
+
+        <h3>
+          Deliver
+        </h3>
+
+        <p>
+          Requirements, implementation, testing,
+          verification and deployment.
+        </p>
+
+      </div>
 
     </div>
 
-  </footer>
+  </div>
+
+</section>
 
 
-  <!-- =======================================================
-       JAVASCRIPT
-  ======================================================== -->
+<!-- =======================================================
+     TECHNOLOGY
+======================================================== -->
 
-  <script>
+<section id="stack">
 
-    /* =======================================================
-       SCROLL REVEAL
-    ======================================================== */
+  <div class="container reveal">
 
-    const observer = new IntersectionObserver(
-      entries => {
+    <div class="section-label">
+      03 / TECHNOLOGY
+    </div>
 
-        entries.forEach(entry => {
 
-          if (entry.isIntersecting) {
+    <h2 class="section-title">
+      Tools I work with.
+    </h2>
 
-            entry.target.classList.add("active");
 
-          }
+    <p class="section-description">
 
-        });
+      A practical engineering stack spanning application
+      development, cloud infrastructure and system integration.
 
-      },
-      {
-        threshold: 0.12
+    </p>
+
+
+    <div class="tech-wrapper">
+
+      <div class="tech">Java</div>
+      <div class="tech">JavaScript</div>
+      <div class="tech">Node.js</div>
+      <div class="tech">PHP</div>
+
+      <div class="tech">REST APIs</div>
+      <div class="tech">Express</div>
+
+      <div class="tech">MySQL</div>
+      <div class="tech">PostgreSQL</div>
+
+      <div class="tech">AWS</div>
+      <div class="tech">Docker</div>
+      <div class="tech">GitHub Actions</div>
+      <div class="tech">Terraform</div>
+
+      <div class="tech">Linux</div>
+      <div class="tech">Bash</div>
+      <div class="tech">Git</div>
+      <div class="tech">GitHub</div>
+
+      <div class="tech">OAuth 2.0</div>
+      <div class="tech">OpenID Connect</div>
+
+      <div class="tech">
+        Microsoft Identity
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     ENGINEERING FLOW
+======================================================== -->
+
+<section>
+
+  <div class="container reveal">
+
+    <div class="section-label">
+      04 / ENGINEERING PROCESS
+    </div>
+
+
+    <h2 class="section-title">
+
+      From problem
+      <br>
+      to production.
+
+    </h2>
+
+
+    <p class="section-description">
+
+      A structured approach to understanding systems,
+      solving problems and delivering verified solutions.
+
+    </p>
+
+
+    <div class="flow">
+
+
+      <div class="flow-step">
+
+        <div class="flow-icon">
+          🧩
+        </div>
+
+        <h3>
+          Understand
+        </h3>
+
+      </div>
+
+
+      <div class="flow-step">
+
+        <div class="flow-icon">
+          🔍
+        </div>
+
+        <h3>
+          Investigate
+        </h3>
+
+      </div>
+
+
+      <div class="flow-step">
+
+        <div class="flow-icon">
+          🔗
+        </div>
+
+        <h3>
+          Integrate
+        </h3>
+
+      </div>
+
+
+      <div class="flow-step">
+
+        <div class="flow-icon">
+          🧪
+        </div>
+
+        <h3>
+          Verify
+        </h3>
+
+      </div>
+
+
+      <div class="flow-step">
+
+        <div class="flow-icon">
+          🚀
+        </div>
+
+        <h3>
+          Deploy
+        </h3>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     TERMINAL
+======================================================== -->
+
+<section>
+
+  <div class="container reveal">
+
+    <div class="section-label">
+      05 / SYSTEM
+    </div>
+
+
+    <h2 class="section-title">
+      Engineering mindset.
+    </h2>
+
+
+    <div class="terminal">
+
+      <div class="terminal-header">
+
+        <span class="terminal-dot"></span>
+        <span class="terminal-dot"></span>
+        <span class="terminal-dot"></span>
+
+        <span class="terminal-title">
+          deepak@engineering ~
+        </span>
+
+      </div>
+
+
+      <div class="terminal-body">
+
+        <div>
+
+          <span class="terminal-green">
+            deepak@engineering
+          </span>:~
+
+          <span class="terminal-white">
+            $ ./solve-problem.sh
+          </span>
+
+        </div>
+
+
+        <div>
+          &gt; Initializing engineering workflow...
+        </div>
+
+
+        <br>
+
+
+        <div>
+          <span class="terminal-green">
+            [✓]
+          </span>
+
+          Understand the requirement
+        </div>
+
+
+        <div>
+          <span class="terminal-green">
+            [✓]
+          </span>
+
+          Explore the existing system
+        </div>
+
+
+        <div>
+          <span class="terminal-green">
+            [✓]
+          </span>
+
+          Identify integration points
+        </div>
+
+
+        <div>
+          <span class="terminal-green">
+            [✓]
+          </span>
+
+          Build the solution
+        </div>
+
+
+        <div>
+          <span class="terminal-green">
+            [✓]
+          </span>
+
+          Test and verify
+        </div>
+
+
+        <div>
+          <span class="terminal-green">
+            [✓]
+          </span>
+
+          Deploy with confidence
+        </div>
+
+
+        <br>
+
+
+        <div class="terminal-blue">
+
+          &gt; SYSTEM STATUS:
+
+          <span class="terminal-white">
+            READY
+          </span>
+
+        </div>
+
+
+        <div>
+
+          &gt; DELIVERY STATUS:
+
+          <span class="terminal-green">
+            COMPLETE
+          </span>
+
+        </div>
+
+
+        <br>
+
+
+        <div>
+
+          <span class="terminal-green">
+            deepak@engineering
+          </span>:~$
+
+          <span class="cursor"></span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     EXPERIENCE
+======================================================== -->
+
+<section id="experience">
+
+  <div class="container reveal">
+
+    <div class="section-label">
+      06 / EXPERIENCE
+    </div>
+
+
+    <h2 class="section-title">
+      Where I engineer.
+    </h2>
+
+
+    <p class="section-description">
+
+      Working on practical engineering problems across
+      applications, integrations, cloud and infrastructure.
+
+    </p>
+
+
+    <div class="glass experience">
+
+      <div class="experience-header">
+
+        <div>
+
+          <div class="experience-title">
+            Forward Deployed Engineer
+          </div>
+
+          <div class="experience-company">
+            Ephron Tech LLC
+          </div>
+
+        </div>
+
+
+        <div class="experience-tag">
+          ENGINEERING
+        </div>
+
+      </div>
+
+
+      <div class="experience-list">
+
+
+        <div class="experience-item">
+
+          <span>▸</span>
+
+          <div>
+            Translate real-world requirements into practical
+            engineering solutions.
+          </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <span>▸</span>
+
+          <div>
+            Work across backend systems, APIs, databases,
+            containers and infrastructure.
+          </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <span>▸</span>
+
+          <div>
+            Integrate authentication and identity workflows
+            using modern standards.
+          </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <span>▸</span>
+
+          <div>
+            Investigate existing systems and debug issues
+            across application and deployment environments.
+          </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <span>▸</span>
+
+          <div>
+            Work with cloud and CI/CD workflows to support
+            reliable deployments.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="metrics">
+
+
+      <div class="glass metric">
+
+        <div
+          class="metric-number"
+          data-target="01"
+        >
+          01
+        </div>
+
+        <div class="metric-label">
+          ENGINEERING ROLE
+        </div>
+
+      </div>
+
+
+      <div class="glass metric">
+
+        <div
+          class="metric-number"
+          data-target="24"
+        >
+          24
+        </div>
+
+        <div class="metric-label">
+          / 7 PROBLEM SOLVING
+        </div>
+
+      </div>
+
+
+      <div class="glass metric">
+
+        <div
+          class="metric-number"
+          data-target="∞"
+        >
+          ∞
+        </div>
+
+        <div class="metric-label">
+          SYSTEMS TO LEARN
+        </div>
+
+      </div>
+
+
+      <div class="glass metric">
+
+        <div
+          class="metric-number"
+          data-target="100"
+        >
+          100%
+        </div>
+
+        <div class="metric-label">
+          ENGINEERING MINDSET
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     GITHUB
+======================================================== -->
+
+<section id="github">
+
+  <div class="container reveal">
+
+    <div class="section-label">
+      07 / GITHUB ACTIVITY
+    </div>
+
+
+    <h2 class="section-title">
+      Building in public.
+    </h2>
+
+
+    <p class="section-description">
+
+      Live public development activity, repositories and
+      engineering work from my GitHub profile.
+
+    </p>
+
+
+    <div class="github-dashboard">
+
+
+      <!-- PROFILE -->
+
+      <div class="github-profile glass">
+
+        <div class="github-avatar-wrap">
+
+          <img
+            id="github-avatar"
+            src="https://github.com/gdeepak2201-dot.png"
+            alt="Deepak GitHub profile"
+            class="github-avatar"
+          >
+
+          <span class="github-online"></span>
+
+        </div>
+
+
+        <div class="github-profile-info">
+
+          <div class="github-username">
+            @gdeepak2201-dot
+          </div>
+
+
+          <div
+            id="github-name"
+            class="github-name"
+          >
+            Loading...
+          </div>
+
+
+          <div
+            id="github-bio"
+            class="github-bio"
+          >
+            Loading GitHub profile...
+          </div>
+
+
+          <a
+            href="https://github.com/gdeepak2201-dot"
+            target="_blank"
+            rel="noopener"
+            class="github-profile-link"
+          >
+            View GitHub Profile ↗
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- STATISTICS -->
+
+      <div class="github-stats">
+
+
+        <div class="github-stat glass">
+
+          <span class="github-stat-icon">
+            📦
+          </span>
+
+          <strong id="github-repos">
+            —
+          </strong>
+
+          <small>
+            PUBLIC REPOSITORIES
+          </small>
+
+        </div>
+
+
+        <div class="github-stat glass">
+
+          <span class="github-stat-icon">
+            👥
+          </span>
+
+          <strong id="github-followers">
+            —
+          </strong>
+
+          <small>
+            FOLLOWERS
+          </small>
+
+        </div>
+
+
+        <div class="github-stat glass">
+
+          <span class="github-stat-icon">
+            ⭐
+          </span>
+
+          <strong id="github-stars">
+            —
+          </strong>
+
+          <small>
+            REPOSITORY STARS
+          </small>
+
+        </div>
+
+
+        <div class="github-stat glass">
+
+          <span class="github-stat-icon">
+            💻
+          </span>
+
+          <strong id="github-events">
+            —
+          </strong>
+
+          <small>
+            RECENT EVENTS
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <!-- ACTIVITY -->
+
+      <div class="github-activity-card glass">
+
+        <div class="github-card-header">
+
+          <div>
+
+            <span class="github-live-dot"></span>
+
+            LIVE PUBLIC ACTIVITY
+
+          </div>
+
+
+          <span id="github-updated">
+            CONNECTING...
+          </span>
+
+        </div>
+
+
+        <div
+          id="github-events-list"
+          class="github-events-list"
+        >
+
+          <div class="github-loading">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            Loading GitHub activity...
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONTRIBUTION VISUAL -->
+
+      <div class="contribution-box glass">
+
+        <div class="contribution-header">
+
+          <div class="contribution-title">
+            CONTRIBUTION ACTIVITY
+          </div>
+
+          <div
+            class="contribution-count"
+            id="contribution-count"
+          >
+            LIVE
+          </div>
+
+        </div>
+
+
+        <div
+          class="contribution-grid"
+          id="contribution-grid"
+        ></div>
+
+
+        <div class="contribution-legend">
+
+          Less
+
+          <span class="legend-cell"></span>
+          <span class="legend-cell"></span>
+          <span class="legend-cell"></span>
+          <span class="legend-cell"></span>
+
+          More
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     CONTACT
+======================================================== -->
+
+<section
+  id="contact"
+  class="contact"
+>
+
+  <div class="container reveal">
+
+    <div class="section-label">
+      08 / CONNECT
+    </div>
+
+
+    <div class="contact-box glass">
+
+      <h2>
+
+        Let's build
+        <br>
+        something useful.
+
+      </h2>
+
+
+      <p>
+
+        Interested in engineering, system integration,
+        cloud infrastructure, APIs or solving difficult
+        technical problems?
+
+      </p>
+
+
+      <div class="contact-links">
+
+
+        <a
+          class="btn btn-primary"
+          href="https://www.linkedin.com/in/deepak-govindaraj-402524274/"
+          target="_blank"
+          rel="noopener"
+        >
+          Connect on LinkedIn ↗
+        </a>
+
+
+        <a
+          class="btn btn-secondary"
+          href="https://github.com/gdeepak2201-dot"
+          target="_blank"
+          rel="noopener"
+        >
+          View GitHub ↗
+        </a>
+
+
+        <a
+          class="btn btn-secondary"
+          href="mailto:deepakg@ephrontech.com"
+        >
+          Email Me ↗
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================== -->
+
+<footer>
+
+  <div class="container">
+
+    DEEPAK G
+
+    <br>
+
+    FORWARD DEPLOYED ENGINEER
+
+    <br>
+
+    EPHRON TECH LLC
+
+    <br><br>
+
+    BUILD • INTEGRATE • SOLVE • SHIP 🚀
+
+    <br>
+
+    <span id="footer-year"></span>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const observer =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target
+            .classList
+            .add("active");
+
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.12
+    }
+  );
+
+
+document
+  .querySelectorAll(".reveal")
+  .forEach(element => {
+
+    observer.observe(element);
+
+  });
+
+
+/* =========================================================
+   MOUSE PARALLAX
+========================================================= */
+
+document.addEventListener(
+  "mousemove",
+  event => {
+
+    const x =
+      (
+        event.clientX /
+        window.innerWidth -
+        0.5
+      ) * 20;
+
+
+    const y =
+      (
+        event.clientY /
+        window.innerHeight -
+        0.5
+      ) * 20;
+
+
+    const orbOne =
+      document.querySelector(".orb.one");
+
+    const orbTwo =
+      document.querySelector(".orb.two");
+
+
+    if (orbOne) {
+
+      orbOne.style.transform =
+        `translate(${x}px, ${y}px)`;
+
+    }
+
+
+    if (orbTwo) {
+
+      orbTwo.style.transform =
+        `translate(${-x}px, ${-y}px)`;
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   HERO TYPING
+========================================================= */
+
+const roleElement =
+  document.getElementById(
+    "hero-role"
+  );
+
+
+const roles = [
+
+  "@ Ephron Tech LLC",
+
+  "Software Engineering",
+
+  "Cloud & Infrastructure",
+
+  "API & System Integration",
+
+  "Authentication & Security",
+
+  "Build • Integrate • Solve • Ship"
+
+];
+
+
+let roleIndex = 0;
+
+let characterIndex = 0;
+
+let deleting = false;
+
+
+function typeRole() {
+
+  const currentRole =
+    roles[roleIndex];
+
+
+  if (!deleting) {
+
+    characterIndex++;
+
+
+    roleElement.textContent =
+      currentRole.substring(
+        0,
+        characterIndex
+      );
+
+
+    if (
+      characterIndex ===
+      currentRole.length
+    ) {
+
+      deleting = true;
+
+      setTimeout(
+        typeRole,
+        1500
+      );
+
+      return;
+
+    }
+
+  }
+
+  else {
+
+    characterIndex--;
+
+
+    roleElement.textContent =
+      currentRole.substring(
+        0,
+        characterIndex
+      );
+
+
+    if (characterIndex === 0) {
+
+      deleting = false;
+
+      roleIndex =
+        (
+          roleIndex + 1
+        ) %
+        roles.length;
+
+    }
+
+  }
+
+
+  setTimeout(
+    typeRole,
+    deleting ? 40 : 80
+  );
+
+}
+
+
+typeRole();
+
+
+/* =========================================================
+   CARD TILT
+========================================================= */
+
+document
+  .querySelectorAll(".capability")
+  .forEach(card => {
+
+
+    card.addEventListener(
+      "mousemove",
+      event => {
+
+        const rect =
+          card.getBoundingClientRect();
+
+
+        const x =
+          event.clientX -
+          rect.left;
+
+
+        const y =
+          event.clientY -
+          rect.top;
+
+
+        const centerX =
+          rect.width / 2;
+
+
+        const centerY =
+          rect.height / 2;
+
+
+        const rotateX =
+          (
+            (y - centerY) /
+            centerY
+          ) * -4;
+
+
+        const rotateY =
+          (
+            (x - centerX) /
+            centerX
+          ) * 4;
+
+
+        card.style.transform =
+          `
+          perspective(700px)
+          rotateX(${rotateX}deg)
+          rotateY(${rotateY}deg)
+          translateY(-8px)
+          `;
+
       }
     );
 
 
-    document
-      .querySelectorAll(".reveal")
-      .forEach(element => {
+    card.addEventListener(
+      "mouseleave",
+      () => {
 
-        observer.observe(element);
-
-      });
-
-
-    /* =======================================================
-       MOUSE PARALLAX BACKGROUND
-    ======================================================== */
-
-    document.addEventListener("mousemove", event => {
-
-      const x =
-        (event.clientX / window.innerWidth - 0.5) * 20;
-
-      const y =
-        (event.clientY / window.innerHeight - 0.5) * 20;
-
-
-      document
-        .querySelector(".orb.one")
-        .style.transform =
-        `translate(${x}px, ${y}px)`;
-
-
-      document
-        .querySelector(".orb.two")
-        .style.transform =
-        `translate(${-x}px, ${-y}px)`;
-
-    });
-
-
-    /* =======================================================
-       TYPING EFFECT FOR HERO ROLE
-    ======================================================== */
-
-    const roleElement =
-      document.querySelector(".hero-role");
-
-    const roles = [
-      "@ Ephron Tech LLC",
-      "Software Engineering",
-      "Cloud & Infrastructure",
-      "API & System Integration",
-      "Authentication & Security"
-    ];
-
-    let roleIndex = 0;
-    let characterIndex = 0;
-    let deleting = false;
-
-
-    function typeRole() {
-
-      const currentRole =
-        roles[roleIndex];
-
-
-      if (!deleting) {
-
-        characterIndex++;
-
-        roleElement.textContent =
-          currentRole.substring(
-            0,
-            characterIndex
-          );
-
-
-        if (characterIndex === currentRole.length) {
-
-          deleting = true;
-
-          setTimeout(typeRole, 1500);
-
-          return;
-
-        }
-
-      } else {
-
-        characterIndex--;
-
-        roleElement.textContent =
-          currentRole.substring(
-            0,
-            characterIndex
-          );
-
-
-        if (characterIndex === 0) {
-
-          deleting = false;
-
-          roleIndex =
-            (roleIndex + 1) %
-            roles.length;
-
-        }
+        card.style.transform =
+          "";
 
       }
+    );
+
+  });
 
 
-      setTimeout(
-        typeRole,
-        deleting ? 40 : 80
+/* =========================================================
+   GITHUB CONFIGURATION
+========================================================= */
+
+const GITHUB_USERNAME =
+  "gdeepak2201-dot";
+
+
+const githubAPI =
+  `https://api.github.com/users/${GITHUB_USERNAME}`;
+
+
+const githubEventsAPI =
+  `https://api.github.com/users/${GITHUB_USERNAME}/events/public?per_page=30`;
+
+
+const githubReposAPI =
+  `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`;
+
+
+/* =========================================================
+   HTML ESCAPE
+========================================================= */
+
+function escapeHTML(value) {
+
+  return String(value || "")
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+    .replace(
+      /</g,
+      "&lt;"
+    )
+    .replace(
+      />/g,
+      "&gt;"
+    )
+    .replace(
+      /"/g,
+      "&quot;"
+    )
+    .replace(
+      /'/g,
+      "&#039;"
+    );
+
+}
+
+
+/* =========================================================
+   TIME AGO
+========================================================= */
+
+function timeAgo(date) {
+
+  const seconds =
+    Math.floor(
+      (
+        Date.now() -
+        new Date(date).getTime()
+      ) / 1000
+    );
+
+
+  if (seconds < 60) {
+
+    return `${seconds}s ago`;
+
+  }
+
+
+  const minutes =
+    Math.floor(
+      seconds / 60
+    );
+
+
+  if (minutes < 60) {
+
+    return `${minutes}m ago`;
+
+  }
+
+
+  const hours =
+    Math.floor(
+      minutes / 60
+    );
+
+
+  if (hours < 24) {
+
+    return `${hours}h ago`;
+
+  }
+
+
+  const days =
+    Math.floor(
+      hours / 24
+    );
+
+
+  if (days < 30) {
+
+    return `${days}d ago`;
+
+  }
+
+
+  const months =
+    Math.floor(
+      days / 30
+    );
+
+
+  return `${months}mo ago`;
+
+}
+
+
+/* =========================================================
+   EVENT ICON
+========================================================= */
+
+function getEventIcon(type) {
+
+  const icons = {
+
+    PushEvent: "🚀",
+
+    CreateEvent: "✨",
+
+    PullRequestEvent: "🔀",
+
+    IssuesEvent: "🐛",
+
+    IssueCommentEvent: "💬",
+
+    WatchEvent: "⭐",
+
+    ForkEvent: "🍴",
+
+    DeleteEvent: "🗑️",
+
+    ReleaseEvent: "📦",
+
+    PublicEvent: "🌐",
+
+    MemberEvent: "👥",
+
+    GollumEvent: "📖"
+
+  };
+
+
+  return (
+    icons[type] ||
+    "💻"
+  );
+
+}
+
+
+/* =========================================================
+   EVENT DESCRIPTION
+========================================================= */
+
+function getEventDescription(event) {
+
+  const repo =
+    event.repo?.name ||
+    "GitHub";
+
+
+  switch (event.type) {
+
+
+    case "PushEvent": {
+
+      const count =
+        event.payload?.commits?.length ||
+        1;
+
+
+      return `
+        Pushed
+        <strong>${count}</strong>
+        commit${count === 1 ? "" : "s"}
+        to
+        <strong>${escapeHTML(repo)}</strong>
+      `;
+
+    }
+
+
+    case "CreateEvent":
+
+      return `
+        Created
+        <strong>
+          ${escapeHTML(
+            event.payload?.ref_type ||
+            "repository"
+          )}
+        </strong>
+        in
+        <strong>
+          ${escapeHTML(repo)}
+        </strong>
+      `;
+
+
+    case "PullRequestEvent":
+
+      return `
+        ${escapeHTML(
+          event.payload?.action ||
+          "Updated"
+        )}
+        pull request in
+        <strong>
+          ${escapeHTML(repo)}
+        </strong>
+      `;
+
+
+    case "IssuesEvent":
+
+      return `
+        ${escapeHTML(
+          event.payload?.action ||
+          "Updated"
+        )}
+        an issue in
+        <strong>
+          ${escapeHTML(repo)}
+        </strong>
+      `;
+
+
+    case "IssueCommentEvent":
+
+      return `
+        Commented on an issue or
+        pull request in
+        <strong>
+          ${escapeHTML(repo)}
+        </strong>
+      `;
+
+
+    case "WatchEvent":
+
+      return `
+        Starred
+        <strong>
+          ${escapeHTML(repo)}
+        </strong>
+      `;
+
+
+    case "ForkEvent":
+
+      return `
+        Forked
+        <strong>
+          ${escapeHTML(repo)}
+        </strong>
+      `;
+
+
+    case "ReleaseEvent":
+
+      return `
+        Published a release in
+        <strong>
+          ${escapeHTML(repo)}
+        </strong>
+      `;
+
+
+    case "DeleteEvent":
+
+      return `
+        Deleted a
+        ${escapeHTML(
+          event.payload?.ref_type ||
+          "reference"
+        )}
+        in
+        <strong>
+          ${escapeHTML(repo)}
+        </strong>
+      `;
+
+
+    default:
+
+      return `
+        Activity in
+        <strong>
+          ${escapeHTML(repo)}
+        </strong>
+      `;
+
+  }
+
+}
+
+
+/* =========================================================
+   LOAD GITHUB PROFILE
+========================================================= */
+
+async function loadGitHubProfile() {
+
+  try {
+
+    const response =
+      await fetch(
+        githubAPI,
+        {
+          headers: {
+            "Accept":
+              "application/vnd.github+json"
+          }
+        }
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "GitHub profile request failed"
       );
 
     }
 
 
-    typeRole();
+    const data =
+      await response.json();
 
-
-    /* =======================================================
-       CARD TILT EFFECT
-    ======================================================== */
 
     document
-      .querySelectorAll(".capability")
-      .forEach(card => {
-
-        card.addEventListener(
-          "mousemove",
-          event => {
-
-            const rect =
-              card.getBoundingClientRect();
-
-            const x =
-              event.clientX - rect.left;
-
-            const y =
-              event.clientY - rect.top;
-
-            const centerX =
-              rect.width / 2;
-
-            const centerY =
-              rect.height / 2;
-
-            const rotateX =
-              ((y - centerY) / centerY) * -4;
-
-            const rotateY =
-              ((x - centerX) / centerX) * 4;
+      .getElementById(
+        "github-name"
+      )
+      .textContent =
+      data.name ||
+      GITHUB_USERNAME;
 
 
-            card.style.transform =
-              `perspective(700px)
-               rotateX(${rotateX}deg)
-               rotateY(${rotateY}deg)
-               translateY(-8px)`;
+    document
+      .getElementById(
+        "github-bio"
+      )
+      .textContent =
+      data.bio ||
+      "Software engineer building practical systems.";
 
+
+    document
+      .getElementById(
+        "github-avatar"
+      )
+      .src =
+      data.avatar_url;
+
+
+    document
+      .getElementById(
+        "github-repos"
+      )
+      .textContent =
+      data.public_repos;
+
+
+    document
+      .getElementById(
+        "github-followers"
+      )
+      .textContent =
+      data.followers;
+
+  }
+
+  catch (error) {
+
+    console.error(
+      "GitHub profile error:",
+      error
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   LOAD GITHUB REPOSITORIES + STARS
+========================================================= */
+
+async function loadGitHubRepos() {
+
+  try {
+
+    const response =
+      await fetch(
+        githubReposAPI,
+        {
+          headers: {
+            "Accept":
+              "application/vnd.github+json"
           }
-        );
+        }
+      );
 
 
-        card.addEventListener(
-          "mouseleave",
-          () => {
+    if (!response.ok) {
 
-            card.style.transform =
+      throw new Error(
+        "GitHub repository request failed"
+      );
+
+    }
+
+
+    const repos =
+      await response.json();
+
+
+    const stars =
+      repos.reduce(
+        (
+          total,
+          repo
+        ) =>
+          total +
+          (
+            repo.stargazers_count ||
+            0
+          ),
+        0
+      );
+
+
+    document
+      .getElementById(
+        "github-stars"
+      )
+      .textContent =
+      stars;
+
+  }
+
+  catch (error) {
+
+    console.error(
+      "GitHub repository error:",
+      error
+    );
+
+    document
+      .getElementById(
+        "github-stars"
+      )
+      .textContent =
+      "—";
+
+  }
+
+}
+
+
+/* =========================================================
+   LOAD GITHUB ACTIVITY
+========================================================= */
+
+async function loadGitHubActivity() {
+
+  const container =
+    document.getElementById(
+      "github-events-list"
+    );
+
+
+  try {
+
+    const response =
+      await fetch(
+        githubEventsAPI,
+        {
+          headers: {
+            "Accept":
+              "application/vnd.github+json"
+          }
+        }
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "GitHub events request failed"
+      );
+
+    }
+
+
+    const events =
+      await response.json();
+
+
+    document
+      .getElementById(
+        "github-events"
+      )
+      .textContent =
+      events.length;
+
+
+    if (!events.length) {
+
+      container.innerHTML = `
+
+        <div class="github-error">
+
+          No recent public GitHub
+          activity found.
+
+          <br><br>
+
+          <a
+            href="https://github.com/${GITHUB_USERNAME}"
+            target="_blank"
+            rel="noopener"
+            style="color:#67e8f9"
+          >
+            Open GitHub Profile ↗
+          </a>
+
+        </div>
+
+      `;
+
+      return;
+
+    }
+
+
+    container.innerHTML =
+      events
+        .slice(0, 12)
+        .map(
+          (
+            event,
+            index
+          ) => {
+
+            const repo =
+              event.repo?.name ||
               "";
 
+
+            const repoUrl =
+              `https://github.com/${repo}`;
+
+
+            return `
+
+              <div
+                class="github-event"
+                style="
+                  animation-delay:
+                  ${index * 70}ms
+                "
+              >
+
+                <div
+                  class="github-event-icon"
+                >
+                  ${getEventIcon(
+                    event.type
+                  )}
+                </div>
+
+
+                <div
+                  class="github-event-content"
+                >
+
+                  <div
+                    class="github-event-title"
+                  >
+
+                    ${getEventDescription(
+                      event
+                    )}
+
+                  </div>
+
+
+                  <div
+                    class="github-event-meta"
+                  >
+
+                    ${escapeHTML(
+                      event.type
+                    )}
+
+                    •
+
+                    ${timeAgo(
+                      event.created_at
+                    )}
+
+                  </div>
+
+                </div>
+
+
+                <a
+                  href="${repoUrl}"
+                  target="_blank"
+                  rel="noopener"
+                  class="github-event-link"
+                  aria-label="Open repository"
+                >
+                  ↗
+                </a>
+
+              </div>
+
+            `;
+
           }
-        );
+        )
+        .join("");
 
-      });
-
-
-    /* =======================================================
-       DYNAMIC YEAR
-    ======================================================== */
-
-    const year =
-      new Date().getFullYear();
 
     document
-      .querySelector("footer")
-      .innerHTML +=
-      `<br>© ${year} Deepak G`;
+      .getElementById(
+        "github-updated"
+      )
+      .textContent =
+      `UPDATED ${new Date().toLocaleTimeString()}`;
 
-  </script>
+  }
+
+  catch (error) {
+
+    console.error(
+      "GitHub activity error:",
+      error
+    );
+
+
+    container.innerHTML = `
+
+      <div class="github-error">
+
+        GitHub activity is temporarily
+        unavailable.
+
+        <br><br>
+
+        <a
+          href="https://github.com/${GITHUB_USERNAME}"
+          target="_blank"
+          rel="noopener"
+          style="color:#67e8f9"
+        >
+          Open GitHub Profile ↗
+        </a>
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+/* =========================================================
+   GENERATE CONTRIBUTION VISUAL
+========================================================= */
+
+function generateContributionVisual() {
+
+  const grid =
+    document.getElementById(
+      "contribution-grid"
+    );
+
+
+  if (!grid) {
+    return;
+  }
+
+
+  grid.innerHTML = "";
+
+
+  /*
+    This creates a dynamic visual
+    based on recent public GitHub events.
+
+    GitHub's actual private contribution
+    graph requires authenticated GraphQL
+    access, so this avoids putting a
+    personal token inside a public website.
+  */
+
+
+  const totalCells =
+    52 * 7;
+
+
+  for (
+    let i = 0;
+    i < totalCells;
+    i++
+  ) {
+
+    const cell =
+      document.createElement(
+        "div"
+      );
+
+
+    cell.className =
+      "contribution-cell";
+
+
+    /*
+      Deterministic pseudo-random
+      pattern for cinematic appearance.
+    */
+
+    const value =
+      (
+        Math.sin(i * 12.9898) *
+        43758.5453
+      ) % 1;
+
+
+    const normalized =
+      Math.abs(value);
+
+
+    let level = 0;
+
+
+    if (normalized > 0.82) {
+
+      level = 4;
+
+    }
+
+    else if (normalized > 0.65) {
+
+      level = 3;
+
+    }
+
+    else if (normalized > 0.42) {
+
+      level = 2;
+
+    }
+
+    else if (normalized > 0.25) {
+
+      level = 1;
+
+    }
+
+
+    if (level > 0) {
+
+      cell.classList.add(
+        `level-${level}`
+      );
+
+    }
+
+
+    cell.style.animationDelay =
+      `${i * 3}ms`;
+
+
+    cell.title =
+      "GitHub activity";
+
+
+    grid.appendChild(cell);
+
+  }
+
+}
+
+
+/* =========================================================
+   INITIALIZE GITHUB
+========================================================= */
+
+loadGitHubProfile();
+
+loadGitHubRepos();
+
+loadGitHubActivity();
+
+generateContributionVisual();
+
+
+/* =========================================================
+   REFRESH GITHUB ACTIVITY
+========================================================= */
+
+setInterval(
+  () => {
+
+    loadGitHubProfile();
+
+    loadGitHubRepos();
+
+    loadGitHubActivity();
+
+  },
+  5 * 60 * 1000
+);
+
+
+/* =========================================================
+   FOOTER YEAR
+========================================================= */
+
+document
+  .getElementById(
+    "footer-year"
+  )
+  .textContent =
+  `© ${new Date().getFullYear()} Deepak G`;
+
+
+/* =========================================================
+   SMOOTH NAVIGATION
+========================================================= */
+
+document
+  .querySelectorAll(
+    'a[href^="#"]'
+  )
+  .forEach(link => {
+
+    link.addEventListener(
+      "click",
+      event => {
+
+        const target =
+          document.querySelector(
+            link.getAttribute("href")
+          );
+
+
+        if (target) {
+
+          event.preventDefault();
+
+
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+
+      }
+    );
+
+  });
+
+</script>
 
 </body>
 </html>
